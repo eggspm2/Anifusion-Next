@@ -75,5 +75,7 @@
       rgba(0, 0, 0, 0.713),
       black
     );
+    border-radius: 12px;
   }
+ 
 }
