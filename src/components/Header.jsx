@@ -47,8 +47,8 @@ const Header = () => {
   return (
     <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px]">
       <div className="w-[18%] text-center">
-        <p className="text-[25px]">
-          <span className="text-[40px] font-bold text-gray-600">A</span>nifusion
+        <p className="text-[25px] font-semibold">
+          <span className="text-[40px] font-bold text-cyan-600 px-1">A</span>nifusion
         </p>
       </div>
       <div className=" flex justify-center items-start w-[400px]">
