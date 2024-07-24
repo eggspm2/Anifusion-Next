@@ -20,9 +20,9 @@ export const AnimeList = ({ data, name }) => {
                 <img
                   src={item.image}
                   alt=""
-                  className=" h-[300px] object-cover rounded-xl"
+                  className=" h-[300px] object-cover rounded-xl border border-zinc-500/50"
                 />
-                <h1 className="text-[20px]">
+                <h1 className="text-[20px] font-semibold w-full text-center">
                   {item.title.english.length > 25
                     ? item.title.english.substring(0, 22) + "..."
                     : item.title.english}
