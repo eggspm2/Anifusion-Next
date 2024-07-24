@@ -35,7 +35,7 @@ const Slider = () => {
         {data.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="flex justify-center items-end py-[30px] relative">
-              <div className="absolute w-[95%] h-[400px] bg-gradient-to-br from-white/0  to-black"></div>
+              <div className="gradient"></div>
               <img
                 className="w-[95%] h-[400px] object-cover rounded-xl"
                 src={item.cover}
