@@ -43,7 +43,7 @@ const Slider = () => {
               />
               <div className="absolute w-[95%] flex flex-col p-[20px] gap-3">
                 <h1 className="text-[40px] font-bold">{item.title.english}</h1>
-                <div className="w-[300px] h-[40px] rounded-xl bg-white/20 flex justify-center items-center gap-3 text-[18px]">
+                <div className="w-[300px] h-[40px] bg-zinc-800/30 rounded-xl border border-zinc-500/50 flex justify-center items-center gap-3 text-[18px]">
                   <div className="flex items-center  justify-center gap-1">
                     <FontAwesomeIcon icon={faWineGlass} className="iconStyle" />
                     <p>{item.duration}</p>
@@ -74,13 +74,13 @@ const Slider = () => {
                 </div>
               </div>
               <div className="absolute w-[95%] flex justify-end gap-4 p-[30px] text-[18px]">
-                    <div className="flex justify-center items-center w-[150px] h-[50px] gap-2 rounded-xl bg-white/20">
+                    <div className="flex justify-center items-center w-[150px] h-[50px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50">
                     <FontAwesomeIcon
                         icon={faCircleInfo}
                       />
                       <p>Details</p>
                     </div>
-                    <div className="flex justify-center items-center w-[150px] h-[50px] rounded-xl gap-2 bg-white/20">
+                    <div className="flex justify-center items-center w-[150px] h-[50px] bg-zinc-800/30 rounded-xl border border-zinc-500/50 gap-2">
                     <FontAwesomeIcon
                         icon={faCirclePlay}
                       />
