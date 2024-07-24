@@ -10,7 +10,7 @@ export const AnimeList = ({ data, name }) => {
   return (
     <div className="flex flex-col justify-between items-center w-full p-[20px] h-[500px]  border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-3">
         <div className="w-full h-[80px] pt-1 px-[10px] ">
-        <h1 className=" text-[30px] px-[10px] font-bold border-l-[5px] border-zinc-500 rounded">
+        <h1 className=" text-[30px] px-[10px] font-bold border-l-[5px] border-zinc-500 rounded-[5px]">
         {name}
       </h1>
         </div>
