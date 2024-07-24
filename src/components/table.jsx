@@ -12,7 +12,7 @@ export const Table = ({data, name}) => {
         <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded px-[20px]">{name}</h1>
         {data && data.map((item) => (
           <div
-            className="flex justify-between w-full h-[130px] p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+            className="flex justify-center w-full h-[130px] p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50"
             key={item.id}
           >
             <img
@@ -20,7 +20,7 @@ export const Table = ({data, name}) => {
               alt=""
               className="h-full w-[80px] rounded-[10px]"
             />
-            <div className="flex flex-col justify-center items-center w-[450px] gap-4">
+            <div className="flex flex-col justify-center items-center w-full gap-4">
               <h1 className="text-[18px] font-semibold">
                 {item.title.english.length > 30
                   ? item.title.english.substring(0, 28) + "..."
