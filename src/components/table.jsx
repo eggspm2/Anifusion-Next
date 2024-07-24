@@ -9,7 +9,7 @@ export const Table = ({data, name}) => {
     if (!data) return <div>Loading ...</div>;
   return (
     <div className="w-[49%] flex flex-col border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-5 p-[20px]">
-        <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded px-[20px]">{name}</h1>
+        <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded-[5px] px-[20px]">{name}</h1>
         {data && data.map((item) => (
           <div
             className="flex justify-center w-full h-[130px] p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50"
