@@ -12,7 +12,7 @@ export const Table = ({data, name}) => {
         <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded px-[20px]">{name}</h1>
         {data && data.map((item) => (
           <div
-            className="flex w-full h-[130px] p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+            className="flex justify-between w-full h-[130px] p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50"
             key={item.id}
           >
             <img

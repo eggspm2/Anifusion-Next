@@ -43,21 +43,20 @@ const Header = () => {
     setFocused(false);
   };
 
-  if(!data1 || !data2 || !data1.title || !data2.title) return <div>Hello</div>
-
+  if(!data1 || !data2 || !data1.title || !data2.title) return <div>Hello</div>;
   return (
     <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px]">
       <div className="w-[18%] text-center">
         <p className="text-[25px]">
-          <span className="text-[45px] font-bold text-gray-600">A</span>nifusion
+          <span className="text-[40px] font-bold text-gray-600">A</span>nifusion
         </p>
       </div>
-      <div className=" flex justify-center items-start w-[400px] ">
+      <div className=" flex justify-center items-start w-[400px]">
         <NavigationMenu>
           <NavigationMenuList className="gap-[10px]">
             <NavigationMenuItem >
-              <NavigationMenuTrigger className="w-[150px] flex gap-[10px]">
-              <FontAwesomeIcon icon={faFilm} />
+              <NavigationMenuTrigger className="w-[150px] flex gap-[10px] text-[16px] font-semibold border border-zinc-500/50">
+              <FontAwesomeIcon icon={faFilm}/>
                 <p>Anime</p>
                 </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -66,7 +65,7 @@ const Header = () => {
                     <img
                       src={data1.image}
                       alt="Name"
-                      className=" w-[200px] h-[100%] rounded-xl bg-blue-500"
+                      className=" w-[200px] h-[100%] rounded-xl"
                     />
                     <div className="flex flex-col">
                     <h1 className="text-[20px]">{data1.title && data1.title.english || data1.title.romaji || data1.title.native }</h1>
@@ -76,7 +75,7 @@ const Header = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="w-[150px]  flex gap-[10px]">
+              <NavigationMenuTrigger className="w-[150px]  flex gap-[10px] text-[16px] font-semibold border border-zinc-500/50">
               <FontAwesomeIcon icon={faBook} />
               <p>Manga</p>
                 </NavigationMenuTrigger>
@@ -86,7 +85,7 @@ const Header = () => {
                     <img
                       src={data2.image}
                       alt="Name"
-                      className=" w-[200px] h-[100%] rounded-xl bg-blue-500"
+                      className=" w-[200px] h-[100%] rounded-xl"
                     />
                      <div className="">
                     <h1>{data2.title && data2.title.english || data2.title.romaji}</h1>
@@ -98,11 +97,11 @@ const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="flex justify-end items-end w-[600px] ">
-        <div className="flex  justify-between items-center w-[400px] h-[35px] px-[10px] bg-zinc-800/30 Shadow rounded-[10px]">
+      <div className="flex justify-end items-end w-[600px] transition duration-1000 ease">
+        <div className={`flex  justify-between items-center w-[400px] h-[35px] px-[10px] bg-zinc-800/30 border ${focused ? "border-white" : "border-zinc-500/50"} rounded-[10px]`}>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className={`text-[15px] transition duration-1000 ease ${focused ? "opacity-100" : "opacity-0"} `}
+            className={`text-[15px]  ${focused ? "opacity-100" : "opacity-0"} `}
           />
           <input
             placeholder="Search Anime"
