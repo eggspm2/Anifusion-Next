@@ -13,7 +13,6 @@ export const Animetable = () => {
       const response = await NewsetApi();
       if (response){
         setData(response);
-        console.log(response);
       }
       const response1 = await PopularApi();
       if(response1){

@@ -21,7 +21,6 @@ const Slider = () => {
       const response = await NewsetApi();
       if (response) {
         setData(response);
-        console.log(response);
       }
     };
     Fetching();

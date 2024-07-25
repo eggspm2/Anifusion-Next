@@ -66,7 +66,6 @@ export const AnimeList = ({ data, name }) => {
                             count = 0;
                           }
                         }
-
                         return stars;
                       })()}
                       </p>

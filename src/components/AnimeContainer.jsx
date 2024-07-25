@@ -15,7 +15,6 @@ export const AnimeContainer = () => {
       const response = await NewsetApi();
       if (response) {
         setData(response);
-        console.log(response);
       }
       const response2 = await PopularApi();
       if(response2){
