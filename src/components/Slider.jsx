@@ -34,7 +34,7 @@ const Slider = () => {
       <Swiper>
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex justify-center items-end py-[30px] relative">
+            <div className="flex justify-center items-end py-[30px] relative text-white">
               <div className="gradient"></div>
               <img
                 className="w-[95%] h-[400px] object-cover rounded-xl"
@@ -49,9 +49,8 @@ const Slider = () => {
                     <p>{item.duration}</p>
                   </div>
                   <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faStar} />
                     <p>
-                      {item.popularity ? `${item.popularity} users` : "N/A"}
+                      {item.status || "N/A"}
                     </p>
                   </div>
                   <div className="flex items-center  justify-center gap-1">

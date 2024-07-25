@@ -45,7 +45,7 @@ const Header = () => {
 
   if(!data1 || !data2 || !data1.title || !data2.title) return <div>Hello</div>;
   return (
-    <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px]">
+    <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
       <div className="w-[18%] text-center">
         <p className="text-[25px] font-semibold">
           <span className="text-[40px] font-bold text-cyan-600 px-1">A</span>nifusion

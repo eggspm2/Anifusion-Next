@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export const AnimeList = ({ data, name }) => {
   if (!data) return <div>Loading ...</div>;
@@ -20,6 +21,7 @@ export const AnimeList = ({ data, name }) => {
           <Swiper spaceBetween={30} slidesPerView={5}>
             {data.map((item) => (
               <SwiperSlide key={item.id}>
+                <Link href={`/home/${item.id}`}>
                 <div className="flex flex-col justify-center items-center h-[450px] gap-3">
                   <img
                     src={item.image}
@@ -52,8 +54,7 @@ export const AnimeList = ({ data, name }) => {
                             stars.push(
                               <FontAwesomeIcon key={i} icon={faStar} className="text-yellow-400" />
                             );
-                            count = count - 20;
-                            console.log(count); 
+                            count = count - 20; 
                           } else if (count < 20 && count >= 1) {
                             stars.push(
                               <FontAwesomeIcon
@@ -69,12 +70,13 @@ export const AnimeList = ({ data, name }) => {
                         return stars;
                       })()}
                       </p>
-                      <p className="font-semibold">
-                      {item.rating/10/2}
+                      <p className="font-semibold italic text-gray-500">
+                     {"~"} {item.rating/10/2}
                       </p>
                     </div>
                   </div>
                 </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

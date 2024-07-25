@@ -26,7 +26,7 @@ export const Table = ({data, name}) => {
                   ? item.title.english.substring(0, 28) + "..."
                   : item.title.english || item.title.romaji}
               </h1>
-              <div className="flex justify-evenly items-center w-full text-gray-400 ">
+              <div className="flex justify-evenly items-center w-full text-gray-500 ">
                 <div className="flex justify-center items-center gap-1">
                   <FontAwesomeIcon icon={faTv} />
                   <p>{item.type}</p>
