@@ -49,17 +49,17 @@ const Slider = () => {
                     <p>{item.duration}</p>
                   </div>
                   <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faStar} className="iconStyle" />
+                    <FontAwesomeIcon icon={faStar} />
                     <p>
                       {item.popularity ? `${item.popularity} users` : "N/A"}
                     </p>
                   </div>
                   <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faStar} className="iconStyle" />
+                    <FontAwesomeIcon icon={faStar} />
                     <p>{item.rating / 10 || "N/A"}</p>
                   </div>
                   <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faClock} className="iconStyle" />
+                    <FontAwesomeIcon icon={faClock}/>
                     <p>{item.duration || "N/A"} mins</p>
                   </div>
                 </div>

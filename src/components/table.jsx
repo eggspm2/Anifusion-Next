@@ -43,7 +43,7 @@ export const Table = ({data, name}) => {
 
                 <div className="flex justify-center items-center gap-1">
                   <FontAwesomeIcon icon={faStar} />
-                  <p>{item.rating}</p>
+                  <p>{item.rating/10}</p>
                 </div>
               </div>
             </div>
