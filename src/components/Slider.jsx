@@ -11,6 +11,7 @@ import {
   faStar,
   faWineGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const Slider = ({data}) => {
  
@@ -55,12 +56,12 @@ const Slider = ({data}) => {
                 </div>
               </div>
               <div className="absolute w-[95%] flex justify-end gap-4 p-[30px] text-[18px]">
-                    <div className="flex justify-center items-center w-[150px] h-[50px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50">
+                    <Link href={`/home/${item.id}`} className="flex justify-center items-center w-[150px] h-[50px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50">
                     <FontAwesomeIcon
                         icon={faCircleInfo}
                       />
                       <p>Details</p>
-                    </div>
+                    </Link>
                     <div className="flex justify-center items-center w-[150px] h-[50px] bg-zinc-800/30 rounded-xl border border-zinc-500/50 gap-2">
                     <FontAwesomeIcon
                         icon={faCirclePlay}

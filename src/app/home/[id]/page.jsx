@@ -2,30 +2,38 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { FetchById } from "@/components/hooks/UseApiFetch";
+import { AniWatchAnimeId, FetchById } from "@/components/hooks/UseApiFetch";
 import AnimeDetails from "@/components/animeDetails";
 import SideDetails from "@/components/SideDetails";
+import back from "../../../assets/image.png";
 
 const Page = () => {
+
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  const [AniwatchData, setAniwatchData] = useState("");
 
   useEffect(() => {
     const fetching = async () => {
-      const response = await FetchById(id);
+      const response = await AniWatchAnimeId(id);
       if (response) {
         console.log(response);
-        setData(response);
+        setAniwatchData(response);
       }
     };
     fetching();
   }, [id]);
 
-  if (!data) return <div>Loading ...</div>;
+  if (!AniwatchData) return <div>Loading ...</div>;
   return (
-    <div className=" w-full flex h-[600px] relative top-[65px] backImage">
-      <AnimeDetails data={data}/>
-      <SideDetails result={data}/>
+    <div className=" w-full flex h-[600px] relative top-[65px]">
+      <img src={back} alt=""  className='absolute w-full h-full object-cover'/>
+      
+      {AniwatchData.anime && (
+        <>
+        <AnimeDetails data={AniwatchData.anime.info} />
+        <SideDetails Aniwatch={AniwatchData.anime.moreInfo} />
+        </>
+      )}
     </div>
   );
 };

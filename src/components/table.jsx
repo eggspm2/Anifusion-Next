@@ -16,36 +16,30 @@ export const Table = ({data, name}) => {
             key={item.id}
           >
             <img
-              src={item.image}
+              src={item.poster}
               alt=""
               className="h-full w-[80px] rounded-[10px]"
             />
             <div className="flex flex-col justify-center items-center w-full gap-4">
-              {item.title.english && 
               <h1 className="text-[18px] font-semibold">
-                {item.title.english.length > 30
-                  ? item.title.english.substring(0, 28) + "..."
-                  : item.title.english || item.title.romaji}
+                {item.name.length > 30
+                  ? item.name.substring(0, 28) + "..."
+                  : item.name || "N/A"}
               </h1>
-}
               <div className="flex justify-evenly items-center w-full text-gray-500 ">
                 <div className="flex justify-center items-center gap-1">
                   <FontAwesomeIcon icon={faTv} />
-                  <p>{item.type}</p>
+                  <p>{item.type || "N/A"}</p>
                 </div>
+                
                 <div className="flex justify-center items-center gap-1">
-                  <FontAwesomeIcon icon={faCalendarDays} />
-                  <p>{item.releaseDate}</p>
+                  <FontAwesomeIcon icon={faFolderOpen} />
+                  <p>{item.episodes.dub || "N/A"}</p>
                 </div>
 
                 <div className="flex justify-center items-center gap-1">
                   <FontAwesomeIcon icon={faFolderOpen} />
-                  <p>{item.totalEpisodes}</p>
-                </div>
-
-                <div className="flex justify-center items-center gap-1">
-                  <FontAwesomeIcon icon={faStar} />
-                  <p>{item.rating/10}</p>
+                  <p>{item.episodes.sub || "N/A"}</p>
                 </div>
               </div>
             </div>
