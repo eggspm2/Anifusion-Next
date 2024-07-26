@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { NewsetApi, PopularApi, TopAiring, TrendingApi } from "./hooks/UseApiFetch";
+import { NewsetApi, PopularApi } from "./hooks/UseApiFetch";
 import { Table } from "./table";
 
 export const Animetable = () => {
