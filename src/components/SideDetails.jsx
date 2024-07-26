@@ -7,7 +7,7 @@ const SideDetails = ({ Aniwatch}) => {
  
   if (!Aniwatch) return <div>Loading ...</div>;
   return (
-    <div className="w-[25%] h-full bg-gray-500/40 backdrop-blur-[20px] flex flex-col justify-center text-[0.9rem] p-[20px]">
+    <div className="w-[25%] h-full bg-zinc-900/60 backdrop-blur-[20px] flex flex-col justify-center text-[0.9rem] p-[20px]">
       <div className="flex gap-2">
         <p className="font-semibold">Japanese: </p>
         <p className="font-light">{Aniwatch.japanese}</p>

@@ -14,7 +14,7 @@ import {
 
     if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-[75%] h-full bg-zinc-900/40 backdrop-blur-[20px] flex p-[60px] gap-10">
+    <div className="w-[75%] h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
       
         <img
           src={data.poster}

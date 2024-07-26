@@ -5,7 +5,8 @@ import { useParams } from "next/navigation";
 import { AniWatchAnimeId, FetchById } from "@/components/hooks/UseApiFetch";
 import AnimeDetails from "@/components/animeDetails";
 import SideDetails from "@/components/SideDetails";
-import back from "../../../assets/image.png";
+import back from "../../../assets/back.png";
+import Image from "next/image";
 
 const Page = () => {
 
@@ -26,8 +27,8 @@ const Page = () => {
   if (!AniwatchData) return <div>Loading ...</div>;
   return (
     <div className=" w-full flex h-[600px] relative top-[65px]">
-      <img src={back} alt=""  className='absolute w-full h-full object-cover'/>
-      
+
+    <Image src={back} alt="" width={0} height={0}  className='absolute w-full h-full object-cover'/>
       {AniwatchData.anime && (
         <>
         <AnimeDetails data={AniwatchData.anime.info} />
