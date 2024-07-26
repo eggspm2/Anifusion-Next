@@ -14,7 +14,7 @@ import {
 
     if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-[75%] h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
+    <div className="w-[77%] h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
       
         <img
           src={data.poster}
@@ -63,11 +63,11 @@ import {
             </div>
           </div>
           <div className="flex w-full gap-4 text-black">
-          <div className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px]">
+          <div className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlay} />
             <p>Watch now</p>
           </div>
-          <div className="flex justify-center items-center w-[180px] bg-green-100 rounded-3xl h-[45px]">
+          <div className="flex justify-center items-center w-[180px] bg-green-100 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlus} />
             <p>Add to List</p>
           </div>

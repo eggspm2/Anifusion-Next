@@ -7,8 +7,8 @@ const SideDetails = ({ Aniwatch}) => {
  
   if (!Aniwatch) return <div>Loading ...</div>;
   return (
-    <div className="w-[25%] h-full bg-zinc-900/60 backdrop-blur-[20px] flex flex-col justify-center text-[0.9rem] p-[20px]">
-      <div className="flex gap-2">
+    <div className="w-[23%] h-full bg-zinc-900/60 backdrop-blur-[20px] flex flex-col justify-center text-[0.8rem] p-[29px] gap-2">
+      <div className="flex gap-2 mt-20">
         <p className="font-semibold">Japanese: </p>
         <p className="font-light">{Aniwatch.japanese}</p>
       </div>
@@ -28,7 +28,7 @@ const SideDetails = ({ Aniwatch}) => {
         <p className="font-semibold">Status: </p>
         <p className="font-light">{Aniwatch.status}</p>
       </div>
-      <div className="flex gap-2 pb-2">
+      <div className="flex gap-2 pb-1">
         <p className="font-semibold">Mal Score: </p>
         <p className="font-light">{Aniwatch.malscore}</p>
       </div>
@@ -43,7 +43,7 @@ const SideDetails = ({ Aniwatch}) => {
           }
           </div>
       </div>
-      <div className="flex gap-2 pt-2">
+      <div className="flex gap-2 pt-1">
         <p className="font-semibold">Studios: </p>
         <p className="font-light">{Aniwatch.studios}</p>
       </div>
