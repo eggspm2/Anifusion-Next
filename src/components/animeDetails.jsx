@@ -52,7 +52,7 @@ import {
               <FontAwesomeIcon icon={faMicrophone} className="text-[0.7rem]" />
               <p>{data.stats.episodes.dub}</p>
             </div>
-            <p className="w-[30px] h-full bg-gray-600/20 text-white backdrop-blur-md  flex justify-center items-center">
+            <p className="w-[30px] h-full bg-gray-600/20 text-white backdrop-blur-md  flex justify-center">
               {data.stats.episodes.sub}
             </p>
             <div className="flex justify-evenly items-center text-white font-light w-[120px]">
