@@ -21,11 +21,13 @@ export const Table = ({data, name}) => {
               className="h-full w-[80px] rounded-[10px]"
             />
             <div className="flex flex-col justify-center items-center w-full gap-4">
+              {item.title.english && 
               <h1 className="text-[18px] font-semibold">
                 {item.title.english.length > 30
                   ? item.title.english.substring(0, 28) + "..."
                   : item.title.english || item.title.romaji}
               </h1>
+}
               <div className="flex justify-evenly items-center w-full text-gray-500 ">
                 <div className="flex justify-center items-center gap-1">
                   <FontAwesomeIcon icon={faTv} />

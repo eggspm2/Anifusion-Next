@@ -155,5 +155,45 @@ export const AniWatchServer = async  (episodeId, server, category) => {
         const response = await fetch(`${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}?server=${server}&category=${category}`);
         const result = await response.json();
         return result;
+}
+
+export const AniWatchHome = async  () => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}home`);
+        const result = await response.json();
+        return result;
 
 }
+
+export const AniWatchAnimeId = async  (id) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}info?id=${id}`);
+        const result = await response.json();
+        return result;
+
+}
+
+export const AniWatchAnimeSearch = async  (name) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}search?q=${name}`);
+        const result = await response.json();
+        return result;
+
+}
+
+export const AniWatchSearchSuggestion = async  (name) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}search/suggest?q=${name}`);
+        const result = await response.json();
+        return result;
+
+}
+
+export const AniWatchCategory = async  (category) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}${category}`);
+        const result = await response.json();
+        return result;
+
+}
+

@@ -1,35 +1,16 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-
-
-import { NewsetApi, PopularApi } from "./hooks/UseApiFetch";
 import { AnimeList } from "./AnimeList";
 
-export const AnimeContainer = () => {
-  const [data, setData] = useState();
-  const [popular, setPopular] = useState();
+export const AnimeContainer = (trending, topUpcoming) => {
 
-  useEffect(() => {
-    const Fetching = async () => {
-      const response = await NewsetApi();
-      if (response) {
-        setData(response);
-      }
-      const response2 = await PopularApi();
-      if(response2){
-        setPopular(response2);
-      }
-    };
-    Fetching();
-  }, []);
 
-  if (!data || !popular) return <div>Loading ...</div>;
+  if (!trending || !topUpcoming) return <div>Loading ...</div>;
   return (
     <>
     <div className="flex flex-col w-[95%] gap-10">
-      <AnimeList data={data} name={"Trending"}/>
-      <AnimeList data={popular} name={"Popular"}/>
+      <AnimeList data={trending} name={"Trending"}/>
+      <AnimeList data={topUpcoming} name={"UpComing"}/>
       </div>
       </>
   );
