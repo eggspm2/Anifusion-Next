@@ -18,7 +18,6 @@ export default function Home() {
     const Fetching = async () => {
       const data = await AniWatchHome();
       if(data){
-        console.log(data);
         setSpotLightData(data.spotlightAnimes);
         setTrendingAmime(data.trendingAnimes);
         setUpcoming(data.topUpcomingAnimes); 

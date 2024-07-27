@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { AniWatchAnimeId, FetchById } from "@/components/hooks/UseApiFetch";
+import { AniWatchAnimeId, AniWatchEpisode, FetchById } from "@/components/hooks/UseApiFetch";
 import AnimeDetails from "@/components/animeDetails";
 import SideDetails from "@/components/SideDetails";
 import back from "../../../assets/back.png";
@@ -18,10 +18,17 @@ const Page = () => {
   useEffect(() => {
     const fetching = async () => {
       const response = await AniWatchAnimeId(id);
+      
       if (response) {
         console.log(response);
         setAniwatchData(response);
+        const data = await AniWatchEpisode(id);
+        if(data){
+          console.log(data);
+        }
+        
       }
+
     };
     fetching();
   }, [id]);

@@ -134,11 +134,11 @@ export const AniWatchIdApi = async  (title) => {
 
 }
 
-export const AniWatchEpisode = async  (name) => {
+export const AniWatchEpisode = async (name) => {
 
         const response = await fetch(`${BASE_ANiWATCH_URL}episodes/${name}`);
         const result = await response.json();
-        return result.episodes;
+        return result;
         
 }
 

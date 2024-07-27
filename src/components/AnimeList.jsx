@@ -9,7 +9,6 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 export const AnimeList = ({ data, name }) => {
   if (!data) return <div>Loading ...</div>;
-  console.log(data);
   return (
     <>
       <div className="w-full h-[40px] pt-1 px-[10px] ">

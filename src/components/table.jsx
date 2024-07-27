@@ -14,7 +14,7 @@ export const Table = ({data, name}) => {
         {data && data.map((item) => (
           <Link href={`/home/${item.id}`}
             className="flex justify-center w-full h-[130px] p-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
-            key={item.id}
+            key={item.name}
           >
             <img
               src={item.poster}

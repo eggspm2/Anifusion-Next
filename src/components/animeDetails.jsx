@@ -9,6 +9,7 @@ import {
     faPlus,
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from 'next/link';
 
  const AnimeDetails = ({data}) => {
 
@@ -63,10 +64,10 @@ import {
             </div>
           </div>
           <div className="flex w-full gap-4 text-black">
-          <div className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
+          <Link  href={`/Episode/${data.id}`} className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlay} />
             <p>Watch now</p>
-          </div>
+          </Link>
           <div className="flex justify-center items-center w-[180px] bg-green-100 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlus} />
             <p>Add to List</p>

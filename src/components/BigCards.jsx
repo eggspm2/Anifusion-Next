@@ -2,6 +2,7 @@
 
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import React from "react";
 
 const BigCards = ({ data }) => {
@@ -11,7 +12,8 @@ const BigCards = ({ data }) => {
       <h1 className="text-[30px] font-semibold">Recommended for You</h1>
       <div className="flex flex-wrap gap-5">
         {data.map((item) => (
-          <div
+          <Link
+            href={`/home/${item.id}`}
             className="flex flex-col w-[220px] h-[350px] gap-2 font-medium"
             key={item.id}
           >
@@ -37,7 +39,7 @@ const BigCards = ({ data }) => {
                 <p>{item.duration}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
