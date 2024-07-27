@@ -4,9 +4,12 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 export const AnimeList = ({ data, name }) => {
   if (!data) return <div>Loading ...</div>;
+  console.log(data);
   return (
     <>
       <div className="w-full h-[40px] pt-1 px-[10px] ">
@@ -20,12 +23,15 @@ export const AnimeList = ({ data, name }) => {
             {data.map((item) => (
               <SwiperSlide key={item.id}>
                 <Link href={`/home/${item.id}`}>
-                  <div className="flex flex-col justify-center items-center h-[400px] gap-3">
+                  <div className="flex flex-col justify-center items-center h-[400px] gap-3 overflow-hidden ">
                     <img
                       src={item.poster}
                       alt=""
-                      className=" h-[300px] object-cover rounded-xl border border-zinc-500/50"
+                      className=" h-[300px] object-cover rounded-xl border border-zinc-500/50 relative"
                     />
+                    <div className="ImageGradient hover:opacity-100">
+                      <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
+                    </div>
                     <h1 className="text-[18px] font-semibold w-full h-[60px] flex justify-center items-center">
                       {item.name}
                     </h1>

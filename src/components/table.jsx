@@ -27,25 +27,13 @@ export const Table = ({data, name}) => {
                   ? item.name.substring(0, 28) + "..."
                   : item.name || "N/A"}
               </h1>
-              <div className="flex justify-center items-center gap-1 w-full text-gray-500 ">
-
-              <div className="w-[40px] h-full px-[25px] bg-green-200  flex justify-center items-center gap-1 rounded-l rounded-bl">
-              <FontAwesomeIcon
-                icon={faClosedCaptioning}
-                className="text-[0.7rem]"
-              />
+              <div className="flex justify-center items-center gap-4 px-[10px] bg-cyan-600 rounded-xl ">
               <p>{item.episodes.sub || "??"}</p>
-            </div>
-
-            <div className="w-[40px] h-full px-[25px] bg-blue-300 flex justify-center items-center gap-1">
-              <FontAwesomeIcon icon={faMicrophone} className="text-[0.7rem]" />
-              <p>{item.episodes.dub || "??"}</p>
-            </div>
-
-                <div className="flex justify-evenly items-center gap-3 px-[10px]">
-                  <FontAwesomeIcon icon={faCircle} className="text-[4px] text-zinc-400/70" />
-                  <p>{item.type || "N/A"}</p>
-                </div>
+              <FontAwesomeIcon icon={faCircle} className="text-[4px] text-cyan-800" />
+              <p>{item.type || "N/A"}</p>
+             
+                <FontAwesomeIcon icon={faCircle} className="text-[4px] text-cyan-800" />
+                  <p>{item.episodes.dub || "??"}</p>
               </div>
             </div>
           </Link>

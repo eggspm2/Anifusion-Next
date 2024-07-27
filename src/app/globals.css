@@ -111,4 +111,17 @@
     background-size: 10px 10px;
     backdrop-filter: blur(10px);
   }
+  .ImageGradient{
+    position: absolute;
+    background: linear-gradient(rgba(255, 0, 0, 0), black);
+    height: 300px;
+    width: 97%;
+    top:15px;
+    z-index: 10;
+    border-radius: 12px;
+    opacity:0;
+    transition: 1s ease;
+    display: grid;
+    place-items: center;
+  }
 }
