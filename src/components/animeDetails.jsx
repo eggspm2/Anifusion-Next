@@ -41,18 +41,18 @@ import {
             <p className="w-[30px] h-full bg-pink-200  flex justify-center items-center ">
               {data.stats.quality}
             </p>
-            <div className="w-[40px] h-full bg-green-200  flex justify-center items-center gap-1">
+            <div className="w-[40px] h-full px-[25px] bg-green-200  flex justify-center items-center gap-1">
               <FontAwesomeIcon
                 icon={faClosedCaptioning}
                 className="text-[0.7rem]"
               />
               <p>{data.stats.episodes.sub}</p>
             </div>
-            <div className="w-[40px] h-full bg-blue-200 flex justify-center items-center gap-1">
+            <div className="w-[40px] h-full px-[25px] bg-blue-200 flex justify-center items-center gap-1">
               <FontAwesomeIcon icon={faMicrophone} className="text-[0.7rem]" />
               <p>{data.stats.episodes.dub}</p>
             </div>
-            <p className="w-[30px] h-full bg-gray-600/20 text-white backdrop-blur-md  flex justify-center">
+            <p className="w-[30px] h-full px-[4px] bg-gray-600/20 text-white backdrop-blur-md  flex justify-center">
               {data.stats.episodes.sub}
             </p>
             <div className="flex justify-evenly items-center text-white font-light w-[120px]">
