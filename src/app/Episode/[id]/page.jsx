@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
-import { MediaPlayer, MediaProvider } from "@vidstack/react";
+import { MediaPlayer, MediaProvider, Track } from "@vidstack/react";
 import {
   defaultLayoutIcons,
   DefaultVideoLayout,
@@ -73,13 +73,22 @@ if(!data) return <div>Loading ...</div>
           thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
           icons={defaultLayoutIcons}
         />
+        {EpisodeData.tracks.map((item, index) => (
+                      <Track
+                        key={index}
+                        src={item.file}
+                        kind={item.kind}
+                        label={item.label}
+                        default
+                      />
+                    ))}
       </MediaPlayer>
       </div>
       <div className="w-[30%] flex flex-col">
         <h1 className="text-[30px] font-semibold">Episodes</h1>
     <div className="flex flex-col h-[450px] gap-2 overflow-y-auto ScrollWidth">
         {data.map((item) => (
-            <div key={item.number} className="flex w-full h-[120px] bg-slate-600 gap-2 rounded-xl" onClick={() => handleEpisode(item.episodeId, item.title)}>
+            <div key={item.number} className={`flex w-full h-[120px] bg-slate-600 gap-2 rounded-xl ${ item.episodeId === CurrentEpisode ? "border border-white" : ""}`} onClick={() => handleEpisode(item.episodeId, item.title)}>
               <img src={EpisodeImage} alt="" className="h-full w-[150px] rounded-xl" />
               <h1 className="w-full">{item.title}</h1>
             </div>
