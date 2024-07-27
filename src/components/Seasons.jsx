@@ -6,8 +6,8 @@ import React from 'react'
     if(!data) return <div>Loading ...</div>
   return (
     <div className='w-full bg-zinc-800/50 flex flex-col gap-3 p-[20px]'>
-        <h1 className='text-[30px]'>More Seasons</h1>
-        <div className='flex gap-5 '>
+        <h1 className='text-[30px] font-semibold'>More Seasons</h1>
+        <div className='flex gap-5 flex-wrap '>
         {data.map((item) => (
             <div key={item.id} className='w-[150px] h-[70px] flex relative overflow-hidden rounded-xl' style={{ backgroundImage: `url(${item.poster})` }}>
                 <div className='SeasonImage w-[150px] h-[70px] rounded-xl absolute'></div>

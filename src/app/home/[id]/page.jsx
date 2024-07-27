@@ -8,6 +8,7 @@ import SideDetails from "@/components/SideDetails";
 import back from "../../../assets/back.png";
 import Image from "next/image";
 import LeftData from "@/components/LeftData";
+import { RightData } from "@/components/RightData";
 
 const Page = () => {
 
@@ -40,6 +41,7 @@ const Page = () => {
     </div>
     <div className="w-full flex relative top-[65px]">
       <LeftData result={AniwatchData}/>
+      <RightData data={AniwatchData}/>
     </div>
     </>
   );
