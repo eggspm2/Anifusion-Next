@@ -3,6 +3,7 @@
 import React from "react";
 import Seasons from "./Seasons";
 import Promotion from "./Promotion";
+import  BigCards  from "./BigCards";
 
 const LeftData = ({ result }) => {
 
@@ -11,6 +12,7 @@ const LeftData = ({ result }) => {
     <div className="flex flex-col w-[77%]">
       {result.seasons.length > 0 && <Seasons data={result.seasons} />}
       {result.anime.info.promotionalVideos.length > 0 && <Promotion data={result.anime.info.promotionalVideos}/>}
+      {result.recommendedAnimes.length > 0 && <BigCards data={result.recommendedAnimes}/>}
     </div>
   );
 };
