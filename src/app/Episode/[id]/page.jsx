@@ -16,8 +16,10 @@ import {
   DefaultVideoLayout,
 } from "@vidstack/react/player/layouts/default";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClosedCaptioning, faMicrophone } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@/components/ui/button";
+import {
+  faClosedCaptioning,
+  faMicrophone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const StreamPage = () => {
   const { id } = useParams();
@@ -26,6 +28,11 @@ const StreamPage = () => {
   const [CurrentEpisode, setCurrentEpisode] = useState("");
   const [currentTitle, setCurrentTitle] = useState("");
   const [EpisodeData, setEpisodeData] = useState("");
+  const [Category, setCategory] = useState("sub");
+  const [Server, setServer] = useState("vidstreaming");
+  const [DubData, setDubData] = useState(false);
+  const [tracks, setTracks] = useState('');
+  const [EpisodeNumber, setEpisodeNumber] = useState('');
 
   useEffect(() => {
     const fetching = async () => {
@@ -35,6 +42,7 @@ const StreamPage = () => {
         setdata(response.episodes);
         setCurrentEpisode(response.episodes[0].episodeId);
         setCurrentTitle(response.episodes[0].title);
+        setEpisodeNumber(response.episodes[0].number)
       }
     };
     fetching();
@@ -50,42 +58,45 @@ const StreamPage = () => {
           console.log(AnilistData);
           setEpisodeImage(AnilistData.image);
         }
-        if (CurrentEpisode) {
-          const Stream = await AniWatchServer(
-            CurrentEpisode,
-            "vidstreaming",
-            "sub"
-          );
-          if (Stream) {
+        if (result.anime.info.stats.episodes.dub) {
+          setDubData(true);
+        }
+        if (CurrentEpisode && Category && Server) {
+          const caption = await AniWatchServer(CurrentEpisode, "vidstreaming" , "sub");
+          const Stream = await AniWatchServer(CurrentEpisode, Server, Category);
+          if (Stream && caption) {
             console.log(Stream);
             setEpisodeData(Stream);
+            setTracks(caption.tracks);
           }
         }
       }
     };
     EpisodeImageFetching();
-  }, [CurrentEpisode, currentTitle]);
+  }, [CurrentEpisode, currentTitle, Category, Server]);
 
-  const handleEpisode = (episodeId, title) => {
+  const handleEpisode = (episodeId, title, number) => {
     setCurrentEpisode(episodeId);
     setCurrentTitle(title);
+    setEpisodeNumber(number);
   };
 
+  const handleServer = (server, category) => {
+    setServer(server);
+    setCategory(category);
+  };
   if (!data || !EpisodeData) return <div>Loading ...</div>;
   return (
     <div className="flex w-full relative top-[65px] p-[10px] gap-2">
       <div className="flex w-[70%] flex-col">
         <div className="flex w-full h-[450px] ">
-          <MediaPlayer
-            title={currentTitle}
-            src={EpisodeData && EpisodeData.sources[0].url}
-          >
+          <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url}>
             <MediaProvider />
             <DefaultVideoLayout
               thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
               icons={defaultLayoutIcons}
             />
-            {EpisodeData.tracks.map((item) => (
+            {tracks.map((item) => (
               <Track
                 key={item}
                 src={item.file}
@@ -101,35 +112,74 @@ const StreamPage = () => {
             <div className="h-full w-[45%] py-[10px] bg-cyan-600 rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
               <p>You are watching</p>
               <p className="font-semibold">Episode</p>
-              <p className="w-[70%] text-center">If current server dosen't work please try others servers beside.</p>
+              <p className="w-[70%] text-center">
+                If current server dosen't work please try others servers beside.
+              </p>
             </div>
             <div className="w-full h-full flex flex-col items-center">
               <div className="w-full h-[50%] flex gap-8 border-b border-dotted border-zinc-500/50 px-[20px]">
                 <div className="flex justify-center items-center gap-2">
-                <FontAwesomeIcon icon={faClosedCaptioning} />
+                  <FontAwesomeIcon icon={faClosedCaptioning} />
                   <p>SUB:</p>
                 </div>
                 <div className="flex justify-center items-center gap-4">
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">Vidstream</div>
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">MegaCloud</div>
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">StreamSb</div>
+                  <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "vidstreaming" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "sub" && Server === "vidstreaming" ? null :  handleServer("vidstreaming", "sub")}
+                  >
+                    Vidstream
+                  </div>
+                  <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "megacloud" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "sub" && Server === "megacloud" ? null : handleServer("megacloud", "sub")}
+                  >
+                    MegaCloud
+                  </div>
+                  <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "streamsb" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "sub" && Server === "streamsb" ? null : handleServer("streamsb", "sub")}
+                  >
+                    StreamSb
+                  </div>
                 </div>
               </div>
               <div className="w-full h-[50%] flex gap-8 px-[20px] ">
-              <div className="flex justify-center items-center gap-2">
-              <FontAwesomeIcon icon={faMicrophone} />
+                <div className="flex justify-center items-center gap-2">
+                  <FontAwesomeIcon icon={faMicrophone} />
                   <p>DUB:</p>
                 </div>
-                <div className="flex justify-center items-center gap-4">
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">Vidstream</div>
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">MegaCloud</div>
-                  <div className="h-[35px] bg-zinc-700 p-[10px] rounded-xl flex justify-center items-center">StreamSb</div>
-                </div>
+                
+                  <div className="flex justify-center items-center gap-4">
+                  {DubData ? (
+                    <>
+                    <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "vidstreaming" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "dub" && Server === "vidstreaming" ? null :  handleServer("vidstreaming", "dub")}
+                  >
+                    Vidstream
+                  </div>
+                  <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "megacloud" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "dub" && Server === "megacloud" ? null : handleServer("megacloud", "dub")}
+                  >
+                    MegaCloud
+                  </div>
+                  <div
+                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "streamsb" ? "bg-cyan-600" : "bg-zinc-700" }`}
+                    onClick={() => Category === "dub" && Server === "streamsb" ? null : handleServer("streamsb", "dub")}
+                  >
+                    StreamSb
+                  </div>
+                    </>
+                     ) : (
+                      <p>Dub is not Available</p>
+                    )}
+                  </div>
+               
               </div>
             </div>
           </div>
-          <div className="w-full h-[150px] bg-zinc-800/50 rounded-xl border border-zinc-500/50">
-          </div>
+          <div className="w-full h-[150px] bg-zinc-800/50 rounded-xl border border-zinc-500/50"></div>
         </div>
       </div>
       <div className="w-[30%] flex flex-col">
@@ -138,11 +188,12 @@ const StreamPage = () => {
           {data.map((item) => (
             <div
               key={item.number}
-              className={`flex w-full h-[120px] bg-zinc-800/50 border border-zinc-500/50 gap-5 rounded-xl ${
+              className={`flex w-full h-[120px] bg-zinc-800/50 border border-zinc-500/50 gap-5 rounded-xl relative ${
                 item.episodeId === CurrentEpisode ? "border border-white" : ""
               }`}
-              onClick={() => handleEpisode(item.episodeId, item.title)}
+              onClick={() => handleEpisode(item.episodeId, item.title, item.number)}
             >
+              <h2 className="absolute bg-cyan-600 px-[5px] rounded-tl rounded-br">Ep {item.number}</h2>
               <img
                 src={EpisodeImage}
                 alt=""

@@ -22,11 +22,6 @@ const Page = () => {
       if (response) {
         console.log(response);
         setAniwatchData(response);
-        const data = await AniWatchEpisode(id);
-        if(data){
-          console.log(data);
-        }
-        
       }
 
     };

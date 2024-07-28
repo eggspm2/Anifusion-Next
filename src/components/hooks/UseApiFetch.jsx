@@ -1,3 +1,5 @@
+"use client";
+
 
 const BASE_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist/";
 const BASE_ANiWATCH_URL = "https://aniwatch-ryan.vercel.app/anime/"
@@ -146,7 +148,7 @@ export const AniWatchSteam = async  (episodeId) => {
 
         const response = await fetch(`${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}`);
         const result = await response.json();
-        return result;
+        return result.episodes;
 
 }
 
