@@ -6,7 +6,7 @@ import { Table } from "./table";
 export const RightData = ({ data ,height}) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-full gap-5 p-[10px] h-[100%]">
+    <div className="flex flex-col w-full gap-5  h-[100%]">
       {data.relatedAnimes && (
         <div className="flex flex-col gap-2 p-[10px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg ">
           <h1 className="text-[30px] font-semibold">Related Anime</h1>

@@ -21,9 +21,9 @@ const Slider = ({data}) => {
   return (
     <div className="w-full">
       <Swiper>
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className="flex justify-center items-end py-[30px] relative text-white">
+        {data.map((item,index) => (
+          <SwiperSlide key={index}>
+            <Link href={`/Episode/${item.id}`} className="flex justify-center items-end py-[30px] relative text-white">
               <div className="gradient"></div>
               <img
                 className="w-[95%] h-[400px] object-cover rounded-xl"
@@ -69,7 +69,7 @@ const Slider = ({data}) => {
                       <p>Watch Now</p>
                     </div>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
