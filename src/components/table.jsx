@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import { faCalendarDays, faCircle, faClosedCaptioning, faFolderOpen, faMicrophone, faStar, faTv } from "@fortawesome/free-solid-svg-icons";
+import {faCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from 'next/link';
 
@@ -11,10 +11,10 @@ export const Table = ({data, name}) => {
   return (
     <>
         <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded-[5px] px-[20px]">{name}</h1>
-        {data && data.map((item) => (
+        {data && data.map((item, index) => (
           <Link href={`/home/${item.id}`}
             className="flex justify-center w-full h-[130px] p-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
-            key={item.name}
+            key={index}
           >
             <img
               src={item.poster}

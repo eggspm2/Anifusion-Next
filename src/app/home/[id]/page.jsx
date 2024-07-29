@@ -37,13 +37,17 @@ const Page = () => {
       {AniwatchData.anime && (
         <>
         <AnimeDetails data={AniwatchData.anime.info} />
-        <SideDetails Aniwatch={AniwatchData.anime.moreInfo} />
+        <div className="w-[23%] flex  bg-zinc-900/60 backdrop-blur-[10px] p-[29px]">
+        <SideDetails Aniwatch={AniwatchData.anime.moreInfo}  />
+        </div>
         </>
       )}
     </div>
-    <div className="w-full flex relative top-[65px]">
+    <div className="w-full flex relative top-[65px] bg-zinc-800/50">
       <LeftData result={AniwatchData}/>
-      <RightData data={AniwatchData}/>
+      <div className="w-[23%] h-full">
+      <RightData data={AniwatchData} height={'h-[600px]'}/>
+      </div>
     </div>
     </>
   );

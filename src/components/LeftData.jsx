@@ -9,7 +9,7 @@ const LeftData = ({ result }) => {
 
     if(!result) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-[77%]">
+    <div className="flex flex-col w-[77%] h-full bg-zinc-800/50">
       {result.seasons.length > 0 && <Seasons data={result.seasons} />}
       {result.anime.info.promotionalVideos.length > 0 && <Promotion data={result.anime.info.promotionalVideos}/>}
       {result.recommendedAnimes.length > 0 && <BigCards data={result.recommendedAnimes}/>}

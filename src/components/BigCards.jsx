@@ -11,21 +11,21 @@ const BigCards = ({ data }) => {
     <div className="flex flex-col w-full bg-zinc-800/50 p-[20px] gap-4">
       <h1 className="text-[30px] font-semibold">Recommended for You</h1>
       <div className="flex flex-wrap gap-5">
-        {data.map((item) => (
+        {data.map((item, index) => (
           <Link
             href={`/home/${item.id}`}
             className="flex flex-col w-[220px] h-[350px] gap-2 font-medium"
-            key={item.id}
+            key={index}
           >
-            <div className="relative h-[300px] w-full overflow-hidden">
-            <img
-              src={item.poster}
-              alt="Image"
-              className="w-full h-full object-cover rounded-xl"
-            />
-            <div className="GradientCard hover:opacity-100">
-            <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
-            </div>
+            <div className="relative h-[300px] w-full">
+              <img
+                src={item.poster}
+                alt="Image"
+                className="w-full h-full object-cover rounded-xl"
+              />
+              <div className="ImageGradient hover:opacity-100">
+                <FontAwesomeIcon icon={faPlay} className="text-[40px]" />
+              </div>
             </div>
             <div className="w-full h-[50px] text-[0.9rem]">
               <h1 className="font-medium">
@@ -33,9 +33,12 @@ const BigCards = ({ data }) => {
                   ? item.name.substring(0, 21) + "..."
                   : item.name}
               </h1>
-              <div className="flex  items-center gap-4 font-extralight text-gray-300 ">
+              <div className="flex  items-center gap-4 font-extralight text-gray-300">
                 <p>{item.type}</p>
-                <FontAwesomeIcon icon={faCircle} className="text-[4px] text-gray-500" />
+                <FontAwesomeIcon
+                  icon={faCircle}
+                  className="text-[4px] text-gray-500"
+                />
                 <p>{item.duration}</p>
               </div>
             </div>

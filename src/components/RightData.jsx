@@ -3,12 +3,12 @@
 import React from "react";
 import { Table } from "./table";
 
-export const RightData = ({ data }) => {
+export const RightData = ({ data ,height}) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-[23%]">
+    <div className="flex flex-col w-full gap-5 p-[10px] h-[100%]">
       {data.relatedAnimes && (
-        <div className="flex flex-col gap-2 p-[10px] bg-zinc-800/50  ">
+        <div className="flex flex-col gap-2 p-[10px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg ">
           <h1 className="text-[30px] font-semibold">Related Anime</h1>
           <div className="overflow-y-scroll ScrollWidth max-h-[400px] flex flex-col gap-2">
           <Table data={data.relatedAnimes} className="w-full" />
@@ -16,9 +16,9 @@ export const RightData = ({ data }) => {
         </div>
       )}
       {data.mostPopularAnimes && (
-        <div className="flex flex-col gap-2 p-[10px] bg-zinc-800/50  ">
+        <div className="flex flex-col gap-2 p-[10px] bg-zinc-800/50 border border-zinc-500/50  rounded-lg">
           <h1 className="text-[30px] font-semibold">Most Popular</h1>
-          <div className="flex flex-col gap-2">
+          <div className={`flex flex-col gap-2 ${height} overflow-y-scroll ScrollWidth`}>
           <Table data={data.mostPopularAnimes} className="w-full" />
           </div>
         </div>

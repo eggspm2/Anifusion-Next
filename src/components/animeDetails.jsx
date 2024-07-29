@@ -10,13 +10,13 @@ import {
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from 'next/link';
+import DetailStack from './detailStack';
 
  const AnimeDetails = ({data}) => {
 
     if (!data) return <div>Loading ...</div>;
   return (
     <div className="w-[77%] h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
-      
         <img
           src={data.poster}
           alt="Anime Image"
@@ -35,34 +35,7 @@ import Link from 'next/link';
             <div className="text-[2.3rem] font-semibold">
               {data.name}
             </div>
-          <div className="flex gap-1 h-[20px] text-black text-[0.9rem] font-semibold">
-            <p className=" px-[4px] h-full bg-cyan-100  flex justify-center items-center rounded-l rounded-bl">
-              {data.stats.rating}
-            </p>
-            <p className="w-[30px] h-full bg-pink-200  flex justify-center items-center ">
-              {data.stats.quality}
-            </p>
-            <div className="w-[40px] h-full px-[25px] bg-green-200  flex justify-center items-center gap-1">
-              <FontAwesomeIcon
-                icon={faClosedCaptioning}
-                className="text-[0.7rem]"
-              />
-              <p>{data.stats.episodes.sub}</p>
-            </div>
-            <div className="w-[40px] h-full px-[25px] bg-blue-200 flex justify-center items-center gap-1">
-              <FontAwesomeIcon icon={faMicrophone} className="text-[0.7rem]" />
-              <p>{data.stats.episodes.dub}</p>
-            </div>
-            <p className="w-[30px] h-full px-[4px] bg-gray-600/20 text-white backdrop-blur-md  flex justify-center">
-              {data.stats.episodes.sub}
-            </p>
-            <div className="flex justify-evenly items-center text-white font-light w-[120px]">
-              <FontAwesomeIcon icon={faCircle} className="text-[4px] text-zinc-400/70" />
-              <p className="font-medium">{data.stats.type}</p>
-              <FontAwesomeIcon icon={faCircle} className="text-[4px] text-zinc-400/70" />
-              <p>{data.stats.duration}</p>
-            </div>
-          </div>
+         <DetailStack data={data}/>
           <div className="flex w-full gap-4 text-black">
           <Link  href={`/Episode/${data.id}`} className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlay} />

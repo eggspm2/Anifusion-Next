@@ -20,19 +20,21 @@ import {
   faClosedCaptioning,
   faMicrophone,
 } from "@fortawesome/free-solid-svg-icons";
+import StreamAnimeInfo from "@/components/StreamAnimeInfo";
+import { RightData } from "@/components/RightData";
 
 const StreamPage = () => {
   const { id } = useParams();
   const [data, setdata] = useState("");
-  const [EpisodeImage, setEpisodeImage] = useState("");
+  const [AnimeData, setAnimeData] = useState("");
   const [CurrentEpisode, setCurrentEpisode] = useState("");
   const [currentTitle, setCurrentTitle] = useState("");
   const [EpisodeData, setEpisodeData] = useState("");
   const [Category, setCategory] = useState("sub");
   const [Server, setServer] = useState("vidstreaming");
   const [DubData, setDubData] = useState(false);
-  const [tracks, setTracks] = useState('');
-  const [EpisodeNumber, setEpisodeNumber] = useState('');
+  const [tracks, setTracks] = useState("");
+  const [EpisodeNumber, setEpisodeNumber] = useState("");
 
   useEffect(() => {
     const fetching = async () => {
@@ -42,7 +44,7 @@ const StreamPage = () => {
         setdata(response.episodes);
         setCurrentEpisode(response.episodes[0].episodeId);
         setCurrentTitle(response.episodes[0].title);
-        setEpisodeNumber(response.episodes[0].number)
+        setEpisodeNumber(response.episodes[0].number);
       }
     };
     fetching();
@@ -56,13 +58,17 @@ const StreamPage = () => {
         const AnilistData = await AniWatchAnimeId(id);
         if (AnilistData) {
           console.log(AnilistData);
-          setEpisodeImage(AnilistData.anime.info.poster);
+          setAnimeData(AnilistData);
         }
         if (result.anime.info.stats.episodes.dub) {
           setDubData(true);
         }
         if (CurrentEpisode && Category && Server) {
-          const caption = await AniWatchServer(CurrentEpisode, "vidstreaming" , "sub");
+          const caption = await AniWatchServer(
+            CurrentEpisode,
+            "vidstreaming",
+            "sub"
+          );
           const Stream = await AniWatchServer(CurrentEpisode, Server, Category);
           if (Stream && caption) {
             console.log(Stream);
@@ -85,10 +91,16 @@ const StreamPage = () => {
     setServer(server);
     setCategory(category);
   };
+
+  const Servers = [
+    { id: 1, server: "vidstreaming" },
+    { id: 1, server: "megacloud" },
+    { id: 1, server: "streamsb" },
+  ];
   if (!data || !EpisodeData) return <div>Loading ...</div>;
   return (
-    <div className="flex w-full relative top-[65px] p-[10px] gap-2">
-      <div className="flex w-[70%] flex-col">
+    <div className="flex w-full relative top-[65px] p-[10px] gap-2 bg-zinc-800/50">
+      <div className="flex w-[70%] flex-col gap-5">
         <div className="flex w-full h-[450px] ">
           <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url}>
             <MediaProvider />
@@ -96,9 +108,9 @@ const StreamPage = () => {
               thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
               icons={defaultLayoutIcons}
             />
-            {tracks.map((item) => (
+            {tracks.map((item, index) => (
               <Track
-                key={item}
+                key={index}
                 src={item.file}
                 kind={item.kind}
                 label={item.label}
@@ -107,12 +119,14 @@ const StreamPage = () => {
             ))}
           </MediaPlayer>
         </div>
-        <div className="w-full h-[300px] p-[10px] flex flex-col gap-3">
-          <div className="w-full h-[150px] bg-zinc-800/50 flex rounded-xl border border-zinc-500/50">
+        <div className="w-full h-[150px] flex flex-col gap-3">
+          <div className="w-full h-full bg-zinc-800/50 flex rounded-xl border border-zinc-500/50">
             <div className="h-full w-[45%] py-[10px] bg-cyan-600 rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
               <p>You are watching</p>
-              <p className="font-semibold">Episode</p>
-              
+              <p className="font-semibold">Episode {EpisodeNumber}</p>
+              <p className="w-[80%] text-center">
+                If current server is not working please switch to other servers
+              </p>
             </div>
             <div className="w-full h-full flex flex-col items-center">
               <div className="w-full h-[50%] flex gap-8 border-b border-dotted border-zinc-500/50 px-[20px]">
@@ -121,24 +135,23 @@ const StreamPage = () => {
                   <p>SUB:</p>
                 </div>
                 <div className="flex justify-center items-center gap-4">
-                  <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "vidstreaming" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "sub" && Server === "vidstreaming" ? null :  handleServer("vidstreaming", "sub")}
-                  >
-                    Vidstream
-                  </div>
-                  <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "megacloud" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "sub" && Server === "megacloud" ? null : handleServer("megacloud", "sub")}
-                  >
-                    MegaCloud
-                  </div>
-                  <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "sub" && Server === "streamsb" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "sub" && Server === "streamsb" ? null : handleServer("streamsb", "sub")}
-                  >
-                    StreamSb
-                  </div>
+                  {Servers.map((item) => (
+                    <div
+                      key={id}
+                      className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${
+                        Category === "sub" && Server === item.server
+                          ? "bg-cyan-600"
+                          : "bg-zinc-700"
+                      }`}
+                      onClick={() =>
+                        Category === "sub" && Server === item.server
+                          ? null
+                          : handleServer(item.server, "sub")
+                      }
+                    >
+                      {item.server.toUpperCase()}
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="w-full h-[50%] flex gap-8 px-[20px] ">
@@ -146,60 +159,73 @@ const StreamPage = () => {
                   <FontAwesomeIcon icon={faMicrophone} />
                   <p>DUB:</p>
                 </div>
-                
-                  <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center gap-4">
                   {DubData ? (
                     <>
-                    <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "vidstreaming" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "dub" && Server === "vidstreaming" ? null :  handleServer("vidstreaming", "dub")}
-                  >
-                    Vidstream
-                  </div>
-                  <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "megacloud" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "dub" && Server === "megacloud" ? null : handleServer("megacloud", "dub")}
-                  >
-                    MegaCloud
-                  </div>
-                  <div
-                    className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${Category === "dub" && Server === "streamsb" ? "bg-cyan-600" : "bg-zinc-700" }`}
-                    onClick={() => Category === "dub" && Server === "streamsb" ? null : handleServer("streamsb", "dub")}
-                  >
-                    StreamSb
-                  </div>
+                      {Servers.map((item) => (
+                        <div
+                          key={id}
+                          className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${
+                            Category === "dub" && Server === item.server
+                              ? "bg-cyan-600"
+                              : "bg-zinc-700"
+                          }`}
+                          onClick={() =>
+                            Category === "dub" && Server === item.server
+                              ? null
+                              : handleServer(item.server, "dub")
+                          }
+                        >
+                          {item.server.toUpperCase()}
+                        </div>
+                      ))}
                     </>
-                     ) : (
-                      <p>Dub is not Available</p>
-                    )}
-                  </div>
-               
+                  ) : (
+                    <p>Dub is not Available</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-          <div className="w-full h-[150px] bg-zinc-800/50 rounded-xl border border-zinc-500/50"></div>
+        </div>
+        <StreamAnimeInfo data={AnimeData.anime} />
+        <div className="p-[20px] text-center border border-zinc-500/50 bg-zinc-800/50 rounded-lg">
+          {AnimeData.anime.info.description}
         </div>
       </div>
-      <div className="w-[30%] flex flex-col">
-        <h1 className="text-[30px] font-semibold">Episodes</h1>
-        <div className="flex flex-col h-[450px] gap-2 overflow-y-auto ScrollWidth">
-          {data.map((item) => (
-            <div
-              key={item.number}
-              className={`flex w-full h-[120px] bg-zinc-800/50 border border-zinc-500/50 gap-5 rounded-xl relative ${
-                item.episodeId === CurrentEpisode ? "border border-white" : ""
-              }`}
-              onClick={() => handleEpisode(item.episodeId, item.title, item.number)}
-            >
-              <h2 className="absolute bg-cyan-600 px-[5px] rounded-tl rounded-br">Ep {item.number}</h2>
-              <img
-                src={EpisodeImage}
-                alt=""
-                className="h-full w-[150px] rounded-xl"
-              />
-              <h1 className="w-full h-full flex items-center">{item.title}</h1>
-            </div>
-          ))}
+      <div className="w-[30%] flex flex-col gap-8  bg-zinc-800/50">
+        <div className="w-full  flex flex-col gap-8 p-[20px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg">
+          <h1 className="text-[35px] font-semibold">Episodes</h1>
+          <div className="flex flex-col h-[450px] gap-2 overflow-y-auto ScrollWidth">
+            {data.map((item, index) => (
+              <div
+                key={index}
+                className={`flex w-full h-[120px]  border border-zinc-500/50 gap-5 rounded-lg relative Transition ${
+                  item.episodeId === CurrentEpisode
+                    ? "border border-white bg-cyan-600"
+                    : "bg-zinc-800/50"
+                }`}
+                onClick={() =>
+                  handleEpisode(item.episodeId, item.title, item.number)
+                }
+              >
+                <h2 className="absolute bg-cyan-600 px-[5px] rounded-tl rounded-br">
+                  Ep {item.number}
+                </h2>
+                <img
+                  src={AnimeData.anime.info.poster}
+                  alt=""
+                  className="h-full w-[250px] rounded-bl-[0.5rem] object-cover rounded-l-[0.5rem]"
+                />
+                <h1 className="w-full h-full flex items-center">
+                  {item.title}
+                </h1>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <RightData data={AnimeData} height={'h-[300px]'}/>
         </div>
       </div>
     </div>

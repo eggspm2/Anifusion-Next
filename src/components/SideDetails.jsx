@@ -7,14 +7,14 @@ const SideDetails = ({ Aniwatch}) => {
  
   if (!Aniwatch) return <div>Loading ...</div>;
   return (
-    <div className="w-[23%] h-full bg-zinc-900/60 backdrop-blur-[20px] flex flex-col justify-center text-[0.8rem] p-[29px] gap-2">
-      <div className="flex gap-2 mt-20">
+    <div className="w-full h-full  flex flex-col justify-center text-[0.8rem]  gap-2">
+      <div className="flex gap-2">
         <p className="font-semibold">Japanese: </p>
         <p className="font-light">{Aniwatch.japanese}</p>
       </div>
       <div className="flex gap-2">
         <p className="font-semibold">Aired: </p>
-        <p className="font-light"></p>
+        <p className="font-light">{Aniwatch.aired}</p>
       </div>
       <div className="flex gap-2">
         <p className="font-semibold">Preimeired:</p>
