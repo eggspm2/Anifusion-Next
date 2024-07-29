@@ -53,10 +53,10 @@ const StreamPage = () => {
       const result = await AniWatchAnimeId(id);
       if (result) {
         console.log(result);
-        const AnilistData = await FetchById(result.anime.info.anilistId);
+        const AnilistData = await AniWatchAnimeId(id);
         if (AnilistData) {
           console.log(AnilistData);
-          setEpisodeImage(AnilistData.image);
+          setEpisodeImage(AnilistData.anime.info.poster);
         }
         if (result.anime.info.stats.episodes.dub) {
           setDubData(true);

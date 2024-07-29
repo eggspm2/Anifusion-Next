@@ -121,8 +121,7 @@
     );
     background-size: 10px 10px;
     height: 300px;
-    width: 97%;
-    top:15px;
+    width: 100%;
     z-index: 10;
     border-radius: 12px;
     opacity:0;

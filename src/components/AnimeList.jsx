@@ -22,14 +22,16 @@ export const AnimeList = ({ data, name }) => {
             {data.map((item) => (
               <SwiperSlide key={item.id}>
                 <Link href={`/home/${item.id}`}>
-                  <div className="flex flex-col justify-center items-center h-[400px] gap-3 overflow-hidden ">
+                  <div className="flex flex-col justify-center items-center h-[400px] gap-3 ">
+                    <div className="flex h-[300px] object-cover overflow-hidden relative">
                     <img
                       src={item.poster}
                       alt=""
-                      className=" h-[300px] object-cover rounded-xl border border-zinc-500/50 relative"
+                      className=" h-[300px] object-cover rounded-xl border border-zinc-500/50 "
                     />
                     <div className="ImageGradient hover:opacity-100">
                       <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
+                    </div>
                     </div>
                     <h1 className="text-[18px] font-semibold w-full h-[60px] flex justify-center items-center">
                       {item.name}

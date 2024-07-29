@@ -39,20 +39,7 @@ const Header = () => {
   const [name, setName] = useState("");
   const [result, setResult] = useState([]);
 
-  useEffect(() => {
-    const fetching = async () => {
-      const data = await FetchByData(16498);
-      if (data) {
-        setData1(data);
-      }
-
-      const response = await MangaDetail(105398);
-      if (response) {
-        setData2(response);
-      }
-    };
-    fetching();
-  }, []);
+  
 
   useEffect(() => {
     const SearchFetching = async () => {
@@ -84,7 +71,7 @@ const Header = () => {
     setFocused(false);
   };
 
-  if (!data1 || !data2 || !data1.title || !data2.title || !result)
+  if (!result)
     return <div>Hello</div>;
   return (
     <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
@@ -106,16 +93,12 @@ const Header = () => {
                 <NavigationMenuLink>
                   <div className="flex w-[500px] h-[300px] p-[10px] bg-zinc-800/30">
                     <img
-                      src={data1.image}
+                      src=''
                       alt="Name"
                       className=" w-[200px] h-[100%] rounded-xl"
                     />
                     <div className="flex flex-col">
-                      <h1 className="text-[20px]">
-                        {(data1.title && data1.title.english) ||
-                          data1.title.romaji ||
-                          data1.title.native}
-                      </h1>
+                      
                     </div>
                   </div>
                 </NavigationMenuLink>
@@ -130,15 +113,12 @@ const Header = () => {
                 <NavigationMenuLink>
                   <div className="flex w-[500px] h-[300px] p-[10px] bg-zinc-800/30">
                     <img
-                      src={data2.image}
+                      src=''
                       alt="Name"
                       className=" w-[200px] h-[100%] rounded-xl"
                     />
                     <div className="">
-                      <h1>
-                        {(data2.title && data2.title.english) ||
-                          data2.title.romaji}
-                      </h1>
+                      
                     </div>
                   </div>
                 </NavigationMenuLink>
