@@ -112,9 +112,7 @@ const StreamPage = () => {
             <div className="h-full w-[45%] py-[10px] bg-cyan-600 rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
               <p>You are watching</p>
               <p className="font-semibold">Episode</p>
-              <p className="w-[70%] text-center">
-                If current server dosen't work please try others servers beside.
-              </p>
+              
             </div>
             <div className="w-full h-full flex flex-col items-center">
               <div className="w-full h-[50%] flex gap-8 border-b border-dotted border-zinc-500/50 px-[20px]">

@@ -17,11 +17,11 @@ const BigCards = ({ data }) => {
             className="flex flex-col w-[220px] h-[350px] gap-2 font-medium"
             key={item.id}
           >
-            <div className="relative h-[300px] w-full">
+            <div className="relative h-[300px] w-full overflow-hidden">
             <img
               src={item.poster}
               alt="Image"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-xl"
             />
             <div className="GradientCard hover:opacity-100">
             <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
