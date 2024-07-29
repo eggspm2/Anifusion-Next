@@ -21,8 +21,8 @@ export const AnimeList = ({ data, name }) => {
           <Swiper spaceBetween={30} slidesPerView={5}>
             {data.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link href={`/home/${item.id}`}>
-                  <div className="flex flex-col justify-center items-center h-[400px] gap-3 ">
+                <Link href={`/home/${item.id}`} >
+                  <div className="flex flex-col  justify-center items-center h-[400px] gap-5">
                     <div className="flex h-[300px] object-cover overflow-hidden relative">
                     <img
                       src={item.poster}
@@ -33,7 +33,7 @@ export const AnimeList = ({ data, name }) => {
                       <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
                     </div>
                     </div>
-                    <h1 className="text-[18px] font-semibold w-full h-[60px] flex justify-center items-center">
+                    <h1 className="text-[18px] font-semibold w-[60%] h-[60px] flex justify-center items-center pb-[10px]">
                       {item.name}
                     </h1>
                   </div>

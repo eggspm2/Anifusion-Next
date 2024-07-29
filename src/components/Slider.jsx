@@ -5,10 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCircle,
   faCircleInfo,
   faCirclePlay,
   faClock,
   faStar,
+  faTv,
   faWineGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -16,8 +18,9 @@ import Link from "next/link";
 const Slider = ({data}) => {
  
 
-  if (!data) return <div>Loading ...</div>;
 
+
+  if (!data) return <div>Loading ...</div>;
   return (
     <div className="w-full">
       <Swiper>
@@ -30,22 +33,24 @@ const Slider = ({data}) => {
                 src={item.poster}
                 alt=""
               />
-              <div className="absolute w-[95%] flex flex-col p-[20px] gap-3">
+              <div className="absolute w-[95%]  flex flex-col p-[20px] gap-3">
                 <h1 className="text-[40px] font-bold">{item.name}</h1>
-                <div className="w-[300px] h-[40px] bg-zinc-800/30 rounded-xl border border-zinc-500/50 flex justify-center items-center gap-3 text-[18px]">
-                  <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faWineGlass} className="iconStyle" />
+                <div className="w-[390px] h-[40px] bg-cyan-600 rounded-xl border border-zinc-500/50 flex justify-center items-center gap-5 text-[18px]">
+                  <div className="flex items-center justify-center gap-1">
+                    <FontAwesomeIcon icon={faTv}/>
                     <p>{item.otherInfo[0]}</p>
                   </div>
-                  <div className="flex items-center  justify-center gap-1">
+                  <div className="flex items-center  justify-center gap-3">
+                  <FontAwesomeIcon icon={faCircle} className="text-[6px] text-cyan-800" />
                     <p>
                       {item.otherInfo[3] || "N/A"}
                     </p>
                   </div>
-                  <div className="flex items-center  justify-center gap-1">
-                    <FontAwesomeIcon icon={faStar} />
+                  <div className="flex items-center  justify-center gap-3">
+                  <FontAwesomeIcon icon={faCircle} className="text-[6px] text-cyan-800" />
                     <p>{item.otherInfo[2] || "N/A"}</p>
                   </div>
+                  <FontAwesomeIcon icon={faCircle} className="text-[6px] text-cyan-800" />
                   <div className="flex items-center  justify-center gap-1">
                     <FontAwesomeIcon icon={faClock}/>
                     <p>{item.otherInfo[1] || "N/A"}</p>
