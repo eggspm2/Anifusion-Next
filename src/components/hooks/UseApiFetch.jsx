@@ -199,3 +199,11 @@ export const AniWatchCategory = async  (category) => {
 
 }
 
+export const AniWatchSchedule = async  (date) => {
+
+        
+        const response = await fetch(`${BASE_ANiWATCH_URL}schedule?date=${date}`);
+        const result = await response.json();
+        return result;
+
+}

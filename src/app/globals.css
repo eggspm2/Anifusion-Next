@@ -134,4 +134,19 @@
   .Transition{
     transition: 1s ease ;
   }
+
+  .Animation{
+    animation: Show 1s ease;
+  }
+  
+  @keyframes Show {
+    from{
+      transform: translateY(60px);
+      opacity:0;
+    }
+    to{
+      transform: translateY(0px);
+      opacity:1 ;
+    }
+  }
 }

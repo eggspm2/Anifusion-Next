@@ -9,9 +9,7 @@ import {
   faCircleInfo,
   faCirclePlay,
   faClock,
-  faStar,
   faTv,
-  faWineGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
@@ -26,7 +24,7 @@ const Slider = ({data}) => {
       <Swiper>
         {data.map((item,index) => (
           <SwiperSlide key={index}>
-            <Link href={`/Episode/${item.id}`} className="flex justify-center items-end py-[30px] relative text-white">
+            <Link href={`/Episode/${item.id}`} className="flex justify-center items-end py-[30px] relative text-white Animation">
               <div className="gradient"></div>
               <img
                 className="w-[95%] h-[400px] object-cover rounded-xl"

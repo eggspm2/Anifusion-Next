@@ -5,7 +5,7 @@ import React from 'react'
  const Seasons = ({data}) => {
     if(!data) return <div>Loading ...</div>
   return (
-    <div className='w-full bg-zinc-800/50 flex flex-col gap-3 p-[20px]'>
+    <div className='w-full  flex flex-col gap-4 p-[20px]'>
         <h1 className='text-[30px] font-semibold'>More Seasons</h1>
         <div className='flex gap-5 flex-wrap '>
         {data.map((item) => (

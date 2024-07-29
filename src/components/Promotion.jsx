@@ -7,7 +7,7 @@ import React from "react";
 const Promotion = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-full bg-zinc-800/50 flex flex-col gap-3 p-[20px]">
+    <div className="w-full flex flex-col gap-3 p-[20px]">
       <h1 className="text-[30px] font-semibold">Promotional Videos</h1>
       <div className="flex gap-3">
         {data.map((item) => (

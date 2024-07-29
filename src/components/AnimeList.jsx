@@ -18,7 +18,8 @@ export const AnimeList = ({ data, name }) => {
       </div>
       <div className="flex flex-col justify-center items-center w-full p-[20px] h-[400px]  border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-3">
         <div className="flex w-full h-[400px]">
-          <Swiper spaceBetween={30} slidesPerView={5}>
+          <Swiper spaceBetween={30} 
+          slidesPerView={5}>
             {data.map((item) => (
               <SwiperSlide key={item.id}>
                 <Link href={`/home/${item.id}`} >
@@ -33,8 +34,8 @@ export const AnimeList = ({ data, name }) => {
                       <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
                     </div>
                     </div>
-                    <h1 className="text-[18px] font-semibold w-[60%] h-[60px] flex justify-center items-center pb-[10px]">
-                      {item.name}
+                    <h1 className="text-[18px] font-semibold flex justify-center items-center">
+                      {item.name.length > 20 ? item.name.substring(0,17) + "..." : item.name}
                     </h1>
                   </div>
                 </Link>
