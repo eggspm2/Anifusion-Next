@@ -33,7 +33,7 @@ export default function Anime() {
   if (!SpotLightData || !TrendingAnime || !Upcoming)
     return <div>Loading ...</div>;
   return (
-    <main className="flex flex-col items-center relative top-[65px]">
+    <main className="flex flex-col items-center relative top-[65px] overflow-hidden">
       <Slider data={SpotLightData} />
       <AnimeContainer trending={TrendingAnime} topUpcoming={Upcoming} />
       <Animetable Airing1={Airing1} Airing2={Airing2} />
