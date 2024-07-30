@@ -74,14 +74,14 @@ const Header = () => {
   if (!result)
     return <div>Hello</div>;
   return (
-    <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
-      <div className="w-[18%] text-center">
-        <p className="text-[25px] font-semibold max-md:text-[15px]">
+    <div className="flex  items-center w-full h-[65px] max-md:justify-between bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px] overflow-hidden">
+      <div className="w-[18%] text-center max-md:w-min">
+        <p className="text-[25px] font-semibold max-md:text-[20px]">
           <span className="text-[40px] max-md:text-[35px] font-bold text-cyan-600 px-1">A</span>
           nifusion
         </p>
       </div>
-      <div className=" flex justify-center items-start w-[400px]">
+      <div className=" flex justify-center items-start w-[400px] max-md:hidden">
         <NavigationMenu>
           <NavigationMenuList className="gap-[10px]">
             <NavigationMenuItem>
@@ -117,9 +117,6 @@ const Header = () => {
                       alt="Name"
                       className=" w-[200px] h-[100%] rounded-xl"
                     />
-                    <div className="">
-                      
-                    </div>
                   </div>
                 </NavigationMenuLink>
               </NavigationMenuContent>
@@ -127,7 +124,7 @@ const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="flex justify-end items-end w-[600px] transition duration-1000 ease">
+      <div className="flex justify-end items-end w-[600px] transition duration-1000 ease max-md:hidden">
         <div
           className={`flex  justify-between items-center w-[400px] h-[35px] px-[10px] bg-zinc-800/30 border ${
             focused ? "border-white" : "border-zinc-500/50"
@@ -210,7 +207,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-end items-center gap-[10px] text-xl h-[35px] w-[400px]">
+      <div className="flex justify-end items-center gap-[10px] text-xl h-[35px] w-[400px] max-md:hidden">
         <Button size={"icon"} variant={"outline"}>
           <FontAwesomeIcon icon={faShuffle} />
         </Button>
