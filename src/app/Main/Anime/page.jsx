@@ -13,7 +13,6 @@ export default function Anime() {
   const [Upcoming, setUpcoming] = useState("");
   const [Airing1, setAiring1] = useState("");
   const [Airing2, setAiring2] = useState("");
-  const [Schedule, setSchedule] = useState("");
   
 
   useEffect(() => {
