@@ -28,7 +28,6 @@ const Airing = () => {
     ScheduleFetch();
   }, [today]);
 
- 
   const handleButtonClick = () => {
     setAnimate(true);
     setTimeout(() => setAnimate(false), 1000);
@@ -45,9 +44,7 @@ const Airing = () => {
           <div
             key={item.id}
             className={` py-[10px] px-[20px] rounded-lg border border-zinc-500/50 Transition hover:bg-cyan-600 ${
-              item.day === today
-                ? "bg-cyan-600"
-                : "bg-zinc-800/50"
+              item.day === today ? "bg-cyan-600" : "bg-zinc-800/50"
             }`}
             onClick={() => day(item.id)}
           >

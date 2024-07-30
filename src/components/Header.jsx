@@ -76,8 +76,8 @@ const Header = () => {
   return (
     <div className="flex  items-center w-full h-[65px] bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
       <div className="w-[18%] text-center">
-        <p className="text-[25px] font-semibold">
-          <span className="text-[40px] font-bold text-cyan-600 px-1">A</span>
+        <p className="text-[25px] font-semibold max-md:text-[15px]">
+          <span className="text-[40px] max-md:text-[35px] font-bold text-cyan-600 px-1">A</span>
           nifusion
         </p>
       </div>

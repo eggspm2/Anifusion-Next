@@ -15,21 +15,21 @@ import Link from "next/link";
 const Slider = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-full">
+    <div className="w-full flex justify-center items-center">
       <Swiper>
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <Link
               href={`/Episode/${item.id}`}
-              className="flex justify-center items-end max-md:w-[95%] max-md:py-[10px] py-[30px] relative text-white Animation"
+              className="flex justify-center items-end  max-md:py-[10px] py-[30px] relative text-white Animation"
             >
               <div className="gradient"></div>
               <img
-                className="w-[95%] h-[400px] max-md:h-[300px] object-cover rounded-xl"
+                className="w-[95%] h-[400px] max-md:h-[250px] object-cover rounded-xl"
                 src={item.poster}
                 alt=""
               />
-              <div className="absolute w-[95%] max-md:p-[0] max-md:left-5 max-md:bottom-[90px] flex flex-col p-[20px] gap-3">
+              <div className="absolute w-[95%] max-md:p-[0] max-md:left-5 max-md:bottom-[70px] flex flex-col p-[20px] gap-3">
                 <h1 className="text-[40px] max-md:text-[18px] font-bold">
                   {item.name}
                 </h1>
@@ -67,18 +67,21 @@ const Slider = ({ data }) => {
                     : item.description || "N/A"}
                 </div>
               </div>
-              <div className="absolute w-[95%] max-md:left-5 max-md:bottom-[40px]  max-md:justify-start max-md:p-[0] max-md:text-[12px] flex justify-end gap-4 p-[30px] text-[18px]">
+              <div className="absolute w-[95%] max-md:left-5 max-md:bottom-[20px]  max-md:justify-start max-md:p-[0] max-md:text-[12px] flex justify-end gap-4 p-[30px] text-[18px]">
                 <Link
                   href={`/home/${item.id}`}
-                  className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[0px] max-md:py-[0px] max-md:text-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+                  className="flex justify-center items-center py-[10px] px-[20px] max-md:p-[10px] max-md:h-min max-md:text-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faCircleInfo} />
                   <p>Details</p>
                 </Link>
-                <div className="flex justify-center items-center py-[10px] px-[20px] max-md:p-[10px] bg-zinc-800/30 rounded-xl border border-zinc-500/50 gap-2">
-                  <FontAwesomeIcon icon={faCirclePlay} />
-                  <p>Watch Now</p>
-                </div>
+                <Link
+                  href={`/Episode/${item.id}`}
+                  className="flex justify-center items-center py-[10px] px-[20px] max-md:p-[10px] max-md:h-min max-md:text-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+                >
+                  <FontAwesomeIcon icon={faCirclePlay}/>
+                  <p>Watch now</p>
+                </Link>
               </div>
             </Link>
           </SwiperSlide>
