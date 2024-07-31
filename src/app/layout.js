@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Header/>
+          <div className="relative top-[65px]">
           {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

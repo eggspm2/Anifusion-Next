@@ -13,7 +13,7 @@ const BigCards = ({ data }) => {
       <div className="flex flex-wrap gap-5">
         {data.map((item, index) => (
           <Link
-            href={`/home/${item.id}`}
+            href={`/Anime/home/${item.id}`}
             className="flex flex-col w-[220px] h-[350px] gap-2 font-medium"
             key={index}
           >

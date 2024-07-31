@@ -3,8 +3,6 @@
 import React from 'react';
 import {
     faCircle,
-    faClosedCaptioning,
-    faMicrophone,
     faPlay,
     faPlus,
   } from "@fortawesome/free-solid-svg-icons";
@@ -37,7 +35,7 @@ import DetailStack from './detailStack';
             </div>
          <DetailStack data={data}/>
           <div className="flex w-full gap-4 text-black">
-          <Link  href={`/Episode/${data.id}`} className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
+          <Link  href={`/Anime/Episode/${data.id}`} className="flex justify-center items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2">
           <FontAwesomeIcon icon={faPlay} />
             <p>Watch now</p>
           </Link>

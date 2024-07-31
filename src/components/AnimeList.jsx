@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
-export const AnimeList = ({ data, name }) => {
+export const AnimeList = ({ data, name, isManga }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <>
@@ -18,24 +18,32 @@ export const AnimeList = ({ data, name }) => {
       </div>
       <div className="flex flex-col justify-center items-center w-full p-[20px] h-[400px]  border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-3">
         <div className="flex w-full h-[400px]">
-          <Swiper spaceBetween={30} 
-          slidesPerView={5}>
+          <Swiper spaceBetween={30} slidesPerView={5}>
             {data.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link href={`/home/${item.id}`} >
+                <Link href={`/Anime/home/${item.id}`}>
                   <div className="flex flex-col  justify-center items-center h-[400px] gap-5">
                     <div className="flex h-[300px] object-cover overflow-hidden relative">
-                    <img
-                      src={item.poster}
-                      alt=""
-                      className=" h-[300px] object-cover rounded-xl border border-zinc-500/50 "
-                    />
-                    <div className="ImageGradient hover:opacity-100">
-                      <FontAwesomeIcon icon={faPlay} className="text-[40px]"/>
-                    </div>
+                      <img
+                        src={item.poster || item.image}
+                        alt=""
+                        className=" h-[300px] object-cover rounded-xl border border-zinc-500/50 "
+                      />
+                      <div className="ImageGradient hover:opacity-100">
+                        <FontAwesomeIcon
+                          icon={faPlay}
+                          className="text-[40px]"
+                        />
+                      </div>
                     </div>
                     <h1 className="text-[18px] font-semibold flex justify-center items-center">
-                      {item.name.length > 20 ? item.name.substring(0,17) + "..." : item.name}
+                      {isManga
+                        ? item.title.length > 20
+                          ? item.title.substring(0, 17) + "..."
+                          : item.title
+                        : item.name.length > 20
+                        ? item.name.substring(0, 17) + "..."
+                        : item.name}
                     </h1>
                   </div>
                 </Link>

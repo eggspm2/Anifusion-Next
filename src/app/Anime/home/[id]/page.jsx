@@ -9,7 +9,7 @@ import {
 } from "@/components/hooks/UseApiFetch";
 import AnimeDetails from "@/components/animeDetails";
 import SideDetails from "@/components/SideDetails";
-import back from "../../../assets/back.png";
+import back from "../../../../assets/back.png";
 import Image from "next/image";
 import LeftData from "@/components/LeftData";
 import { RightData } from "@/components/RightData";
@@ -33,7 +33,7 @@ const Page = () => {
   if (!AniwatchData) return <div>Loading ...</div>;
   return (
     <>
-      <div className=" w-full flex h-[600px] relative top-[65px]">
+      <div className=" w-full flex h-[600px]">
         <Image
           src={back}
           alt=""

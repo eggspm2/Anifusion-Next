@@ -99,7 +99,7 @@ const StreamPage = () => {
   ];
   if (!data || !EpisodeData) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-full relative top-[65px] p-[10px] gap-2 bg-zinc-800/50">
+    <div className="flex flex-col w-full p-[10px] gap-2 bg-zinc-800/50">
       <div className="flex  w-full gap-4">
         <div className="flex w-[70%]  flex-col gap-5">
           <div className="flex w-full h-[600px] ">

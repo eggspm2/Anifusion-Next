@@ -3,7 +3,8 @@
 
 const BASE_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist/";
 const BASE_ANiWATCH_URL = "https://aniwatch-ryan.vercel.app/anime/"
-const BASE_MANGA_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist-manga/"
+const BASE_MANGA_URL = "https://manga-ryan.vercel.app/api/"
+const PROXY_URl = "https:/anymey-proxy.vercel.app/cors?url=";
 
 export const NewsetApi = async  () => {
 
@@ -74,54 +75,9 @@ export const FetchBySearch = async  (name) => {
         return result.results;
 }
 
-export const MangaApi = async  () => {
+export const MangaList = async  (page) => {
 
-        const response = await fetch(`${BASE_MANGA_URL}popular`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const PopularManga = async  () => {
-
-        const response = await fetch(`${BASE_MANGA_URL}trending`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const TrendingManga = async  () => {
-
-        const response = await fetch(`${BASE_URL}advanced-search?type=MANGA&seasont=Winter&provider=mangadex`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const AiringManga = async  () => {
-
-        const response = await fetch(`${BASE_URL}advanced-search?type=MANGA&provider=mangadex`);
-        const result = await response.json();
-        return result.results;
-
-}
-
-export const MangaSearch = async  (name) => {
-
-        const response = await fetch(`${BASE_MANGA_URL}${name}`);
-        const result = await response.json();
-        return result.results;
-
-}
-
-export const MangaDetail = async  (id) => {
-
-        const response = await fetch(`${BASE_MANGA_URL}info/${id}?provider=mangadex`);
-        const result = await response.json();
-        return result;
-
-}
-
-export const MangaChapters = async  (id) => {
-
-        const response = await fetch(`${BASE_MANGA_URL}read?chapterId=${id}&provider=mangadex`);
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}mangalist?page=${page}`);
         const result = await response.json();
         return result;
 
