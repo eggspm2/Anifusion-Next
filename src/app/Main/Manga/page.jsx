@@ -1,8 +1,10 @@
 "use client";
 
-import { Animetable } from '@/components/Anime.table';
-import { AnimeContainer } from '@/components/AnimeContainer';
+
 import { MangaList } from '@/components/hooks/UseApiFetch'
+import MangaSlider from '@/components/Manga/MangaSlider';
+import { MangaStack } from '@/components/Manga/MangaStack';
+import { MangaTableContainer } from '@/components/Manga/MangaTableContainer';
 import Slider from '@/components/Slider';
 import React, { useEffect, useState } from 'react'
 
@@ -40,9 +42,9 @@ export default function Manga() {
     },[]);
   return (
     <div className='flex justify-center items-center flex-col w-full bg-zinc-800/50'>
-      <Slider data={result} isManga={true}/>
-      <AnimeContainer trending={List1} topUpcoming={List2} isManga={true}/>
-      <Animetable Airing1={Table1} Airing2={Table2} isManga={true}/>
+      <MangaSlider data={result}/>
+      <MangaStack trending={List1} topUpcoming={List2} />
+      <MangaTableContainer Airing1={Table1} Airing2={Table2}/>
     </div>
   )
 }

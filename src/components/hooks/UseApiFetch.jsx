@@ -83,6 +83,21 @@ export const MangaList = async  (page) => {
 
 }
 
+export const MangaDetail = async  (id) => {
+
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}manga/${id}`);
+        const result = await response.json();
+        return result;
+
+}
+export const MangaChapter = async  (chapter) => {
+
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}/manga/${chapter}`);
+        const result = await response.json();
+        return result;
+
+}
+
 export const AniWatchIdApi = async  (title) => {
 
         const response = await fetch(`${BASE_ANiWATCH_URL}search?q=${title}`);

@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
   AniWatchAnimeId,
-  AniWatchEpisode,
-  FetchById,
 } from "@/components/hooks/UseApiFetch";
 import AnimeDetails from "@/components/animeDetails";
 import SideDetails from "@/components/SideDetails";

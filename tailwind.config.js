@@ -2,10 +2,14 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-    "./app/**/*.{js,jsx}",
-    "./src/**/*.{js,jsx}",
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    './app/**/*.{js,jsx}',
+    './src/**/*.{js,jsx}',
+    './src/Main/**/*.{js,jsx}',
+    './src/Manga/**/*.{js,jsx}',
+    './src/Anime/**/*.{js,jsx}',
+    './src/components/Manga/**/*.{js,jsx}',
   ],
   prefix: "",
   theme: {
@@ -13,6 +17,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
+        "max-md" : {'max' : '786px'},
         "2xl": "1400px",
         "max-md":{max:"768px"}
       },
@@ -75,4 +80,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}

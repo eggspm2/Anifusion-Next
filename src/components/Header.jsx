@@ -29,7 +29,7 @@ const Header = () => {
   const [result, setResult] = useState([]);
   const [SearchToggle, setSearchToggle] = useState(false);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const SearchFetching = async () => {
       if (isManga) {
         const response = await MangaSearch(name);
@@ -51,7 +51,7 @@ const Header = () => {
       }
     };
     SearchFetching();
-  }, [name]);
+  }, [name]); */
 
   const handleText = (e) => {
     setName(e.target.value);
@@ -132,7 +132,7 @@ const Header = () => {
           />
           {focused && result && (
             <div className="SearchContainer bg-zinc-900/80 border border-zinc-500/50">
-              <SearchResults result={result} />
+              
             </div>
           )}
         </div>
@@ -163,7 +163,7 @@ const Header = () => {
               </div>
               {focused && result && (
                 <div className="w-full max-h-[300px] bg-zinc-800 rounded-lg overflow-y-scroll ScrollWidth text-[15px]">
-                  <SearchResults result={result} />
+                  
                 </div>
               )}
             </div>
