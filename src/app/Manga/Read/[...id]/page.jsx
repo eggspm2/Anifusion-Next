@@ -25,12 +25,9 @@ const page = ({ params }) => {
         if (response) {
           console.log(response);
           setData(response);
-          const index = response.chapterListIds.findIndex(
-            (item) => item.id === params.id[1]
-          );
-          console.log(index);
-          setCount(index);
-        }
+          setCount(response.chapterListIds.findIndex(
+            (item) => item.id === params.id[1]));
+        } 
       }
     };
     Fetching();
@@ -38,7 +35,8 @@ const page = ({ params }) => {
 
   const handleNextChapter = () => {
     if (data.chapterListIds.length > 0) {
-      setCount(c => c + 1);
+      setCount(data.chapterListIds.findIndex(
+        (item) => item.id === params.id[1]) + 1);
       setChapter(data.chapterListIds[count].id);
       console.log(chapter,count);
     }
