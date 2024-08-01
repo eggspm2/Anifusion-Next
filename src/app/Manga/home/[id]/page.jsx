@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { MangaDetail } from "@/components/hooks/UseApiFetch";
 import { Chapters } from "@/components/Manga/Chapters";
@@ -13,11 +13,17 @@ const Page = () => {
 
   useEffect(() => {
     const fetching = async () => {
-      const response = await MangaDetail(id);
-      if (response) {
-        console.log(response);
-        setMangaData(response);
+      try{
+        const response = await MangaDetail(id);
+        if (response) {
+          console.log(response);
+          setMangaData(response);
+        }
       }
+      catch(error){
+        console.error(error);
+      }
+      
     };
     fetching();
   }, [id]);
