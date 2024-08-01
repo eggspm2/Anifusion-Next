@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [Data, setData] = useState("");
   const [Chapter, setChapter] = useState(params.id[1]);
   const [Prev, setPrev] = useState(true);
@@ -160,4 +160,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
