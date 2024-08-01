@@ -99,10 +99,10 @@ const StreamPage = () => {
   ];
   if (!data || !EpisodeData) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-full p-[10px] gap-2 bg-zinc-800/50">
-      <div className="flex  w-full gap-4">
+    <div className="flex flex-col w-full p-[10px] gap-2 bg-zinc-800/50 Animation">
+      <div className="flex flex-row-reverse w-full gap-4">
         <div className="flex w-[70%]  flex-col gap-5">
-          <div className="flex w-full h-[600px] ">
+          <div className="flex w-full h-[600px]">
             <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url}>
               <MediaProvider />
               <DefaultVideoLayout
@@ -140,7 +140,7 @@ const StreamPage = () => {
                     {Servers.map((item) => (
                       <div
                         key={id}
-                        className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${
+                        className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center Transition hover:bg-cyan-600 ${
                           Category === "sub" && Server === item.server
                             ? "bg-cyan-600"
                             : "bg-zinc-700"
@@ -167,7 +167,7 @@ const StreamPage = () => {
                         {Servers.map((item) => (
                           <div
                             key={id}
-                            className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center ${
+                            className={`h-[35px] p-[10px] rounded-xl flex justify-center items-center Transition hover:bg-cyan-600 ${
                               Category === "dub" && Server === item.server
                                 ? "bg-cyan-600"
                                 : "bg-zinc-700"
@@ -198,7 +198,7 @@ const StreamPage = () => {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex w-full h-[120px]  border border-zinc-500/50 gap-5 rounded-lg relative Transition ${
+                  className={`flex flex-row-reverse w-full h-[120px] p-[10px] border border-zinc-500/50 gap-5 rounded-lg relative Transition ${
                     item.episodeId === CurrentEpisode
                       ? "border border-white bg-cyan-600"
                       : "bg-zinc-800/50"

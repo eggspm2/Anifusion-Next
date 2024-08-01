@@ -22,7 +22,8 @@ export const MangaCourosale = ({ data }) => {
         <img
           src={data.imageUrl}
           alt="Image"
-          className="h-[300px] w-[200px] object-cover rounded-lg Box_Shadow"
+          className="h-[300px] w-[200px] object-cover rounded-lg Box_Shadow
+          "
         />
         <Button className="gap-2">
             <FontAwesomeIcon icon={faBook}/>

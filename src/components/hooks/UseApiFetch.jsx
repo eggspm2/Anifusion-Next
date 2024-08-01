@@ -138,6 +138,13 @@ export const AniWatchHome = async  () => {
 
 }
 
+export const CategoryFetch = async  (page) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}tv?page=${page}`);
+        const result = await response.json();
+        return result.animes;
+
+}
 export const AniWatchAnimeId = async  (id) => {
 
         const response = await fetch(`${BASE_ANiWATCH_URL}info?id=${id}`);

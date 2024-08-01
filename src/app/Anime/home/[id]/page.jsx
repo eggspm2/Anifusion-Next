@@ -31,7 +31,7 @@ const Page = () => {
   if (!AniwatchData) return <div>Loading ...</div>;
   return (
     <>
-      <div className=" w-full flex h-[600px]">
+      <div className=" w-full flex h-[600px] relative">
         <Image
           src={back}
           alt=""
@@ -48,7 +48,7 @@ const Page = () => {
           </>
         )}
       </div>
-      <div className="w-full flex relative top-[65px] bg-zinc-800/50">
+      <div className="w-full flex bg-zinc-800/50">
         <LeftData result={AniwatchData} />
         <div className="w-[23%] h-full p-[10px]">
           <RightData data={AniwatchData} height={"h-[600px]"} />

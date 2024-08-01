@@ -8,20 +8,20 @@ import React from "react";
 const BigCards = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-full  p-[20px] gap-4">
-      <h1 className="text-[30px] font-semibold">Recommended for You</h1>
+    <div className="flex flex-col w-full  p-[20px] gap-10">
+      <h1 className="text-[35px] font-semibold">Recommended for You</h1>
       <div className="flex flex-wrap gap-5">
         {data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex flex-col w-[220px] h-[350px] gap-2 font-medium"
+            className="flex flex-col w-[220px] h-[350px] gap-2 font-medium "
             key={index}
           >
             <div className="relative h-[300px] w-full">
               <img
                 src={item.poster}
                 alt="Image"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover rounded-xl Box_Shadow"
               />
               <div className="ImageGradient hover:opacity-100">
                 <FontAwesomeIcon icon={faPlay} className="text-[40px]" />

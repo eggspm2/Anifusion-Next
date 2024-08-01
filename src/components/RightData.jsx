@@ -15,7 +15,7 @@ export const RightData = ({ data ,height}) => {
           </div>
         </div>
       )}
-      {data.mostPopularAnimes && (
+      {data.mostPopularAnimes.length > 0 && (
         <div className="flex flex-col gap-2 p-[10px]  border border-zinc-500/50  rounded-lg">
           <h1 className="text-[30px] font-semibold">Most Popular</h1>
           <div className={`flex flex-col gap-2 ${height} overflow-y-scroll ScrollWidth`}>
