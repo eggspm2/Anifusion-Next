@@ -4,7 +4,7 @@
 const BASE_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist/";
 const BASE_ANiWATCH_URL = "https://aniwatch-ryan.vercel.app/anime/"
 const BASE_MANGA_URL = "https://manga-ryan.vercel.app/api/"
-const PROXY_URl = "https:/anymey-proxy.vercel.app/cors?url=";
+const PROXY_URl = "https://anymey-proxy.vercel.app/cors?url=";
 
 export const NewsetApi = async  () => {
 
@@ -75,9 +75,9 @@ export const FetchBySearch = async  (name) => {
         return result.results;
 }
 
-export const MangaTableData = async  (page) => {
+export const MangaTableData = async  (pagenumber) => {
 
-        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}mangalist?page=${page}`);
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}mangalist?page=${pagenumber}`);
         const result = await response.json();
         return result;
 
