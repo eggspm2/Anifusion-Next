@@ -17,7 +17,7 @@ const SearchResults = ({ result }) => {
     <div className="flex flex-col gap-3 h-full w-full p-[10px]  overflow-y-scroll ScrollWidth">
       {result.animes.map((item) => (
         <Link
-          href={`/home/${item.id}`}
+          href={`/Anime/home/${item.id}`}
           key={item.id}
           className="flex w-full h-[100px] bg-zinc-700/50 border border-zinc-500/50 rounded-xl p-[10px]"
         >
