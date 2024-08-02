@@ -43,7 +43,7 @@ export const AnimeContainer = () => {
       <div className="flex justify-center gap-10 w-full">
         {names.map((item) => (
           <p
-            className={`py-[8px] w-[150px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
+            className={`py-[8px] w-[150px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition Box_Shadow hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
             key={item.id}
             onClick={() => getPage(item.id)}
           >
@@ -51,7 +51,7 @@ export const AnimeContainer = () => {
           </p>
         ))}
       </div>
-      <div className={`flex flex-wrap gap-5 ${Animate ? "AnimationCard" : ''}`}>
+      <div className={`flex flex-wrap gap-5 ${Animate ? "Animation" : ''}`}>
         {data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}

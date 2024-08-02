@@ -28,13 +28,13 @@ export const Table = ({ data, name, isManga }) => {
               alt=""
               className="h-full w-[80px] rounded-[10px]"
             />
-            <div className="flex flex-col justify-center items-center w-full gap-4">
+            <div className="flex flex-col justify-center items-center w-full gap-1">
               <h1 className="text-[18px] font-semibold">
                 {item.name.length > 30
                   ? item.name.substring(0, 28) + "..."
                   : item.name}
               </h1>
-              <div className="flex justify-center items-center text-black gap-4 p-[8px] bg-white rounded-lg ">
+              <div className="flex justify-center items-center w-[230px] text-black gap-4 p-1 bg-white rounded-lg ">
               <div className="flex items-center gap-2">
                   <FontAwesomeIcon icon={faMicrophone} />
                   <p>{item.episodes.sub || "??"}</p>
