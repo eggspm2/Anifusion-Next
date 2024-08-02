@@ -14,15 +14,15 @@ export default function Manga() {
   useEffect(() => {
     const Fetching = async () => {
       try {
-        const data = await MangaTableData(1);
+        const data = await MangaTableData("1");
         if (data) {
           setResult(data.mangaList);
         }
-        const response1 = await MangaTableData(2);
+        const response1 = await MangaTableData("2");
         if (response1) {
           setList1(response1.mangaList);
         }
-        const response2 = await MangaTableData(3);
+        const response2 = await MangaTableData("3");
         if (response1) {
           setList2(response2.mangaList);
         }

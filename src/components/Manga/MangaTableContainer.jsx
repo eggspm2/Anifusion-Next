@@ -12,7 +12,7 @@ export const MangaTableContainer = () => {
   useEffect(() => {
     const fetching = async () => {
       try {
-        const data = await MangaTableData(4);
+        const data = await MangaTableData("4");
         if (data) {
           const Slice1 = data.mangaList.slice(0, 11);
           const Slice2 = data.mangaList.slice(12, 23);
