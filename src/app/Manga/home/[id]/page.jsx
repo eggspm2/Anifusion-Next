@@ -29,7 +29,7 @@ const Page = () => {
   }, [id]);
   return (
     <div className="flex flex-col justify-center items-center gap-5 pt-[20px]">
-      <MangaCourosale data={MangaData} />
+      <MangaCourosale data={MangaData} id={id}/>
       <Chapters data={MangaData} id={id}/>
     </div>
   );

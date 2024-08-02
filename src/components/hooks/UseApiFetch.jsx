@@ -138,6 +138,14 @@ export const AniWatchHome = async  () => {
 
 }
 
+export const AniWatcSearch = async  (name) => {
+
+        const response = await fetch(`${BASE_ANiWATCH_URL}search?q=${name}`);
+        const result = await response.json();
+        return result;
+        
+}
+
 export const CategoryFetch = async  (page) => {
 
         const response = await fetch(`${BASE_ANiWATCH_URL}tv?page=${page}`);

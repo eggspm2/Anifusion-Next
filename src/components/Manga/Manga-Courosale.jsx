@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-export const MangaCourosale = ({ data }) => {
+export const MangaCourosale = ({ data, id }) => {
+  
+  console.log(data);
     if(!data) return <div>Loading ...</div>
   return (
     <div className="flex w-[95%] justify-center items-center border border-zinc-500/50 rounded-lg overflow-hidden">
@@ -23,10 +25,9 @@ export const MangaCourosale = ({ data }) => {
         <img
           src={data.imageUrl}
           alt="Image"
-          className="h-[300px] w-[200px] object-cover rounded-lg Box_Shadow
-          "
+          className="h-[300px] w-[200px] object-cover rounded-lg Box_Shadow"
         />
-        <Link href={`/Manga/Read/${data.chapterList[0].path}`}>
+        <Link href={`/Manga/Read/${id}/${data.chapterList[data.chapterList.length - 1].id}`}>
         <Button className="gap-2">
             <FontAwesomeIcon icon={faBook}/>
             <p>Read now</p>

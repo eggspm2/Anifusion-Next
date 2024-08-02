@@ -41,7 +41,7 @@ const MangaSlider = ({ data }) => {
                   <p>Details</p>
                 </Link>
                 <Link
-                  href={`/Manga/Read/${item.id}`}
+                  href={`/Manga/Read/${item.id}/${"chapter-1"}`}
                   className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[20px] max-md:py-[10px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faBook} />

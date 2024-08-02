@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CategoryFetch } from "./hooks/UseApiFetch";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 export const AnimeContainer = () => {
@@ -16,7 +15,6 @@ export const AnimeContainer = () => {
     const fetching = async () => {
       const response = await CategoryFetch(page);
       if (response) {
-        console.log(response);
         setData(response.slice(0,32));
       }
     };
@@ -41,11 +39,11 @@ export const AnimeContainer = () => {
 
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-[95%] gap-[50px] Animation">
+    <div className="flex flex-col w-[95%]  gap-[50px] Animation">
       <div className="flex justify-center gap-10 w-full">
         {names.map((item) => (
           <p
-            className={`py-[8px] w-[150px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition ${item.id === page ? "bg-cyan-600 text-white" : "bg-zinc-800"}`}
+            className={`py-[8px] w-[150px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
             key={item.id}
             onClick={() => getPage(item.id)}
           >
@@ -57,7 +55,7 @@ export const AnimeContainer = () => {
         {data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex flex-col w-[200px] h-[350px] gap-2 font-medium"
+            className="flex flex-col w-[15%] h-[350px] gap-2 font-medium"
             key={index}
           >
             <div className="relative h-[300px] w-full overflow-hidden rounded-xl">

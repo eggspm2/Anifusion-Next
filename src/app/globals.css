@@ -170,11 +170,11 @@
 
   @keyframes AnimationCards {
     from{
-      transform: translateX(-400px);
+      transform: scale(0);
       opacity:0;
     }
     to{
-      transform: translateX(0px);
+      transform: scale(1);
       opacity:1 ;
     }
   }

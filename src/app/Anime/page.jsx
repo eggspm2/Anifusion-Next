@@ -24,7 +24,6 @@ export default function Anime() {
         setUpcoming(data.topUpcomingAnimes);
         setAiring1(data.topAiringAnimes.slice(0, 9));
         setAiring2(data.topAiringAnimes.slice(10, 19));
-        console.log(data);
       }
     };
     Fetching();
@@ -38,7 +37,7 @@ export default function Anime() {
       <Slider data={SpotLightData} />
       <AnimeContainer/>
       <Animetable Airing1={Airing1} Airing2={Airing2} />
-      <Airing />
+      <Airing/>
     </main>
   );
 }

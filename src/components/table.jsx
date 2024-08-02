@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-import {faCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircle,
+  faClosedCaptioning,
+  faMicrophone,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-
 
 export const Table = ({ data, name, isManga }) => {
   if (!data) return <div>Loading ...</div>;
@@ -27,23 +30,23 @@ export const Table = ({ data, name, isManga }) => {
             />
             <div className="flex flex-col justify-center items-center w-full gap-4">
               <h1 className="text-[18px] font-semibold">
-                  {item.name.length > 30
+                {item.name.length > 30
                   ? item.name.substring(0, 28) + "..."
                   : item.name}
               </h1>
-              <div className="flex justify-center items-center gap-4 px-[10px] bg-cyan-600 rounded-xl ">
-                <p>{item.episodes.sub || "??"}</p>
-                <FontAwesomeIcon
-                  icon={faCircle}
-                  className="text-[4px] text-cyan-800"
-                />
+              <div className="flex justify-center items-center text-black gap-4 p-[8px] bg-white rounded-lg ">
+              <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faMicrophone} />
+                  <p>{item.episodes.sub || "??"}</p>
+                </div>
+                <FontAwesomeIcon icon={faCircle} className="text-[4px]" />
                 <p>{item.type || "N/A"}</p>
 
-                <FontAwesomeIcon
-                  icon={faCircle}
-                  className="text-[4px] text-cyan-800"
-                />
-                <p>{item.episodes.dub || "??"}</p>
+                <FontAwesomeIcon icon={faCircle} className="text-[4px]" />
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faClosedCaptioning} />
+                  <p>{item.episodes.dub || "??"}</p>
+                </div>
               </div>
             </div>
           </Link>

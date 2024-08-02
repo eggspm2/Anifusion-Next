@@ -32,7 +32,7 @@ const Slider = ({ data }) => {
                 <h1 className="text-[40px] max-md:text-[18px] font-bold">
                   {item.name}
                 </h1>
-                <div className="w-max p-[5px] max-md:text-[10px] max-md:gap-2 bg-cyan-600 rounded-xl border border-zinc-500/50 flex justify-center items-center gap-5 text-[18px]">
+                <div className="w-max p-[5px] max-md:text-[10px] max-md:gap-2 bg-white text-black rounded-xl border border-zinc-500/50 flex justify-center items-center gap-5 text-[18px]">
                   <div className="flex items-center justify-center gap-1">
                     <FontAwesomeIcon icon={faTv} />
                     <p>{item.otherInfo[0]}</p>
@@ -40,20 +40,20 @@ const Slider = ({ data }) => {
                   <div className="flex items-center justify-center gap-3 max-md:gap-1">
                     <FontAwesomeIcon
                       icon={faCircle}
-                      className="text-[6px] text-cyan-800"
+                      className="text-[6px]"
                     />
                     <p>{item.otherInfo[3] || "N/A"}</p>
                   </div>
                   <div className="flex items-center justify-center gap-3 max-md:gap-1">
                     <FontAwesomeIcon
                       icon={faCircle}
-                      className="text-[6px] text-cyan-800"
+                      className="text-[6px]"
                     />
                     <p>{item.otherInfo[2] || "N/A"}</p>
                   </div>
                   <FontAwesomeIcon
                     icon={faCircle}
-                    className="text-[6px] text-cyan-800"
+                    className="text-[6px]"
                   />
                   <div className="flex items-center justify-center gap-1">
                     <FontAwesomeIcon icon={faClock} />

@@ -28,12 +28,15 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     const Fetching = async () => {
+      console.log(params);
       if (Chapter) {
         const response = await MangaChapter(params.id[0] + "/" + Chapter);
         if (response) {
           console.log(response);
           setData(response);
-          const index = response.chapterListIds.findIndex((item) => item.name === response.currentChapter);
+          const index = response.chapterListIds.findIndex(
+            (item) => item.name === response.currentChapter
+          );
           console.log(index);
           if (index === 0) {
             setNext(false);
@@ -54,7 +57,10 @@ const Page = ({ params }) => {
   const handleChapter = (nextbtn) => {
     if (nextbtn) {
       if (Next) {
-        const index = Data.chapterListIds.findIndex((item) => item.name === Data.currentChapter) - 1;
+        const index =
+          Data.chapterListIds.findIndex(
+            (item) => item.name === Data.currentChapter
+          ) - 1;
         setChapter(Data.chapterListIds[index].id);
         if (index === 0) {
           setNext(false);
@@ -63,7 +69,9 @@ const Page = ({ params }) => {
     } else {
       if (Prev) {
         const index =
-          Data.chapterListIds.findIndex((item) => item.name === Data.currentChapter) + 1;
+          Data.chapterListIds.findIndex(
+            (item) => item.name === Data.currentChapter
+          ) + 1;
         setChapter(Data.chapterListIds[index].id);
         if (index === Data.chapterListIds.length - 1) {
           setPrev(false);
@@ -76,7 +84,6 @@ const Page = ({ params }) => {
 
   const SelectChapter = (chapterId) => {
     setChapter(chapterId);
-    
   };
 
   if (!Data) return <div>Loading ...</div>;
