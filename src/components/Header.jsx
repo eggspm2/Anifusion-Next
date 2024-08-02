@@ -57,12 +57,13 @@ const Header = () => {
     setName(e.target.value);
   };
 
-  const OnFocused = () => {
-    setFocused(true);
-  };
-
-  const Unfocused = () => {
-    setFocused(false);
+  const OnFocused = (show) => {
+    if(show){
+      setFocused(true);
+    }
+    else{
+      setFocused(false);
+    }
   };
 
   if (!result) return <div>Hello</div>;
@@ -124,7 +125,6 @@ const Header = () => {
           } rounded-[10px] relative`}
         >
           <SearchStack
-            Unfocused={Unfocused}
             OnFocused={OnFocused}
             focused={focused}
             isManga={isManga}
@@ -154,7 +154,6 @@ const Header = () => {
                 } rounded-[10px]`}
               >
                 <SearchStack
-                  Unfocused={Unfocused}
                   OnFocused={OnFocused}
                   focused={focused}
                   isManga={isManga}

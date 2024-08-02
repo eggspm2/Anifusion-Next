@@ -7,7 +7,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const SearchStack = ({OnFocused, Unfocused, focused, isManga, handleText}) => {
+const SearchStack = ({OnFocused, focused, isManga, handleText}) => {
   return (
     <div className="flex justify-between items-center w-full text-[15px]">
           <FontAwesomeIcon
@@ -16,7 +16,7 @@ const SearchStack = ({OnFocused, Unfocused, focused, isManga, handleText}) => {
           />
           <input
             placeholder={isManga ? "Search Manga" : "Search Anime"}
-            onClick={() => OnFocused()}
+            onClick={() => OnFocused(true)}
             className={`w-[300px] outline-none bg-transparent absolute transition duration-1000 ease ${
               focused ? `translate-x-[30px]` : `translate-x-0`
             }`}
@@ -34,7 +34,7 @@ const SearchStack = ({OnFocused, Unfocused, focused, isManga, handleText}) => {
               className={`text-[15px] transition duration-1000 ease absolute ${
                 focused ? "scale-100" : "scale-x-0"
               }`}
-              onClick={() => Unfocused()}
+              onClick={() => OnFocused()}
             />
           </div>
           </div>
