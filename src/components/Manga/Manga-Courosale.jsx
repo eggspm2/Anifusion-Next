@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook, faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export const MangaCourosale = ({ data }) => {
     if(!data) return <div>Loading ...</div>
@@ -25,10 +26,12 @@ export const MangaCourosale = ({ data }) => {
           className="h-[300px] w-[200px] object-cover rounded-lg Box_Shadow
           "
         />
+        <Link href={`/Manga/Read/${data.chapterList[0].path}`}>
         <Button className="gap-2">
             <FontAwesomeIcon icon={faBook}/>
             <p>Read now</p>
         </Button>
+        </Link>
         </div>
         <div className="flex flex-col justify-center gap-3 w-[75%]">
           <h1 className="text-[40px] font-semibold ">{data.name}</h1>

@@ -75,7 +75,7 @@ export const FetchBySearch = async  (name) => {
         return result.results;
 }
 
-export const MangaList = async  (page) => {
+export const MangaTableData = async  (page) => {
 
         const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}mangalist?page=${page}`);
         const result = await response.json();
