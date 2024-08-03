@@ -44,6 +44,7 @@ const Airing = () => {
       <div className="flex w-[60%] max-md:w-[90%] gap-10">
         <Swiper
         spaceBetween={10}
+        centeredSlides={true}
         breakpoints={{
           320: {
             slidesPerView: 3,
@@ -65,7 +66,7 @@ const Airing = () => {
           {days.map((item) => (
             <SwiperSlide key={item.id}>
               <div
-                className={` py-[10px] px-[20px] w-min rounded-lg max-md:text-[10px] border border-zinc-500/50 Transition font-semibold hover:bg-white hover:text-black ${
+                className={`  w-[140px] p-[10px] max-md:w-[100px] max-md:p-[7px] text-center rounded-lg max-md:text-[10px] border border-zinc-500/50 Transition font-semibold hover:bg-white hover:text-black ${
                   item.day === today ? "bg-white text-black" : "bg-zinc-800/50"
                 }`}
                 onClick={() => day(item.id)}
@@ -81,7 +82,7 @@ const Airing = () => {
           {Schedule.map((item, index) => (
             <Link
               key={index}
-              href={`/home/${item.id}`}
+              href={`/Anime/home/${item.id}`}
               className={`flex justify-between gap-2 bg-zinc-800/50 max-md:w-full max-md:text-[10px] w-[70%] p-[20px] border border-zinc-500/50 rounded-lg Transition ${
                 animate ? "Animation" : ""
               } hover:bg-zinc-500/50`}
