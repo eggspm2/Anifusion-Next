@@ -68,7 +68,7 @@ export const AnimeContainer = () => {
                 <FontAwesomeIcon icon={faPlay} className="text-[40px]" />
               </div>
             </div>
-            <div className="w-full h-[50px] text-[0.9rem] max-md:text-[12px]">
+            <div className="w-full h-[50px] text-[0.9rem] max-md:text-[10px]">
               <h1 className="font-medium">
                 {item.name.length > 25
                   ? item.name.substring(0, 21) + "..."

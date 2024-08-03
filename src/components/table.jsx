@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export const Table = ({ data, name, isManga, width }) => {
+export const Table = ({ data, name, width }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <>
@@ -20,7 +20,7 @@ export const Table = ({ data, name, isManga, width }) => {
         data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex justify-center w-full h-[130px] p-[10px] gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+            className="flex justify-center w-full h-[130px] p-[10px]  gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
             key={index}
           >
             <img
@@ -29,12 +29,12 @@ export const Table = ({ data, name, isManga, width }) => {
               className="h-full w-[80px] rounded-[10px]"
             />
             <div className="flex flex-col justify-center items-center w-full gap-1">
-              <h1 className="text-[18px] font-semibold">
+              <h1 className="text-[18px] font-semibold max-md:text-[14px]">
                 {item.name.length > 30
                   ? item.name.substring(0, 28) + "..."
                   : item.name}
               </h1>
-              <div className={`flex justify-center items-center ${width} max-md:w-[210px] text-black gap-4 p-1 bg-white rounded-lg`}>
+              <div className={`flex justify-center items-center ${width} max-md:text-[10px] max-md:w-[170px] text-black gap-4 p-1 bg-white rounded-lg`}>
               <div className="flex items-center gap-2">
                   <FontAwesomeIcon icon={faMicrophone} />
                   <p>{item.episodes.sub || "??"}</p>
