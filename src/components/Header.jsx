@@ -43,12 +43,6 @@ const Header = () => {
           setResult(response);
         }
       }
-      if(name){
-        setFocused(true);
-      }
-      else{
-        setFocused(false);
-      }
     };
     SearchFetching();
   }, [name]); 
@@ -68,7 +62,7 @@ const Header = () => {
 
   if (!result) return <div>Hello</div>;
   return (
-    <div className="flex  items-center w-full h-[65px] max-md:justify-between bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
+    <div className="flex  items-center w-[100vw] h-[65px] max-md:justify-between bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
       <div className="w-[18%] text-center max-md:w-min">
         <p className="text-[25px] font-semibold max-md:text-[20px]">
           <span className="text-[40px] max-md:text-[35px] font-bold text-cyan-600 px-1">
@@ -132,7 +126,7 @@ const Header = () => {
           />
           {focused && result && (
             <div className="SearchContainer bg-zinc-900/80 border border-zinc-500/50">
-              <SearchResults result={result}/>
+              <SearchResults result={result} width={'w-[250px]'}/>
             </div>
           )}
         </div>
@@ -146,8 +140,7 @@ const Header = () => {
         >
            <FontAwesomeIcon icon={faMagnifyingGlass} />
            </Button>
-          {SearchToggle && (
-            <div className="absolute flex flex-col justify-center items-center gap-4 top-full w-[100%] left-0 p-[10px] bg-zinc-900">
+            <div className={`absolute flex flex-col justify-center items-center Transition ${SearchToggle ? 'opacity-100': 'opacity-0'} gap-4 top-full w-[100%] left-0 p-[10px] bg-zinc-900`}>
               <div
                 className={`w-full bg-zinc-800/50 p-[10px]  border ${
                   focused ? "border-white" : "border-zinc-500/50"
@@ -162,11 +155,10 @@ const Header = () => {
               </div>
               {focused && result && (
                 <div className="w-full max-h-[300px] bg-zinc-800 rounded-lg overflow-y-scroll ScrollWidth text-[15px]">
-                  <SearchResults result={result} />
+                  <SearchResults result={result} width={'w-[200px]'}/>
                 </div>
               )}
             </div>
-          )}
         <Button size={"icon"} variant={"outline"}>
           <FontAwesomeIcon icon={faShuffle} />
         </Button>

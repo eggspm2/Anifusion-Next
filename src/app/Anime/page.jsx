@@ -30,7 +30,7 @@ export default function Anime() {
   }, []);
 
   
-  if (!SpotLightData || !TrendingAnime || !Upcoming)
+  if (!SpotLightData || !Airing1 || !Airing2)
     return <div>Loading ...</div>;
   return (
     <main className="flex flex-col items-center overflow-hidden">

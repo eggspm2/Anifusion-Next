@@ -24,10 +24,10 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Header/>
-          <div className="relative top-[65px]">
+          <div className="relative top-[65px] overflow-hidden">
           {children}
           </div>
-          <div className="relative top-[65px]">
+          <div className="relative top-[65px] overflow-hidden">
           <Footer/>
           </div>
         </ThemeProvider>

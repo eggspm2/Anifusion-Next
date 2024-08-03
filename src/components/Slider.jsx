@@ -70,14 +70,14 @@ const Slider = ({ data }) => {
               <div className="absolute w-[95%] text-black max-md:left-5 max-md:bottom-[20px]  max-md:justify-start max-md:p-[0] max-md:text-[12px] flex justify-end gap-4 p-[30px] text-[18px]">
                 <Link
                   href={`/Anime/home/${item.id}`}
-                  className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[20px] max-md:py-[10px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
+                  className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[10px] max-md:py-[5px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faCircleInfo} />
                   <p>Details</p>
                 </Link>
                 <Link
                   href={`/Anime/Episode/${item.id}`}
-                  className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[20px] max-md:py-[10px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
+                  className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[10px] max-md:py-[5px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faCirclePlay}/>
                   <p>Watch now</p>

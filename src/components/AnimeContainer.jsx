@@ -40,10 +40,10 @@ export const AnimeContainer = () => {
   if (!data) return <div>Loading ...</div>;
   return (
     <div className="flex flex-col w-[95%]  gap-[50px] Animation">
-      <div className="flex justify-center gap-10 w-full">
+      <div className="flex justify-center  gap-10 max-md:gap-3 w-full">
         {names.map((item) => (
           <p
-            className={`py-[8px] w-[150px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition Box_Shadow hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
+            className={`py-[8px] w-[150px] max-md:w-[25%] max-md:text-[12px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition Box_Shadow hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
             key={item.id}
             onClick={() => getPage(item.id)}
           >
@@ -51,18 +51,18 @@ export const AnimeContainer = () => {
           </p>
         ))}
       </div>
-      <div className={`flex flex-wrap gap-5 ${Animate ? "Animation" : ''}`}>
+      <div className={`flex flex-wrap gap-5 max-md:justify-center ${Animate ? "Animation" : ''}`}>
         {data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex flex-col w-[15%] h-[350px] gap-2 font-medium"
+            className="flex flex-col w-[15%] max-md:w-[45%] h-[350px] gap-2 font-medium"
             key={index}
           >
             <div className="relative h-[300px] w-full overflow-hidden rounded-xl">
               <img
                 src={item.poster}
                 alt="Image"
-                className="w-full h-full object-cover rounded-xl Box_Shadow hover:scale-[1.1]"
+                className="w-full h-full object-cover rounded-xl Box_Shadow"
               />
               <div className="ImageGradient hover:opacity-100">
                 <FontAwesomeIcon icon={faPlay} className="text-[40px]" />

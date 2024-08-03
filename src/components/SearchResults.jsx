@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-const SearchResults = ({ result }) => {
+const SearchResults = ({ result,width }) => {
   if (!result.animes) return <div></div>;
   return (
     <div className="flex flex-col gap-3 h-full w-full p-[10px]  overflow-y-scroll ScrollWidth">
@@ -32,7 +32,7 @@ const SearchResults = ({ result }) => {
                 ? item.name.substring(0, 18) + "..."
                 : item.name}
             </h1>
-            <div className="flex items-center justify-evenly gap-2 w-[250px] bg-black Box_Shadow  p-1 text-[14px] rounded-lg">
+            <div className={`flex items-center justify-evenly gap-2 ${width} bg-black p-1 text-[14px] rounded-lg`}>
               <div className="flex justify-center items-center gap-1">
                 <FontAwesomeIcon icon={faTv} />
                 <p>{item.type || "??"}</p>
