@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export const Table = ({ data, name, isManga }) => {
+export const Table = ({ data, name, isManga,width }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <>
@@ -34,7 +34,7 @@ export const Table = ({ data, name, isManga }) => {
                   ? item.name.substring(0, 28) + "..."
                   : item.name}
               </h1>
-              <div className="flex justify-center items-center w-[230px] text-black gap-4 p-1 bg-white rounded-lg ">
+              <div className={`flex justify-center items-center ${width} text-black gap-4 p-1 bg-white rounded-lg`}>
               <div className="flex items-center gap-2">
                   <FontAwesomeIcon icon={faMicrophone} />
                   <p>{item.episodes.sub || "??"}</p>
@@ -44,7 +44,7 @@ export const Table = ({ data, name, isManga }) => {
 
                 <FontAwesomeIcon icon={faCircle} className="text-[4px]" />
                 <div className="flex items-center gap-2">
-                  <FontAwesomeIcon icon={faClosedCaptioning} />
+                  <FontAwesomeIcon icon={faClosedCaptioning}/>
                   <p>{item.episodes.dub || "??"}</p>
                 </div>
               </div>

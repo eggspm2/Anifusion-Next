@@ -41,7 +41,6 @@ const SearchResults = ({ result }) => {
                 <FontAwesomeIcon icon={faClock} />
                 <p>{item.dration || "??"}</p>
               </div>
-
               <div className="flex justify-center items-center gap-1">
                 <FontAwesomeIcon icon={faClosedCaptioning} />
                 <p>{item.episodes.sub || "??"}</p>

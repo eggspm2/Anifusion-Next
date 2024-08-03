@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,9 @@ export default function RootLayout({ children }) {
           <Header/>
           <div className="relative top-[65px]">
           {children}
+          </div>
+          <div className="relative top-[65px]">
+          <Footer/>
           </div>
         </ThemeProvider>
       </body>
