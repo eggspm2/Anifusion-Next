@@ -16,7 +16,7 @@ export const RightData = ({ data ,height}) => {
           <h1>Related Anime</h1>
           </div>
           <div className="overflow-y-scroll ScrollWidth max-h-[400px] flex flex-col gap-2">
-          <Table data={data.relatedAnimes} width={'w-[180px] text-[12px]'} />
+          <Table data={data.relatedAnimes} width={'w-[170px] text-[10px]'} />
           </div>
         </div>
       )}
@@ -27,7 +27,7 @@ export const RightData = ({ data ,height}) => {
           <h1>Most Popular</h1>
           </div>
           <div className={`flex flex-col gap-2 ${height} overflow-y-scroll ScrollWidth`}>
-          <Table data={data.mostPopularAnimes} width={'w-[180px] text-[12px]'}/>
+          <Table data={data.mostPopularAnimes} width={'w-[170px] text-[10px]'}/>
           </div>
         </div>
       )}

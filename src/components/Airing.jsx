@@ -44,7 +44,6 @@ const Airing = () => {
       <div className="flex w-[60%] max-md:w-[90%] gap-10">
         <Swiper
         spaceBetween={10}
-        centeredSlides={true}
         breakpoints={{
           320: {
             slidesPerView: 3,
@@ -67,7 +66,7 @@ const Airing = () => {
             <SwiperSlide key={item.id}>
               <div
                 className={`  w-[140px] p-[10px] max-md:w-[100px] max-md:p-[7px] text-center rounded-lg max-md:text-[10px] border border-zinc-500/50 Transition font-semibold hover:bg-white hover:text-black ${
-                  item.day === today ? "bg-white text-black" : "bg-zinc-800/50"
+                  item.day === today ? "bg-white text-black" : "bg-black/40"
                 }`}
                 onClick={() => day(item.id)}
               >

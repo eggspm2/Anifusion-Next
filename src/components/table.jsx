@@ -20,7 +20,7 @@ export const Table = ({ data, name, width }) => {
         data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex justify-center w-full h-[130px] p-[10px]  gap-2 bg-zinc-800/30 rounded-xl border border-zinc-500/50"
+            className="flex justify-center w-full h-[130px] p-[10px]  gap-2 bg-white/10 rounded-xl border border-zinc-500/50"
             key={index}
           >
             <img

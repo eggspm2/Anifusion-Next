@@ -104,7 +104,7 @@ const StreamPage = () => {
   ];
   if (!data || !EpisodeData) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col w-full p-[10px] gap-2 bg-zinc-800/50 Animation">
+    <div className="flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation">
       <div className="flex flex-row-reverse max-md:flex-col w-full gap-4">
         <div className="flex w-[70%] max-md:w-full flex-col gap-5">
           <div className="flex w-full max-md:h-[300px] h-[600px]">
@@ -126,7 +126,7 @@ const StreamPage = () => {
             </MediaPlayer>
           </div>
           <div className="w-full h-[150px] max-md:h-min flex flex-col gap-3">
-            <div className="w-full h-full bg-zinc-800/50 flex max-md:flex-col rounded-xl gap-2 border border-zinc-500/50">
+            <div className="w-full h-full bg-black/50 flex max-md:flex-col rounded-xl gap-2 border border-zinc-500/50">
               <div className="h-full w-[45%] max-md:w-full max-md:rounded-xl max-md:text-[12px] py-[10px] bg-white text-black rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
                 <p>You are watching</p>
                 <p className="font-semibold">Episode {EpisodeNumber}</p>
@@ -199,7 +199,7 @@ const StreamPage = () => {
           </div>
         </div>
         <div className="flex w-[30%] max-md:w-full">
-          <div className="w-full h-[770px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg">
+          <div className="w-full h-[770px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-black/50 border border-zinc-500/50 rounded-lg">
             <div className="flex justify-between items-center text-[30px] font-semibold max-md:text-[25px]">
               <div className="flex gap-3 items-center">
                 <h1>Episodes</h1>
@@ -214,22 +214,22 @@ const StreamPage = () => {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-row-reverse w-full h-[120px] p-[10px] border border-zinc-500/50 gap-5 rounded-lg relative Transition ${
+                  className={`flex flex-row-reverse w-full h-[120px] p-[10px] gap-5 rounded-lg relative Transition ${
                     item.episodeId === CurrentEpisode
-                      ? "border border-white bg-white text-black"
-                      : "bg-zinc-800/30"
+                      ? "border border-black bg-white/40 text-black"
+                      : "bg-black/30 border border-zinc-500/50"
                   }`}
                   onClick={() =>
                     handleEpisode(item.episodeId, item.title, item.number)
                   }
                 >
-                  <h2 className="absolute bg-cyan-600 px-[5px] rounded-tl rounded-br">
+                  <h2 className={`absolute px-[5px] rounded-tl rounded-bl rounded-br ${item.episodeId === CurrentEpisode ? "bg-black/60 text-white" : "bg-white/60 text-black"}`}>
                     Ep {item.number}
                   </h2>
                   <img
                     src={AnimeData.anime.info.poster}
                     alt=""
-                    className="h-full w-[250px] rounded-bl-[0.5rem] object-cover rounded-l-[0.5rem]"
+                    className="h-full w-[250px] rounded-bl-[0.5rem] object-cover rounded-lg"
                   />
                   <h1 className="w-full h-full flex items-center">
                     {item.title}
@@ -243,7 +243,7 @@ const StreamPage = () => {
       <div className="flex max-md:flex-col w-full">
         <div className="w-[70%] max-md:w-full flex max-md:p-[0px] flex-col gap-4 p-[10px]">
           <StreamAnimeInfo data={AnimeData.anime} />
-          <div className="p-[20px] text-center border border-zinc-500/50 bg-zinc-800/50 rounded-lg">
+          <div className="p-[20px] text-center border border-zinc-500/50 bg-black/40 rounded-lg">
             {AnimeData.anime.info.description}
           </div>
         </div>

@@ -43,7 +43,7 @@ export const AnimeContainer = () => {
       <div className="flex justify-center  gap-10 max-md:gap-3 w-full">
         {names.map((item) => (
           <p
-            className={`py-[8px] w-[150px] max-md:w-[25%] max-md:text-[12px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition Box_Shadow hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-zinc-800"}`}
+            className={`py-[8px] w-[150px] max-md:w-[25%] max-md:text-[12px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-black/40"}`}
             key={item.id}
             onClick={() => getPage(item.id)}
           >

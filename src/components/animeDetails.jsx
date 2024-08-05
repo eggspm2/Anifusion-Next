@@ -46,7 +46,7 @@ const AnimeDetails = ({ data }) => {
             <p>Add to List</p>
           </div>
         </div>
-        <div className="w-full text-[0.9rem]">{data.description}</div>
+        <div className="w-full text-[0.9rem]">{data.description.length > 650 ? data.description.substring(0,650) + "..." : data.description}</div>
       </div>
     </div>
   );

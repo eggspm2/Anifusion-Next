@@ -46,7 +46,7 @@ const Page = () => {
           </div>
         )}
       </div>
-      <div className="w-full max-md:flex-col flex bg-zinc-800/50">
+      <div className="w-full max-md:flex-col flex bg-black/40">
         <LeftData result={AniwatchData} />
         <div className="w-[23%] max-md:w-full h-full p-[10px]">
           <RightData data={AniwatchData} height={"h-[600px]"} />
