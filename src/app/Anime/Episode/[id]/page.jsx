@@ -26,6 +26,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import StreamAnimeInfo from "@/components/StreamAnimeInfo";
 import { RightData } from "@/components/RightData";
+import { Button } from "@/components/ui/button";
 
 const StreamPage = () => {
   const { id } = useParams();
@@ -126,7 +127,7 @@ const StreamPage = () => {
           </div>
           <div className="w-full h-[150px] max-md:h-min flex flex-col gap-3">
             <div className="w-full h-full bg-zinc-800/50 flex max-md:flex-col rounded-xl gap-2 border border-zinc-500/50">
-              <div className="h-full w-[45%] max-md:w-full max-md:rounded-xl max-md:text-[10px] py-[10px] bg-cyan-600 rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
+              <div className="h-full w-[45%] max-md:w-full max-md:rounded-xl max-md:text-[12px] py-[10px] bg-white text-black rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
                 <p>You are watching</p>
                 <p className="font-semibold">Episode {EpisodeNumber}</p>
                 <p className="w-[80%] text-center">
@@ -142,13 +143,14 @@ const StreamPage = () => {
                   </div>
                   <div className="flex justify-center items-center max-md:gap-2 gap-4">
                     {Servers.map((item) => (
-                      <div
+                      <Button
                         key={id}
-                        className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition hover:bg-cyan-600 ${
+                        variant={`${
                           Category === "sub" && Server === item.server
-                            ? "bg-cyan-600"
-                            : "bg-zinc-700"
+                            ? ""
+                            : "outline"
                         }`}
+                        className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition `}
                         onClick={() =>
                           Category === "sub" && Server === item.server
                             ? null
@@ -156,7 +158,7 @@ const StreamPage = () => {
                         }
                       >
                         {item.server.toUpperCase()}
-                      </div>
+                      </Button>
                     ))}
                   </div>
                 </div>
@@ -169,13 +171,14 @@ const StreamPage = () => {
                     {DubData ? (
                       <>
                         {Servers.map((item) => (
-                          <div
+                          <Button
                             key={id}
-                            className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition hover:bg-cyan-600 ${
+                            variant={`${
                               Category === "dub" && Server === item.server
-                                ? "bg-cyan-600"
-                                : "bg-zinc-700"
+                                ? ""
+                                : "outline"
                             }`}
+                            className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition`}
                             onClick={() =>
                               Category === "dub" && Server === item.server
                                 ? null
@@ -183,7 +186,7 @@ const StreamPage = () => {
                             }
                           >
                             {item.server.toUpperCase()}
-                          </div>
+                          </Button>
                         ))}
                       </>
                     ) : (
@@ -196,7 +199,7 @@ const StreamPage = () => {
           </div>
         </div>
         <div className="flex w-[30%] max-md:w-full">
-          <div className="w-full  h-[770px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg">
+          <div className="w-full h-[770px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-zinc-800/50 border border-zinc-500/50 rounded-lg">
             <div className="flex justify-between items-center text-[30px] font-semibold max-md:text-[25px]">
               <div className="flex gap-3 items-center">
                 <h1>Episodes</h1>
@@ -213,8 +216,8 @@ const StreamPage = () => {
                   key={index}
                   className={`flex flex-row-reverse w-full h-[120px] p-[10px] border border-zinc-500/50 gap-5 rounded-lg relative Transition ${
                     item.episodeId === CurrentEpisode
-                      ? "border border-white bg-cyan-600"
-                      : "bg-zinc-800/50"
+                      ? "border border-white bg-white text-black"
+                      : "bg-zinc-800/30"
                   }`}
                   onClick={() =>
                     handleEpisode(item.episodeId, item.title, item.number)
