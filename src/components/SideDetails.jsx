@@ -2,12 +2,12 @@
 
 import React from "react";
 
-const SideDetails = ({ Aniwatch}) => {
+const SideDetails = ({ Aniwatch, style}) => {
 
  
   if (!Aniwatch) return <div>Loading ...</div>;
   return (
-    <div className="w-full h-full  flex flex-col justify-center text-[0.8rem]  gap-2">
+    <div className={`w-full h-full  flex flex-col justify-center text-[0.8rem] ${style} gap-2`}>
       <div className="flex gap-2">
         <p className="font-semibold">Japanese: </p>
         <p className="font-light">{Aniwatch.japanese}</p>
