@@ -90,10 +90,10 @@ const Page = ({ params }) => {
   return (
     <div className="flex flex-col items-center w-full gap-3 pt-4">
       <div className="flex flex-col gap-2 justify-center items-center">
-        <h1 className="text-[30px]">{Data.title}</h1>
-        <h2 className="text-[20px]">{Data.currentChapter}</h2>
+        <h1 className="text-[30px] max-md:text-[20px]">{Data.title}</h1>
+        <h2 className="text-[20px] max-md:text-[14px] text-gray-500">{Data.currentChapter}</h2>
       </div>
-      <div className="flex w-[70%] justify-between items-center gap-2">
+      <div className="flex w-[70%] max-md:w-full max-md:p-[10px] justify-between items-center gap-2">
         <Button
           variant="outline"
           className={` p-[10px] ${
@@ -159,9 +159,69 @@ const Page = ({ params }) => {
             src={item.image}
             alt=""
             key={index}
-            className="object-cover w-[70%]"
+            className="object-cover w-[70%] max-md:w-full"
           />
         ))}
+      </div>
+      <div className="flex w-[70%] max-md:w-full max-md:p-[10px] justify-between items-center gap-2">
+        <Button
+          variant="outline"
+          className={` p-[10px] ${
+            Prev ? "" : "bg-white text-gray-500/50 hover:bg-white"
+          }`}
+          onClick={() => handleChapter(false)}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} className="text-[20px]" />
+        </Button>
+        <Drawer>
+          <DrawerTrigger>
+            <Button variant="outline" className="px-[40px]">
+              <FontAwesomeIcon icon={faBook} className="pr-5" />
+              Chapters List
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <div className="flex flex-col text-center gap-1 pt-3">
+                <DrawerTitle>Choose Your Chapter</DrawerTitle>
+                <DrawerDescription>
+                  Browse through the chapters and dive into your next manga
+                  adventure!
+                </DrawerDescription>
+              </div>
+            </DrawerHeader>
+            <DrawerFooter>
+              <DrawerClose>
+                <div className="flex flex-col gap-5 items-center">
+                  <div className="flex flex-col items-center w-full gap-2 h-[300px] overflow-y-scroll ScrollWidth p-[20px]">
+                    {Data.chapterListIds.map((item) => (
+                      <Button
+                        variant="outline"
+                        key={item.id}
+                        className="p-[10px] rounded-lg w-[80%]"
+                        onClick={() => SelectChapter(item.id)}
+                      >
+                        {item.name}
+                      </Button>
+                    ))}
+                  </div>
+                  <Button variant="outline" className="w-min">
+                    Cancel
+                  </Button>
+                </div>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+        <Button
+          variant="outline"
+          className={` p-[10px] ${
+            Next ? "" : "bg-white text-gray-500/50 hover:bg-white"
+          }`}
+          onClick={() => handleChapter(true)}
+        >
+          <FontAwesomeIcon icon={faChevronRight} className="text-[20px]" />
+        </Button>
       </div>
     </div>
   );

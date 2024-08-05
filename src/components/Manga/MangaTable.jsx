@@ -10,7 +10,7 @@ export const MangaTable = ({ data, name }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <>
-      <h1 className="text-[28px] font-bold border-l-[5px] border-zinc-500 rounded-[5px] px-[20px]">
+      <h1 className="text-[28px] max-md:text-[25px] font-bold border-l-[5px] border-zinc-500 rounded-[5px] px-[20px]">
         {name}
       </h1>
       {data &&
@@ -26,17 +26,17 @@ export const MangaTable = ({ data, name }) => {
               className="h-full w-[80px] rounded-[10px]"
             />
             <div className="flex flex-col justify-center items-center w-full gap-4">
-              <h1 className="text-[18px] font-semibold">
-                  {item.title.length > 30
-                  ? item.title.substring(0, 28) + "..."
+              <h1 className="text-[18px] max-md:text-[12px] font-semibold">
+                  {item.title.length > 25
+                  ? item.title.substring(0, 22) + "..."
                   : item.title}
               </h1>
-              <div className="flex gap-1">
-                <Button className="flex gap-2">
+              <div className="flex gap-1 ">
+                <Button className="flex gap-2 max-md:text-[10px] max-md:p-[5px]">
                 <FontAwesomeIcon icon={faBook} />
                   {item.chapter.length > 12 ? item.chapter.substring(0,9) + '...' : item.chapter}
                 </Button>
-                <Button className="flex gap-2">
+                <Button className="flex gap-2 max-md:text-[10px] max-md:p-[5px]">
                 <FontAwesomeIcon icon={faEye} />
                   {item.view}
                 </Button>

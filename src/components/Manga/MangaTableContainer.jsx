@@ -29,11 +29,11 @@ export const MangaTableContainer = () => {
   if (!Table1 || !Table2) return <div>Loading ...</div>;
 
   return (
-    <div className="flex justify-between items-center w-[95%] py-[40px]">
-      <div className="w-[49%] flex flex-col border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-5 p-[20px]">
+    <div className="flex max-md:flex-col justify-between items-center w-[95%] py-[40px]">
+      <div className="w-[49%] max-md:w-full flex flex-col border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-5 max-md:p-[10px] p-[20px]">
         <MangaTable data={Table1} name={"Latest"} />
       </div>
-      <div className="w-[49%] flex flex-col border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-5 p-[20px]">
+      <div className="w-[49%] max-md:w-full flex flex-col border border-zinc-500/50 bg-zinc-800/30 rounded-xl gap-5 max-md:p-[10px] p-[20px]">
         <MangaTable data={Table2} name={"Favourite"} />
       </div>
     </div>
