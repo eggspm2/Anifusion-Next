@@ -88,7 +88,7 @@ const Page = ({ params }) => {
 
   if (!Data) return <div>Loading ...</div>;
   return (
-    <div className="flex flex-col items-center w-full gap-3 pt-4">
+    <div className="flex flex-col items-center w-full gap-3 pt-4 py-[10px]">
       <div className="flex flex-col gap-2 justify-center items-center">
         <h1 className="text-[30px] max-md:text-[20px]">{Data.title}</h1>
         <h2 className="text-[20px] max-md:text-[14px] text-gray-500">{Data.currentChapter}</h2>
