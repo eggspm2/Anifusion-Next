@@ -8,10 +8,12 @@ import Link from "next/link";
 import { WeekDay } from "./hooks/WeekDay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Skeleton } from "./ui/skeleton";
 
 const Airing = () => {
   const [Schedule, setSchedule] = useState("");
   const [animate, setAnimate] = useState(false);
+  
 
   const days = WeekDay();
   const date = new Date();
@@ -20,7 +22,6 @@ const Airing = () => {
 
   useEffect(() => {
     const ScheduleFetch = async () => {
-      console.log(days);
       const ScheduleDay = await AniWatchSchedule(today);
       if (ScheduleDay) {
         console.log(ScheduleDay);
@@ -39,28 +40,30 @@ const Airing = () => {
     handleButtonClick();
   };
 
+  const skeletonArray = Array.from({ length: 5 });
+
   return (
     <div className="flex flex-col justify-center items-center gap-4 w-full">
       <div className="flex w-[60%] max-md:w-[90%] gap-10">
         <Swiper
-        spaceBetween={10}
-        breakpoints={{
-          320: {
-            slidesPerView: 3,
-          },
-          480: {
-            slidesPerView: 3,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1440: {
-            slidesPerView: 5,
-          },
-        }} 
+          spaceBetween={10}
+          breakpoints={{
+            320: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1440: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {days.map((item) => (
             <SwiperSlide key={item.id}>
@@ -76,29 +79,36 @@ const Airing = () => {
           ))}
         </Swiper>
       </div>
-      {Schedule && (
-        <div className="flex justify-center items-center flex-col gap-3 w-full p-[10px] ">
-          {Schedule.map((item, index) => (
-            <Link
-              key={index}
-              href={`/Anime/home/${item.id}`}
-              className={`flex justify-between gap-2 bg-zinc-800/50 max-md:w-full max-md:text-[10px] w-[70%] p-[20px] border border-zinc-500/50 rounded-lg Transition ${
-                animate ? "Animation" : ""
-              } hover:bg-zinc-500/50`}
-            >
-              <div className="flex gap-2 justify-center items-center  bg-white text-black px-[10px] rounded-2xl">
-                <FontAwesomeIcon icon={faPlay} />
-                <p>{item.episode}</p>
-              </div>
-              <h1 className="w-full px-[10px]">{item.name.length > 25 ? item.name.substring(0,23) + "..." : item.name}</h1>
-              <div className="flex gap-2 justify-center items-center bg-white text-black px-[10px] rounded-2xl">
-                <p>{item.time}</p>
-                <FontAwesomeIcon icon={faClock} />
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
+
+      <div className="flex justify-center items-center flex-col gap-3 w-full p-[10px]">
+        {Schedule
+          ? Schedule.map((item, index) => (
+              <Link
+                key={index}
+                href={`/Anime/home/${item.id}`}
+                className={`flex justify-between gap-2 bg-zinc-800/50 max-md:w-full max-md:text-[10px] w-[70%] p-[20px] border border-zinc-500/50 rounded-lg Transition ${
+                  animate ? "Animation" : ""
+                } hover:bg-zinc-500/50`}
+              >
+                <div className="flex gap-2 justify-center items-center  bg-white text-black px-[10px] rounded-2xl">
+                  <FontAwesomeIcon icon={faPlay} />
+                  <p>{item.episode}</p>
+                </div>
+                <h1 className="w-full px-[10px]">
+                  {item.name.length > 25
+                    ? item.name.substring(0, 23) + "..."
+                    : item.name}
+                </h1>
+                <div className="flex gap-2 justify-center items-center bg-white text-black px-[10px] rounded-2xl">
+                  <p>{item.time}</p>
+                  <FontAwesomeIcon icon={faClock} />
+                </div>
+              </Link>
+            ))
+          : skeletonArray.map((_, index) => (
+              <Skeleton key={index} className="w-[70%] h-[80px]" />
+            ))}
+      </div>
     </div>
   );
 };

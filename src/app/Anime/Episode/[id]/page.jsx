@@ -27,6 +27,7 @@ import {
 import StreamAnimeInfo from "@/components/StreamAnimeInfo";
 import { RightData } from "@/components/RightData";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const StreamPage = () => {
   const { id } = useParams();
@@ -102,7 +103,29 @@ const StreamPage = () => {
     { id: 1, server: "megacloud" },
     { id: 1, server: "streamsb" },
   ];
-  if (!data || !EpisodeData) return <div>Loading ...</div>;
+
+  const skeletonArray = Array.from({ length: 5 });
+
+  if (!data || !EpisodeData)
+    return (
+      <div className=" flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation ">
+        <div className="flex flex-row-reverse max-md:flex-col w-full gap-4 items-center">
+          <Skeleton className=" w-[70%] max-md:w-[95%] h-[500px]"></Skeleton>
+          <Skeleton className=" w-[30%] max-md:w-[95%] h-[500px] flex flex-col gap-2 p-[10px]">
+            {skeletonArray.map((_, index) => (
+              <Skeleton key={index} className="w-full h-[100px]" />
+            ))}
+          </Skeleton>
+        </div>
+        <div className="flex flex-col w-full items-center h-max p-[10px] gap-5">
+            <Skeleton className="w-[95%] h-[400px]"/>
+            <div className="flex flex-col w-[95%] gap-3">
+            <Skeleton className="max-md:w-[80%] w-[50%] h-[30px] rounded-full"/>
+            <Skeleton className="max-md:w-[70%] w-[40%] h-[30px] rounded-full"/>
+            </div>
+          </div>
+      </div>
+    );
   return (
     <div className="flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation">
       <div className="flex flex-row-reverse max-md:flex-col w-full gap-4">
@@ -223,7 +246,13 @@ const StreamPage = () => {
                     handleEpisode(item.episodeId, item.title, item.number)
                   }
                 >
-                  <h2 className={`absolute px-[5px] rounded-tl rounded-bl rounded-br ${item.episodeId === CurrentEpisode ? "bg-black/60 text-white" : "bg-white/60 text-black"}`}>
+                  <h2
+                    className={`absolute px-[5px] rounded-tl rounded-bl rounded-br ${
+                      item.episodeId === CurrentEpisode
+                        ? "bg-black/60 text-white"
+                        : "bg-white/60 text-black"
+                    }`}
+                  >
                     Ep {item.number}
                   </h2>
                   <img

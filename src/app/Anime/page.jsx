@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 
 export default function Anime() {
   const [SpotLightData, setSpotLightData] = useState("");
-  const [TrendingAnime, setTrendingAmime] = useState("");
-  const [Upcoming, setUpcoming] = useState("");
   const [Airing1, setAiring1] = useState("");
   const [Airing2, setAiring2] = useState("");
   
@@ -20,8 +18,6 @@ export default function Anime() {
       const data = await AniWatchHome();
       if (data) {
         setSpotLightData(data.spotlightAnimes);
-        setTrendingAmime(data.trendingAnimes);
-        setUpcoming(data.topUpcomingAnimes);
         setAiring1(data.topAiringAnimes.slice(0, 9));
         setAiring2(data.topAiringAnimes.slice(10, 19));
       }
@@ -29,9 +25,6 @@ export default function Anime() {
     Fetching();
   }, []);
 
-  
-  if (!SpotLightData || !Airing1 || !Airing2)
-    return <div>Loading ...</div>;
   return (
     <main className="flex flex-col items-center bg-black overflow-hidden">
       <Slider data={SpotLightData} />

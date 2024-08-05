@@ -5,6 +5,7 @@ import { faCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CategoryFetch } from "./hooks/UseApiFetch";
 import Link from "next/link";
+import { Skeleton } from "./ui/skeleton";
 
 export const AnimeContainer = () => {
   const [page, setPage] = useState(1);
@@ -37,7 +38,17 @@ export const AnimeContainer = () => {
     handleButtonClick();
   };
 
-  if (!data) return <div>Loading ...</div>;
+  const skeletonArray = Array.from({ length: 18 });
+
+  if (!data) {
+    return (
+      <div className="flex flex-wrap gap-5 items-center p-[10px] max-md:justify-center">
+        {skeletonArray.map((_, index) => (
+          <Skeleton key={index} className="w-[200px] h-[300px] max-md:w-[45%] max-md:h[250px]" />
+        ))}
+      </div>
+    );
+  };
   return (
     <div className="flex flex-col w-[95%]  gap-[50px] Animation">
       <div className="flex justify-center  gap-10 max-md:gap-3 w-full">
