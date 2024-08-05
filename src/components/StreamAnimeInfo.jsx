@@ -13,9 +13,9 @@ const StreamAnimeInfo = ({ data }) => {
           <img
             src={data.info.poster}
             alt=""
-            className=" w-full max-md:w-[55%] h-[300px] object-cover rounded-lg"
+            className=" w-full max-md:w-[55%] h-[300px] max-md:h-[270px] Box_Shadow object-cover rounded-lg"
           />
-          <Button variant="outline" className="max-md:w-[70%] p-[20px] rounded-lg text-center">{data.moreInfo.synonyms || data.moreInfo.japanese}</Button>
+          <Button variant="outline" className="p-[20px] rounded-lg text-center">{data.moreInfo.synonyms || data.moreInfo.japanese}</Button>
         </div>
         <div className="flex flex-col gap-5 w-full max-md:items-center p-[10px]">
           <p className="text-[30px] font-semibold max-md:text-[14px]">{data.info.name}</p>

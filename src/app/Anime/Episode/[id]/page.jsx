@@ -136,7 +136,7 @@ const StreamPage = () => {
                 </p>
               </div>
               <div className="w-full h-full flex flex-col items-center">
-                <div className="w-full h-[50%] flex gap-8 max-md:p-[10px] border-b border-dotted border-zinc-500/50 px-[20px]">
+                <div className="w-full h-[50%] flex gap-8 max-md:gap-2 max-md:p-[10px] border-b border-dotted border-zinc-500/50 px-[20px]">
                   <div className="flex justify-center items-center gap-2 max-md:text-[14px]">
                     <FontAwesomeIcon icon={faClosedCaptioning} />
                     <p>SUB:</p>
@@ -150,7 +150,7 @@ const StreamPage = () => {
                             ? ""
                             : "outline"
                         }`}
-                        className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition `}
+                        className={`h-[35px] p-[10px] max-md:p-[8px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition `}
                         onClick={() =>
                           Category === "sub" && Server === item.server
                             ? null
@@ -162,7 +162,7 @@ const StreamPage = () => {
                     ))}
                   </div>
                 </div>
-                <div className="w-full h-[50%] flex gap-9 max-md:p-[10px] px-[20px] ">
+                <div className="w-full h-[50%] flex gap-9 max-md:gap-2 max-md:p-[10px] px-[20px] ">
                   <div className="flex justify-center items-center gap-2 max-md:text-[14px]">
                     <FontAwesomeIcon icon={faMicrophone} />
                     <p>DUB:</p>
@@ -178,7 +178,7 @@ const StreamPage = () => {
                                 ? ""
                                 : "outline"
                             }`}
-                            className={`h-[35px] p-[10px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition`}
+                            className={`h-[35px] p-[10px] max-md:p-[8px] max-md:text-[10px] max-md:h-[30px] rounded-xl flex justify-center items-center Transition`}
                             onClick={() =>
                               Category === "dub" && Server === item.server
                                 ? null

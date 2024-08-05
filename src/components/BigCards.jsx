@@ -14,7 +14,7 @@ const BigCards = ({ data }) => {
         {data.map((item, index) => (
           <Link
             href={`/Anime/home/${item.id}`}
-            className="flex flex-col w-[220px] max-md:w-[47%] h-[350px] gap-2 font-medium "
+            className="flex flex-col w-[220px] max-md:w-[45%] h-[350px] max-md:h-[300px] gap-2 font-medium "
             key={index}
           >
             <div className="relative h-[300px] w-full">
@@ -27,10 +27,10 @@ const BigCards = ({ data }) => {
                 <FontAwesomeIcon icon={faPlay} className="text-[40px]" />
               </div>
             </div>
-            <div className="w-full h-[50px] text-[0.9rem] max-md:text-[12px]">
+            <div className="w-full h-[50px] text-[0.9rem] max-md:text-[10px]">
               <h1 className="font-medium">
                 {item.name.length > 25
-                  ? item.name.substring(0, 21) + "..."
+                  ? item.name.substring(0, 22) + "..."
                   : item.name}
               </h1>
               <div className="flex  items-center gap-4 font-extralight text-gray-300">
