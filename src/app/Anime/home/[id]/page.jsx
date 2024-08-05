@@ -31,7 +31,7 @@ const Page = () => {
   if (!AniwatchData) return <div>Loading ...</div>;
   return (
     <>
-      <div className=" w-full flex h-[600px] relative">
+      <div className=" w-full flex max-md:flex-col h-[600px] relative">
         <Image
           src={back}
           alt=""

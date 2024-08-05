@@ -7,6 +7,7 @@ import { faBook, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const MangaSlider = ({ data }) => {
+  console.log(data);
   if (!data) return <div>Loading ...</div>;
   return (
     <div className="w-full flex justify-center items-center">

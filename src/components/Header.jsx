@@ -32,10 +32,7 @@ const Header = () => {
   useEffect(() => {
     const SearchFetching = async () => {
       if (isManga) {
-        const response = await MangaSearch(name);
-        if (response) {
-          console.log(response);
-        }
+          console.log("Manga");
       } else {
         const response = await AniWatcSearch(name);
         if (response) {

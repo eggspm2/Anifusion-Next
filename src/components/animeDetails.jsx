@@ -14,14 +14,14 @@ import DetailStack from './detailStack';
 
     if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-[77%] h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
+    <div className="w-[77%] max-md:w-full max-md:flex-col h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
         <img
           src={data.poster}
           alt="Anime Image"
           className=" w-[200px] h-[250px] object-cover"
         />
         <div className="flex flex-col gap-7">
-          <div className="flex items-center text-[0.9rem] gap-2">
+          <div className="flex items-center text-[0.9rem] gap-2 max-md:hidden">
             <p className="font-medium">Home</p>
             <FontAwesomeIcon icon={faCircle} className="text-[4px] text-zinc-400/70" />
             <p className="font-medium">{data.stats.type}</p>
