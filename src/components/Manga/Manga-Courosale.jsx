@@ -8,7 +8,6 @@ import Link from "next/link";
 
 export const MangaCourosale = ({ data, id }) => {
   console.log(data);
-  if (!data) return <div>Loading ...</div>;
   return (
     <div className="flex w-[95%] border border-zinc-500/50 rounded-lg overflow-hidden relative">
       <div className="flex w-full h-[400px] absolute blur-[10px] ">

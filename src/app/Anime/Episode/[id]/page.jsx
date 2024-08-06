@@ -108,9 +108,9 @@ const StreamPage = () => {
 
   if (!data || !EpisodeData)
     return (
-      <div className=" flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation ">
-        <div className="flex flex-row-reverse max-md:flex-col w-full gap-4 items-center">
-          <Skeleton className=" w-[70%] max-md:w-[95%] h-[500px]"></Skeleton>
+      <div className=" flex flex-col w-full p-[10px] items-center gap-2 bg-black/40 Animation ">
+        <div className="flex flex-row-reverse max-md:flex-col w-[95%] gap-4 items-center">
+          <Skeleton className=" w-[68%] max-md:w-[95%] h-[500px]"></Skeleton>
           <Skeleton className=" w-[30%] max-md:w-[95%] h-[500px] flex flex-col gap-2 p-[10px]">
             {skeletonArray.map((_, index) => (
               <Skeleton key={index} className="w-full h-[100px]" />

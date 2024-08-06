@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/Footer";
+import { IsMangaProvider } from "@/components/Context/IsMangaContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,26 +14,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <>
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header/>
-          <div className="relative top-[65px] overflow-hidden">
-          {children}
-          </div>
-          <div className="relative top-[65px] overflow-hidden">
-          <Footer/>
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
-  </>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <IsMangaProvider>
+              <Header />
+              <div className="relative top-[65px] overflow-hidden">
+                {children}
+              </div>
+              <div className="relative top-[65px] overflow-hidden">
+                <Footer />
+              </div>
+            </IsMangaProvider>
+          </ThemeProvider>
+        </body>
+      </html>
   );
 }

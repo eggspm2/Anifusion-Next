@@ -17,6 +17,7 @@ export const AnimeContainer = () => {
       const response = await CategoryFetch(page);
       if (response) {
         setData(response.slice(0,32));
+        console.log(response);
       }
     };
     fetching();
@@ -40,11 +41,11 @@ export const AnimeContainer = () => {
 
   const skeletonArray = Array.from({ length: 18 });
 
-  if (!data) {
+  if (!data || !data[30].poster) {
     return (
-      <div className="flex flex-wrap gap-5 items-center p-[10px] max-md:justify-center">
+      <div className="flex flex-wrap gap-5 w-[95%] items-center p-[10px] max-md:justify-center">
         {skeletonArray.map((_, index) => (
-          <Skeleton key={index} className="w-[200px] h-[300px] max-md:w-[45%] max-md:h[250px]" />
+          <Skeleton key={index} className="w-[190px] h-[300px] max-md:w-[45%] max-md:h[250px]" />
         ))}
       </div>
     );

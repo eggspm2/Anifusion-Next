@@ -19,6 +19,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Page = ({ params }) => {
   const [Data, setData] = useState("");
@@ -28,7 +29,6 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     const Fetching = async () => {
-      console.log(params);
       if (Chapter) {
         const response = await MangaChapter(params.id[0] + "/" + Chapter);
         if (response) {
@@ -86,7 +86,9 @@ const Page = ({ params }) => {
     setChapter(chapterId);
   };
 
-  if (!Data) return <div>Loading ...</div>;
+  if (!Data) return <div className="flex w-full p-[10px] justify-center pt-10 items-center">
+    <Skeleton className="w-[70%] max-md:w-full h-[700px]" />
+  </div>;
   return (
     <div className="flex flex-col items-center w-full gap-3 pt-4 py-[10px]">
       <div className="flex flex-col gap-2 justify-center items-center">

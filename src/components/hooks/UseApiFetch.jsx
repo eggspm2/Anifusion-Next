@@ -80,6 +80,14 @@ export const MangaTableData = async  (pagenumber) => {
         const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}mangalist?page=${pagenumber}`);
         const result = await response.json();
         return result;
+        
+}
+
+export const MangaSearch = async  (name) => {
+
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}search/${name}?page=1`);
+        const result = await response.json();
+        return result;
 
 }
 

@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { MangaTable } from "./MangaTable";
 import { MangaTableData } from "../hooks/UseApiFetch";
+import { Skeleton } from "../ui/skeleton";
 
 export const MangaTableContainer = () => {
-  
   const [Table1, setTable1] = useState("");
   const [Table2, setTable2] = useState("");
 
@@ -25,8 +25,23 @@ export const MangaTableContainer = () => {
     };
     fetching();
   }, []);
+  const skeletonArray = Array.from({ length: 6 });
 
-  if (!Table1 || !Table2) return <div>Loading ...</div>;
+  if (!Table1 || !Table2)
+    return (
+      <div className="flex justify-between items-center w-[95%]  max-md:flex-col max-md:gap-5 py-[40px]">
+        <Skeleton className="w-[49%] max-md:w-full h-[600px] flex flex-col rounded-xl gap-5 max-md:p-[10px] p-[20px]">
+          {skeletonArray.map((_, index) => (
+            <Skeleton key={index} className="w-full h-[100px]" />
+          ))}
+        </Skeleton>
+        <Skeleton className="w-[49%] max-md:w-full h-[600px] flex flex-col rounded-xl gap-5 max-md:p-[10px] p-[20px]">
+          {skeletonArray.map((_, index) => (
+            <Skeleton key={index} className="w-full h-[100px]" />
+          ))}
+        </Skeleton>
+      </div>
+    );
 
   return (
     <div className="flex max-md:flex-col justify-between items-center w-[95%] py-[40px]">

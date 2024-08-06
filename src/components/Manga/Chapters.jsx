@@ -6,7 +6,6 @@ import Link from 'next/link';
 import React from 'react';
 
 export const Chapters = ({data,id}) => {
-    if(!data) return <div>Loading ...</div>
   return (
     <div className='flex w-full justify-center items-center'>
         <div className='w-[95%] flex justify-center flex-col gap-4 bg-zinc-800/50 rounded-lg border border-zinc-500/50'>

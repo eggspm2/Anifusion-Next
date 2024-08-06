@@ -33,9 +33,9 @@ const Page = () => {
     return (
       <div className="flex flex-col items-center gap-3 w-full h-max pt-4">
         <Skeleton className="w-[95%] h-[400px]" />
-        <div className="flex flex-wrap gap-5 p-[10px] max-md:justify-center">
+        <div className="flex flex-wrap w-[95%] gap-5 p-[10px] max-md:justify-center">
           {skeletonArray.map((_, index) => (
-            <Skeleton key={index} className="w-[200px] max-md:w-[45%] h-[300px] max-md:h-[250px]" />
+            <Skeleton key={index} className="w-[190px] max-md:w-[45%] h-[300px] max-md:h-[250px]" />
           ))}
         </div>
       </div>

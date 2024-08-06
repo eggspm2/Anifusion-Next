@@ -8,12 +8,10 @@ import Link from "next/link";
 import { Skeleton } from "../ui/skeleton";
 
 const MangaSlider = ({ data }) => {
-  console.log(data);
-  if (!data) return 
-  <div className="w-full grid place-items-center h-[450px]">
-  <Skeleton className="w-[95%] h-[400px]"/>
-  </div>
-  ;
+  if (!data) return(
+  <div className="flex h-[500px] w-full items-center justify-center">
+    <Skeleton className="w-[95%] h-[400px]" />
+  </div> );
   return (
     <div className="w-full flex justify-center items-center">
       <Swiper>

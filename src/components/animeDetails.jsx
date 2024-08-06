@@ -9,7 +9,7 @@ import DetailStack from "./detailStack";
 const AnimeDetails = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
-    <div className="w-[77%] max-md:w-full max-md:flex-col max-md:items-center h-full bg-zinc-900/70 backdrop-blur-[20px] flex p-[60px] gap-10">
+    <div className="w-[77%] max-md:w-full max-md:flex-col max-md:items-center h-full bg-zinc-900/70 backdrop-blur-[10px] flex p-[60px] gap-10">
       <img
         src={data.poster}
         alt="Anime Image"

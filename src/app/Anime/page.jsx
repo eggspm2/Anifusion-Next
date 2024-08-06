@@ -3,7 +3,7 @@
 import Airing from "@/components/Airing";
 import { Animetable } from "@/components/Anime.table";
 import { AnimeContainer } from "@/components/AnimeContainer";
-import { AniWatchHome, AniWatchSchedule } from "@/components/hooks/UseApiFetch";
+import { AniWatchHome } from "@/components/hooks/UseApiFetch";
 import Slider from "@/components/Slider";
 import { useEffect, useState } from "react";
 
