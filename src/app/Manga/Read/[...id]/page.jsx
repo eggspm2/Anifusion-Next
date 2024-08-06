@@ -86,7 +86,7 @@ const Page = ({ params }) => {
     setChapter(chapterId);
   };
 
-  if (!Data) return <div className="flex w-full p-[10px] justify-center pt-10 items-center">
+  if (!Data || !Data.images[5]?.image) return <div className="flex w-full p-[10px] justify-center pt-10 items-center">
     <Skeleton className="w-[70%] max-md:w-full h-[700px]" />
   </div>;
   return (
