@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/Footer";
-import { IsMangaProvider } from "@/components/Context/IsMangaContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <IsMangaProvider>
               <Header />
               <div className="relative top-[65px] overflow-hidden">
                 {children}
@@ -31,7 +29,6 @@ export default function RootLayout({ children }) {
               <div className="relative top-[65px] overflow-hidden">
                 <Footer />
               </div>
-            </IsMangaProvider>
           </ThemeProvider>
         </body>
       </html>
