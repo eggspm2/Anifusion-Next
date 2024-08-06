@@ -130,7 +130,7 @@ const StreamPage = () => {
     <div className="flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation">
       <div className="flex flex-row-reverse max-md:flex-col w-full gap-4">
         <div className="flex w-[70%] max-md:w-full flex-col gap-5">
-          <div className="flex w-full max-md:h-[300px] h-[600px]">
+          <div className="w-full max-md:h-[300px] h-[600px]">
             <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url}>
               <MediaProvider />
               <DefaultVideoLayout
