@@ -6,6 +6,7 @@ import SideDetails from "./SideDetails";
 import { Button } from "./ui/button";
 
 const StreamAnimeInfo = ({ data }) => {
+  if(!data) return <div></div>;
   return (
     <div className=" flex flex-col w-full p-[10px]  bg-black/40 rounded-lg border border-zinc-500/50">
       <div className="flex max-md:flex-col gap-5">
@@ -15,7 +16,7 @@ const StreamAnimeInfo = ({ data }) => {
             alt=""
             className=" w-full max-md:w-[55%] h-[300px] max-md:h-[270px] Box_Shadow object-cover rounded-lg"
           />
-          <Button variant="outline" className="p-[20px] rounded-lg text-center">{data.moreInfo.synonyms.length > 30 ? data.moreInfo.synonyms.substring(0,25) + "..." : data.moreInfo.synonyms  || data.moreInfo.japanese}</Button>
+          <Button variant="outline" className="p-[20px] rounded-lg text-center">{data.moreInfo.synonyms && data.moreInfo.synonyms.length > 30 ? data.moreInfo.synonyms.substring(0,25) + "..." : data.moreInfo.synonyms  || data.moreInfo.japanese}</Button>
         </div>
         <div className="flex flex-col gap-5 w-full max-md:items-center p-[10px]">
           <p className="text-[30px] font-semibold max-md:text-[14px]">{data.info.name}</p>

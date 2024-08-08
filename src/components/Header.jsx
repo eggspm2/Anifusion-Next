@@ -144,15 +144,14 @@ const Header = () => {
             isManga={isManga}
             handleText={handleText}
           />
-          {focused && result && (
-            <div className="SearchContainer bg-zinc-900/80 border border-zinc-500/50">
+        
+            <div className={`SearchContainer bg-zinc-900/80 border border-zinc-500/50 ${focused ? 'scale-100' : 'scale-0'}`}>
               {isManga ? (
-                <MangaSearchResults result={result} />
+                <MangaSearchResults result={result} setFocused={setFocused}/>
               ) : (
-                <SearchResults result={result} width={"w-[250px]"} />
+                <SearchResults result={result} width={"w-[250px]"} setFocused={setFocused} />
               )}
             </div>
-          )}
         </div>
       </div>
       <div className="flex justify-end items-center gap-[10px] text-xl h-[35px] w-[25%] max-md:w-[40%]">
@@ -164,9 +163,10 @@ const Header = () => {
         >
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </Button>
+        
         <div
-          className={`absolute flex flex-col justify-center items-center Transition ${
-            SearchToggle ? "opacity-100" : "opacity-0"
+          className={`absolute  flex-col justify-center items-center Transition ${
+            SearchToggle ? "scale-100" : "scale-0"
           } gap-4 top-full w-[100%] left-0 p-[10px] bg-zinc-900`}
         >
           <div
@@ -184,9 +184,9 @@ const Header = () => {
           {focused && result && (
             <div className="w-full max-h-[300px] bg-zinc-800 rounded-lg overflow-y-scroll ScrollWidth text-[15px]">
               {isManga ? (
-                <MangaSearchResults result={result} />
+                <MangaSearchResults result={result} setFocused={setSearchToggle} />
               ) : (
-                <SearchResults result={result} width={"w-[200px]"} />
+                <SearchResults result={result} width={"w-[200px]"} setFocused={setSearchToggle} />
               )}
             </div>
           )}

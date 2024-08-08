@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-const MangaSearchResults = ({ result }) => {
+const MangaSearchResults = ({ result, setFocused }) => {
   if (!result.mangaList) return <div></div>;
   return (
     <div className="flex flex-col gap-3 h-full w-full p-[10px]  overflow-y-scroll ScrollWidth">
@@ -11,6 +11,7 @@ const MangaSearchResults = ({ result }) => {
         <Link
           href={`/Manga/home/${item.id}`}
           key={item.id}
+          onClick={() => setFocused(false)}
           className="flex w-full h-[110px] bg-zinc-700/50 border border-zinc-500/50 rounded-xl p-[10px]"
         >
           <img

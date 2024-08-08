@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-const SearchResults = ({ result,width }) => {
+const SearchResults = ({ result,width, setFocused }) => {
   if (!result.animes) return <div></div>;
   return (
     <div className="flex flex-col gap-3 h-full w-full p-[10px]  overflow-y-scroll ScrollWidth">
@@ -20,6 +20,7 @@ const SearchResults = ({ result,width }) => {
           href={`/Anime/home/${item.id}`}
           key={item.id}
           className="flex w-full h-[110px] bg-zinc-700/50 border border-zinc-500/50 rounded-xl p-[10px]"
+          onClick={() => setFocused(false)}
         >
           <img
             src={item.poster}
