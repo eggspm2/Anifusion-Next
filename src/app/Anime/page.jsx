@@ -26,7 +26,7 @@ export default function Anime() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center bg-black overflow-hidden">
+    <main className="flex flex-col items-center overflow-hidden">
       <Slider data={SpotLightData} />
       <AnimeContainer/>
       <Animetable Airing1={Airing1} Airing2={Airing2} />

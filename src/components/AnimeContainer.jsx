@@ -9,7 +9,7 @@ import { Skeleton } from "./ui/skeleton";
 
 export const AnimeContainer = () => {
   const [page, setPage] = useState(1);
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const [Animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -36,22 +36,14 @@ export const AnimeContainer = () => {
 
   const getPage = (number) => {
     setPage(number);
+    setData([]);
     handleButtonClick();
   };
 
   const skeletonArray = Array.from({ length: 18 });
 
-  if (!data || !data[30].poster) {
-    return (
-      <div className="flex flex-wrap gap-5 w-[95%] items-center p-[10px] max-md:justify-center">
-        {skeletonArray.map((_, index) => (
-          <Skeleton key={index} className="w-[190px] h-[300px] max-md:w-[45%] max-md:h[250px]" />
-        ))}
-      </div>
-    );
-  };
   return (
-    <div className="flex flex-col w-[95%]  gap-[50px] Animation">
+    <div className="flex flex-col w-[95%] gap-[50px] Animation">
       <div className="flex justify-center  gap-10 max-md:gap-3 w-full">
         {names.map((item) => (
           <p
@@ -63,6 +55,13 @@ export const AnimeContainer = () => {
           </p>
         ))}
       </div>
+      {(!data || !data[30]?.poster) ? (
+      <div className="flex flex-wrap gap-5 w-full items-center p-[10px] max-md:justify-center">
+        {skeletonArray.map((_, index) => (
+          <Skeleton key={index} className="w-[190px] h-[300px] max-md:w-[45%] max-md:h[250px]" />
+        ))}
+      </div>
+    ):  (
       <div className={`flex flex-wrap gap-5 max-md:justify-center ${Animate ? "Animation" : ''}`}>
         {data.map((item, index) => (
           <Link
@@ -97,7 +96,7 @@ export const AnimeContainer = () => {
             </div>
           </Link>
         ))}
-      </div>
+      </div>)}
     </div>
   );
 };

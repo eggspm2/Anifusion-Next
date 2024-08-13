@@ -130,8 +130,8 @@ const StreamPage = () => {
     <div className="flex flex-col w-full p-[10px] gap-2 bg-black/40 Animation">
       <div className="flex flex-row-reverse max-md:flex-col w-full gap-4">
         <div className="flex w-[70%] max-md:w-full flex-col gap-5">
-          <div className="w-full max-md:h-[300px] h-[600px]">
-            <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url}>
+          <div className="w-full max-md:h-[190px] h-[500px]">
+            <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url} className="w-full h-full">
               <MediaProvider />
               <DefaultVideoLayout
                 thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
@@ -222,7 +222,7 @@ const StreamPage = () => {
           </div>
         </div>
         <div className="flex w-[30%] max-md:w-full">
-          <div className="w-full h-[770px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-black/50 border border-zinc-500/50 rounded-lg">
+          <div className="w-full h-[670px] max-md:h-[450px] flex flex-col gap-8 p-[20px] bg-black/50 border border-zinc-500/50 rounded-lg">
             <div className="flex justify-between items-center text-[30px] font-semibold max-md:text-[25px]">
               <div className="flex gap-3 items-center">
                 <h1>Episodes</h1>
@@ -237,10 +237,10 @@ const StreamPage = () => {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-row-reverse w-full h-[120px] p-[10px] gap-5 rounded-lg relative Transition ${
+                  className={`flex flex-row-reverse border w-full h-[120px] p-[10px] gap-5 rounded-lg relative Transition hover:bg-white/40 hover:text-black hover:border-black ${
                     item.episodeId === CurrentEpisode
-                      ? "border border-black bg-white/40 text-black"
-                      : "bg-black/30 border border-zinc-500/50"
+                      ? "border-black bg-white/40 text-black"
+                      : "bg-black/30 border-zinc-500/50"
                   }`}
                   onClick={() =>
                     handleEpisode(item.episodeId, item.title, item.number)
