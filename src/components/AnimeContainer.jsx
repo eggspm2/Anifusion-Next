@@ -72,7 +72,7 @@ export const AnimeContainer = () => {
             <div className="relative h-[300px] w-full overflow-hidden rounded-xl">
               <img
                 src={item.poster}
-                alt="Image"
+                alt={item.name}
                 className="w-full h-full object-cover rounded-xl Box_Shadow"
               />
               <div className="ImageGradient hover:opacity-100">
