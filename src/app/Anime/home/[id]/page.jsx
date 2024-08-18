@@ -20,7 +20,6 @@ const Page = () => {
       const response = await AniWatchAnimeId(id);
 
       if (response) {
-        console.log(response);
         setAniwatchData(response);
       }
     };

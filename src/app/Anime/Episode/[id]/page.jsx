@@ -66,8 +66,11 @@ const StreamPage = () => {
           console.log(AnilistData);
           setAnimeData(AnilistData);
         }
-        if (result.anime.info.stats.episodes.dub) {
+        if (result.anime.info.stats.episodes.dub >= EpisodeNumber) {
           setDubData(true);
+        }
+        else{
+          setDubData(false);
         }
         if (CurrentEpisode && Category && Server) {
           const caption = await AniWatchServer(
@@ -85,7 +88,7 @@ const StreamPage = () => {
       }
     };
     EpisodeImageFetching();
-  }, [CurrentEpisode, currentTitle, Category, Server]);
+  }, [CurrentEpisode, currentTitle, Category, Server,EpisodeNumber]);
 
   const handleEpisode = (episodeId, title, number) => {
     setCurrentEpisode(episodeId);
