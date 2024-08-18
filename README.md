@@ -1,4 +1,4 @@
-# 🌟 AniFusion Next 🌟
+# 🌟 AniFusion Next 
 
 Welcome to **AniFusion Next**, a cutting-edge web application designed for anime enthusiasts. Dive into a seamless experience crafted with the latest web technologies, tailored for those who live and breathe anime.
 
@@ -114,7 +114,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Got questions or feedback? Reach out to us:
 
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **GitHub**: [reyyuuki](https://github.com/yourusername)
 - **Email**: youremail@example.com
 
 Thanks for stopping by! We hope AniFusion Next becomes your go-to anime platform. Enjoy your journey through the world of anime with us! 🎉
