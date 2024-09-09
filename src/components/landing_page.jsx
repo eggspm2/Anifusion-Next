@@ -1,6 +1,5 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -39,15 +38,6 @@ export default function LandingPage() {
                   </Link>
                 </div>
               </div>
-            </div>
-            <div className="absolute inset-0 -z-10">
-              <Image
-                src=""
-                alt="Anime collage background"
-                fill
-                className="object-cover opacity-10"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background"></div>
             </div>
           </section>
           
@@ -139,7 +129,7 @@ export default function LandingPage() {
                     <CardTitle className="text-lg truncate">{item.title.english ?? item.title.romaji }</CardTitle>
                       <p className="text-sm text-muted-foreground flex items-center mt-1">
                         <Star className="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" />
-                        4.{Math.floor(Math.random() * 10)} • Action, Adventure
+                        {item.rating/20} • Action, Adventure
                       </p>
                     </CardContent>
                   </Card>
