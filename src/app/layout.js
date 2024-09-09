@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import NewHeader from "@/components/new_header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,11 +25,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <div className="relative top-[65px] overflow-hidden">{children}</div>
-          <div className="relative top-[65px] overflow-hidden">
-            <Footer />
-          </div>
+          
+          <NewHeader/>
+          <div className="overflow-hidden">{children}</div>
         </ThemeProvider>
       </body>
     </html>

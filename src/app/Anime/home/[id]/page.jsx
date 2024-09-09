@@ -21,6 +21,7 @@ const Page = () => {
 
       if (response) {
         setAniwatchData(response);
+        console.log(response.anime);
       }
     };
     fetching();

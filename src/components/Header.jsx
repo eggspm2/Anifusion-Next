@@ -82,7 +82,7 @@ const Header = () => {
 
   if (!isShown) return <div></div>;
   return (
-    <div className="flex  items-center w-[100vw] h-[65px] max-md:justify-between bg-zinc-800/30 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
+    <div className="flex  items-center w-[100vw] h-[65px] max-md:justify-between border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-[20px] border-b border-zinc-500/50 fixed z-20 backdrop-blur-[10px]">
       <div className="w-[18%] text-center max-md:w-min">
         <p className="text-[25px] font-semibold max-md:text-[20px]">
           <span className="text-[40px] max-md:text-[35px] font-bold text-cyan-600 px-1">
@@ -91,47 +91,7 @@ const Header = () => {
           nifusion
         </p>
       </div>
-      <div className=" flex justify-center items-start w-[400px] max-md:hidden">
-        <NavigationMenu>
-          <NavigationMenuList className="gap-[10px]">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="w-[150px] flex gap-[10px] text-[16px] font-semibold border border-zinc-500/50">
-                <FontAwesomeIcon icon={faFilm} />
-                <p>Anime</p>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>
-                  <div className="flex w-[500px] h-[300px] p-[10px] bg-zinc-800/30">
-                    <img
-                      src=""
-                      alt="Name"
-                      className=" w-[200px] h-[100%] rounded-xl"
-                    />
-                    <div className="flex flex-col"></div>
-                  </div>
-                </NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="w-[150px]  flex gap-[10px] text-[16px] font-semibold border border-zinc-500/50">
-                <FontAwesomeIcon icon={faBook} />
-                <p>Manga</p>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>
-                  <div className="flex w-[500px] h-[300px] p-[10px] bg-zinc-800/30">
-                    <img
-                      src=""
-                      alt="Name"
-                      className=" w-[200px] h-[100%] rounded-xl"
-                    />
-                  </div>
-                </NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
+      
       <div className="flex justify-end items-end  w-[600px] transition duration-1000 ease max-md:hidden">
         <div
           className={`flex justify-between items-center w-[400px] h-[35px] px-[10px] bg-zinc-800/30 border ${
