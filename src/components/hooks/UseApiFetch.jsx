@@ -5,6 +5,7 @@ const BASE_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist/";
 const BASE_ANiWATCH_URL = "https://aniwatch-ryan.vercel.app/anime/"
 const BASE_MANGA_URL = "https://manga-ryan.vercel.app/api/"
 const PROXY_URl = "https://anymey-proxy.vercel.app/cors?url=";
+const ANIME_PROXY = "https://goodproxy.goodproxy.workers.dev/fetch?url=";
 
 export const NewsetApi = async  () => {
 
@@ -108,7 +109,7 @@ export const MangaChapter = async  (chapter) => {
 
 export const AniWatchIdApi = async  (title) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}search?q=${title}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}search?q=${title}`);
         const result = await response.json();
         const FindName = result.animes.find(find => find.name === title);
         return FindName.id;
@@ -117,7 +118,7 @@ export const AniWatchIdApi = async  (title) => {
 
 export const AniWatchEpisode = async (name) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}episodes/${name}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}episodes/${name}`);
         const result = await response.json();
         return result;
         
@@ -125,7 +126,7 @@ export const AniWatchEpisode = async (name) => {
 
 export const AniWatchSteam = async  (episodeId) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}`);
         const result = await response.json();
         return result.episodes;
 
@@ -133,14 +134,14 @@ export const AniWatchSteam = async  (episodeId) => {
 
 export const AniWatchServer = async  (episodeId, server, category) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}?server=${server}&category=${category}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}?server=${server}&category=${category}`);
         const result = await response.json();
         return result;
 }
 
 export const AniWatchHome = async  () => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}home`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}home`);
         const result = await response.json();
         return result;
 
@@ -148,7 +149,7 @@ export const AniWatchHome = async  () => {
 
 export const AniWatcSearch = async  (name) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}search?q=${name}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}search?q=${name}`);
         const result = await response.json();
         return result;
         
@@ -156,14 +157,14 @@ export const AniWatcSearch = async  (name) => {
 
 export const CategoryFetch = async  (page) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}tv?page=${page}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}tv?page=${page}`);
         const result = await response.json();
         return result.animes;
 
 }
 export const AniWatchAnimeId = async  (id) => {
 
-        const response = await fetch(`${BASE_ANiWATCH_URL}info?id=${id}`);
+        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}info?id=${id}`);
         const result = await response.json();
         return result;
 
@@ -194,8 +195,7 @@ export const AniWatchCategory = async  (category) => {
 }
 
 export const AniWatchSchedule = async  (date) => {
-
-        
+   
         const response = await fetch(`${BASE_ANiWATCH_URL}schedule?date=${date}`);
         const result = await response.json();
         return result;

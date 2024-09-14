@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Footer } from "@/components/Footer";
+import { ThemeProvider } from "../components/theme-provider";
+import Header from "../components/Header.jsx"
 import NextTopLoader from "nextjs-toploader";
 import NewHeader from "@/components/new_header";
 
@@ -25,9 +24,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          
           <NewHeader/>
-          <div className="overflow-hidden">{children}</div>
+          
+          <div className="overflow-hidden relative top-[65px]">{children}</div>
         </ThemeProvider>
       </body>
     </html>
