@@ -25,7 +25,7 @@ const SearchResults = ({ result,width, setFocused }) => {
           <img
             src={item.poster}
             alt=""
-            className="w-[80px] h-full object-cover rounded-xl border border-zinc-500/50"
+            className="w-[60px] h-full object-cover rounded-xl border border-zinc-500/50"
           />
           <div className="flex flex-col justify-center items-center w-full gap-1">
             <h1 className="text-[18px] font-semibold">
