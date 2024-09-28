@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Play, BookOpen, Menu, Star, ChevronRight, PlayCircle } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Footer } from './new_footer'
 import { mostPopularAnimes } from '@/app/OfflineData/_offline_data'
 import aot from "../assets/Character Development(1).jpg";
 import manga from "../assets/manga.jpg";
@@ -40,8 +39,6 @@ export default function LandingPage() {
               </div>
             </div>
           </section>
-          
-          
           <div className="mx-auto px-4 py-8">
         <section className="mb-12">
           <div className="grid md:grid-cols-2 gap-6">
@@ -59,7 +56,7 @@ export default function LandingPage() {
                   alt="Manga Collage"
                   width={400}
                   height={200}
-                  className="w-full h-48 object-cover rounded-md mb-4"
+                  className="w-full h-68 object-cover rounded-md mb-4"
                 />
                 <p className="text-muted-foreground">
                   Explore thousands of manga titles across various genres. From action-packed shonen to heartwarming slice-of-life, find your next favorite series.
@@ -86,7 +83,7 @@ export default function LandingPage() {
                   alt="Anime Collage"
                   width={400}
                   height={200}
-                  className="w-full h-48 object-cover rounded-md mb-4"
+                  className="w-full h-68 object-cover rounded-md mb-4"
                 />
                 <p className="text-muted-foreground">
                   Stream the latest anime episodes and classic series in high quality. Enjoy a wide selection of subtitled and dubbed content.
@@ -118,11 +115,13 @@ export default function LandingPage() {
                           fill = "true"
                           className="object-cover transition-transform group-hover:scale-105"
                         />
+                        <Link href={`/Anime/home/${item.id}`}>
                         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                           <Button variant="secondary" size="sm" className="w-full">
                             Watch Now <ChevronRight className="ml-2 h-4 w-4" />
                           </Button>
                         </div>
+                        </Link>
                       </div>
                     </CardHeader>
                     <CardContent className="p-4">
@@ -195,7 +194,6 @@ export default function LandingPage() {
             </div>
           </section>
         </main>
-        <Footer/>
       </div>
   )
 }
