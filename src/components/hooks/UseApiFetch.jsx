@@ -1,80 +1,12 @@
 "use client";
 
 
-const BASE_URL = "https://consumet-api-two-nu.vercel.app/meta/anilist/";
 const BASE_ANiWATCH_URL = "https://aniwatch-ryan.vercel.app/anime/"
 const BASE_MANGA_URL = "https://manga-ryan.vercel.app/api/"
 const PROXY_URl = "https://anymey-proxy.vercel.app/cors?url=";
 const ANIME_PROXY = "https://goodproxy.goodproxy.workers.dev/fetch?url=";
 
-export const NewsetApi = async  () => {
 
-        const response = await fetch(`${BASE_URL}trending`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const PopularApi = async  () => {
-
-        const response = await fetch(`${BASE_URL}popular`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const TopAiring = async  () => {
-
-        const response = await fetch(`${BASE_URL}airing-schedule`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const TrendingApi = async  () => {
-
-        const response = await fetch(`${BASE_URL}advanced-search`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const RandomApi = async  () => {
-
-        const response = await fetch(`${BASE_URL}random-anime`);
-        const result = await response.json();
-        return result.results;
-}
-
-export const FetchById = async  (id) => {
-        
-        const response = await fetch(`${BASE_URL}info/${id}?provider=gogoanime`);
-        const result = await response.json();
-        return result;
-}
-
-export const FetchByData = async  (id) => {
-        
-        const response = await fetch(`${BASE_URL}data/${id}?provider=gogoanime`);
-        const result = await response.json();
-        return result;
-}
-
-export const FetchEpisodes = async  (id) => {
-        
-        const response = await fetch(`${BASE_URL}episodes/${id}`);
-        const result = await response.json();
-        return result;
-}
-
-export const FetchEpisodesId = async  (episodeId) => {
-        
-        const response = await fetch(`${BASE_URL}watch/${episodeId}`);
-        const result = await response.json();
-        return result;
-}
-export const FetchBySearch = async  (name) => {
-        
-        const response = await fetch(`${BASE_URL}${name}`);
-        const result = await response.json();
-        return result.results;
-}
 
 export const MangaTableData = async  (pagenumber) => {
 
@@ -86,7 +18,7 @@ export const MangaTableData = async  (pagenumber) => {
 
 export const MangaSearch = async  (name) => {
 
-        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}search/${name}?page=1`);
+        const response = await fetch(`${PROXY_URl}${BASE_MANGA_URL}search/${name}`);
         const result = await response.json();
         return result;
 
