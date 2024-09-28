@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Play } from 'lucide-react'
-import { Footer } from '@/components/new_footer'
 import { useParams } from 'next/navigation'
 import { AniWatcSearch } from '@/components/hooks/UseApiFetch'
 import Link from 'next/link'
@@ -28,7 +27,7 @@ export default function Page() {
       }
     }
     fetchData()
-  }, [name])
+  }, [])
 
   const handleSearch = async (e) => {
     e.preventDefault()
@@ -91,7 +90,7 @@ export default function Page() {
                       <Link href={`/Anime/home/${anime.id}`}>
                       <Card className="h-full overflow-hidden border-0 bg-black/40 backdrop-blur-sm">
                         <CardHeader className="relative p-0">
-                          <div className="aspect-[2/3] overflow-hidden">
+                          <div className="aspect-[3/3] overflow-hidden">
                             <img 
                               src={anime.poster || "/placeholder.svg?height=300&width=200"} 
                               alt={anime.name} 
@@ -135,7 +134,6 @@ export default function Page() {
           </div>
         </section>
       </main>
-      <Footer />
       <style jsx global>{`
         .spotlight-effect {
           position: relative;
