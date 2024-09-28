@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
-import Header from "../components/Header.jsx"
 import NextTopLoader from "nextjs-toploader";
-import NewHeader from "@/components/new_header";
+import NewHeader from "@/components/_header";
+import { Footer } from "@/components/_footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,8 +26,9 @@ export default function RootLayout({ children }) {
         >
           <NewHeader/>
           
-          <div className="overflow-hidden relative top-[65px]">{children}</div>
+          <div className="overflow-hidden">{children}</div>
         </ThemeProvider>
+        <Footer/>
       </body>
     </html>
   );
