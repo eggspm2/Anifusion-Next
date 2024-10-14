@@ -10,8 +10,8 @@ import {
 
 const DetailStack = ({data}) => {
   return (
-    <div className="flex gap-1 h-[20px] max-md:text-[10px] text-black text-[0.9rem] font-semibold">
-    <p className=" px-[5px] h-full bg-cyan-100 max-md:px-[15px] flex justify-center items-center rounded-l rounded-bl">
+    <div className="flex gap-1 h-[20px] max-md:text-[10px] text-black text-[0.7rem] font-semibold">
+    <p className=" px-[5px] h-full bg-cyan-100 max-md:px-[10px] flex justify-center items-center rounded-l rounded-bl">
       {data.stats.rating}
     </p>
     <p className="px-[5px] h-full bg-pink-200  flex justify-center items-center ">
