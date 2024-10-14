@@ -3,7 +3,7 @@
 
 const BASE_ANiWATCH_URL = "https://hianime-noir.vercel.app/anime/"
 const BASE_MANGA_URL = "https://kakalot-ryan.vercel.app/api/"
-const PROXY_URl = "";
+const PROXY_URl = "https://goodproxy.goodproxy.workers.dev/fetch?url=";
 const ANIME_PROXY = "https://goodproxy.goodproxy.workers.dev/fetch?url=";
 
 

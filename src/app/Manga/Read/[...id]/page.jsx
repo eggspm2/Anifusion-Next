@@ -34,57 +34,42 @@ const Page = ({ params }) => {
         if (response) {
           console.log(response);
           setData(response);
+  
+          // Update next/prev status after fetching data
           const index = response.chapterListIds.findIndex(
             (item) => item.name === response.currentChapter
           );
-          console.log(index);
-          if (index === 0) {
-            setNext(false);
-          } else {
-            setNext(true);
-          }
-          if (index === response.chapterListIds.length - 1) {
-            setPrev(false);
-          } else {
-            setPrev(true);
-          }
+          
+          setNext(index > 0);  // Disable next if it's the first chapter
+          setPrev(index < response.chapterListIds.length - 1);  // Disable prev if it's the last chapter
         }
       }
     };
     Fetching();
-  }, [Chapter, Next, Prev]);
-
+  }, [Chapter]);  // Only depend on Chapter to avoid unnecessary re-renders
+  
   const handleChapter = (nextbtn) => {
-    if (nextbtn) {
-      if (Next) {
-        const index =
-          Data.chapterListIds.findIndex(
-            (item) => item.name === Data.currentChapter
-          ) - 1;
-        setChapter(Data.chapterListIds[index].id);
-        if (index === 0) {
-          setNext(false);
-        }
+    const index = Data.chapterListIds.findIndex(
+      (item) => item.name === Data.currentChapter
+    );
+  
+    if (nextbtn && Next) {
+      const newIndex = index - 1;
+      if (newIndex >= 0) {
+        setChapter(Data.chapterListIds[newIndex].id);  // Move to the next chapter
       }
-    } else {
-      if (Prev) {
-        const index =
-          Data.chapterListIds.findIndex(
-            (item) => item.name === Data.currentChapter
-          ) + 1;
-        setChapter(Data.chapterListIds[index].id);
-        if (index === Data.chapterListIds.length - 1) {
-          setPrev(false);
-        } else {
-          setPrev(true);
-        }
+    } else if (!nextbtn && Prev) {
+      const newIndex = index + 1;
+      if (newIndex < Data.chapterListIds.length) {
+        setChapter(Data.chapterListIds[newIndex].id);  // Move to the previous chapter
       }
     }
   };
-
+  
   const SelectChapter = (chapterId) => {
     setChapter(chapterId);
   };
+  
 
   if (!Data || !Data.images[5]?.image) return <div className="flex w-full p-[10px] justify-center pt-10 items-center">
     <Skeleton className="w-[70%] max-md:w-full h-[700px]" />
