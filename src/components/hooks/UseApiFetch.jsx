@@ -3,7 +3,7 @@
 
 const BASE_ANiWATCH_URL = "https://hianime-noir.vercel.app/anime/"
 const BASE_MANGA_URL = "https://kakalot-ryan.vercel.app/api/"
-const PROXY_URl = "https://anymey-proxy.vercel.app/cors?url=";
+const PROXY_URl = "";
 const ANIME_PROXY = "https://goodproxy.goodproxy.workers.dev/fetch?url=";
 
 
@@ -66,7 +66,7 @@ export const AniWatchSteam = async  (episodeId) => {
 
 export const AniWatchServer = async  (episodeId, server, category) => {
 
-        const response = await fetch(`${ANIME_PROXY}${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}?server=${server}&category=${category}`);
+        const response = await fetch(`${BASE_ANiWATCH_URL}episode-srcs?id=${episodeId}?server=${server}&category=${category}`);
         const result = await response.json();
         return result;
 }
