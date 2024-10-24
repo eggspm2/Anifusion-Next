@@ -49,7 +49,7 @@ export const AnimeContainer = () => {
       <Tabs defaultValue="Trending" className="w-full">
       <TabsList className="flex justify-between gap-2  px-1">
         {names.map((item) => (
-            <TabsTrigger value={item.name} className="w-[25%] md:text-[14px] text-[12px]" onClick={() => getPage(item.id)}>{item.name}</TabsTrigger>
+            <TabsTrigger value={item.name} key={item.id} className="w-[25%] md:text-[14px] text-[12px]" onClick={() => getPage(item.id)}>{item.name}</TabsTrigger>
         ))}
          </TabsList>
          </Tabs>
