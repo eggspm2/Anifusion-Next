@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CategoryFetch } from "./hooks/UseApiFetch";
 import Link from "next/link";
 import { Skeleton } from "./ui/skeleton";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const AnimeContainer = () => {
   const [page, setPage] = useState(1);
@@ -26,7 +27,7 @@ export const AnimeContainer = () => {
     { id: 1, name: "Trending" },
     { id: 2, name: "Popular" },
     { id: 3, name: "Favorite" },
-    { id: 4, name: "Completed" },
+    { id: 4, name: "Latest" },
   ];
 
   const handleButtonClick = () => {
@@ -45,15 +46,13 @@ export const AnimeContainer = () => {
   return (
     <div className="flex flex-col w-[95%] gap-[50px] Animation">
       <div className="flex justify-center  gap-10 max-md:gap-3 w-full">
+      <Tabs defaultValue="Trending" className="w-full">
+      <TabsList className="flex justify-between gap-2  px-1">
         {names.map((item) => (
-          <p
-            className={`py-[8px] w-[150px] max-md:w-[25%] max-md:text-[12px] text-center text-[18px] font-semibold border border-zinc-500/50 rounded-lg Transition hover:bg-white hover:text-black ${item.id === page ? "bg-white text-black" : "bg-black/40"}`}
-            key={item.id}
-            onClick={() => getPage(item.id)}
-          >
-            {item.name}
-          </p>
+            <TabsTrigger value={item.name} className="w-[25%] md:text-[14px] text-[12px]" onClick={() => getPage(item.id)}>{item.name}</TabsTrigger>
         ))}
+         </TabsList>
+         </Tabs>
       </div>
       {(!data || !data[30]?.poster) ? (
       <div className="flex flex-wrap gap-5 w-full items-center p-[10px] max-md:justify-center">
