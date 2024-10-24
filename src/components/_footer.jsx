@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Facebook, Instagram, Sparkles, Twitter, Youtube } from "lucide-react"
+import { Facebook, Github, Instagram, Sparkles, Twitter, Youtube } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -16,16 +16,12 @@ export function Footer() {
             <p className="text-muted-foreground mb-4">
               Your ultimate destination for anime streaming and manga reading. Dive into a world of endless stories and adventures.
             </p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <Input type="email" placeholder="Enter your email" />
-              <Button type="submit">Subscribe</Button>
-            </form>
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Anime</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Manga</Link></li>
+              <li><Link href="/Anime" className="text-muted-foreground hover:text-foreground transition-colors">Anime</Link></li>
+              <li><Link href="/Manga" className="text-muted-foreground hover:text-foreground transition-colors">Manga</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Community</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link></li>
             </ul>
@@ -36,7 +32,7 @@ export function Footer() {
               <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Help Center</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Contact Us</Link></li>
+              <li><Link href="mailto:irfan31331@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">Contact Us</Link></li>
             </ul>
           </div>
         </div>
@@ -53,13 +49,13 @@ export function Footer() {
               <Twitter className="h-5 w-5" />
               <span className="sr-only">Twitter</span>
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="https://www.instagram.com/irfanmew313/" className="text-muted-foreground hover:text-foreground transition-colors">
               <Instagram className="h-5 w-5" />
               <span className="sr-only">Instagram</span>
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Youtube className="h-5 w-5" />
-              <span className="sr-only">YouTube</span>
+            <Link href="https://github.com/reyyuuki" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Github className="h-5 w-5" />
+              <span className="sr-only">Github</span>
             </Link>
           </div>
         </div>
