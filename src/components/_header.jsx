@@ -42,19 +42,18 @@ export default function NewHeader() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between w-full px-4">
           <Link href="/" className="flex items-center space-x-2">
             <Sparkles className="h-6 w-6" />
             <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">AniFusion</span>
           </Link>
           <nav className={cn(
-            "md:mt-[0px] mt-[120px] fixed inset-0 z-50 bg-background md:static",
+            "md:mt-[0px]  fixed right-0 top-0  z-50 bg-background md:bg-transparent md:static rounded-lg",
             isMenuOpen ? "flex" : "hidden md:block"
           )}>
             <ul className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0 w-full h-full md:w-auto md:h-auto">
-              <li><Link href="/Anime" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>Anime</Link></li>
-              <li><Link href="/Manga" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>Manga</Link></li>
+              <li><Button variant='ghost' className='bg-transparent'><Link href="/Anime" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>Anime</Link></Button></li>
+              <li><Button variant='ghost' className='bg-transparent'><Link href="/Manga" className="text-muted-foreground hover:text-foreground transition-colors" onClick={() => setIsMenuOpen(false)}>Manga</Link></Button></li>
               <li className="md:hidden"><Toggle /></li>
               <li className="md:hidden">
                 <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
@@ -82,7 +81,7 @@ export default function NewHeader() {
                 type="button"
                 size="icon"
                 variant="ghost"
-                className="absolute right-7 top-4 md:hidden"
+                className="absolute right-9 top-3.5 md:hidden"
                 onClick={() => setIsSearchOpen(false)}
               >
                 <X className="h-4 w-4" />
@@ -111,7 +110,7 @@ export default function NewHeader() {
             </div>
           </div>
         </div>
-      </div>
+      
     </header>
   )
 }
