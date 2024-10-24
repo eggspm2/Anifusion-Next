@@ -137,7 +137,6 @@ const StreamPage = () => {
             <MediaPlayer title={currentTitle} src={EpisodeData.sources[0].url} className="w-full h-full">
               <MediaProvider />
               <DefaultVideoLayout
-                thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
                 icons={defaultLayoutIcons}
               />
               {tracks.map((item, index) => (
