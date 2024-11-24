@@ -4,13 +4,13 @@ export const WeekDay = () => {
   let current = new Date();
   let week = [{}];
   let names = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Staurday",
+    "Minggu",
+    "Senin",
+    "Selasa",
+    "Rabu",
+    "Kamis",
+    "Jumat",
+    "Sabtu",
   ];
   for (let i = 0; i < 7; i++) {
     let First = current.getDate() - current.getDay() + i;
