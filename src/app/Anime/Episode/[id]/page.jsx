@@ -153,11 +153,10 @@ const StreamPage = () => {
           <div className="w-full h-[150px] max-md:h-min flex flex-col gap-3">
             <div className="w-full h-full bg-black/50 flex max-md:flex-col rounded-xl gap-2 border border-zinc-500/50">
               <div className="h-full w-[45%] max-md:w-full max-md:rounded-xl max-md:text-[12px] py-[10px] bg-white text-black rounded-l-xl rounded-bl-xl flex flex-col justify-center items-center gap-1">
-                <p>You are watching</p>
+                <p>Sedang Menonton</p>
                 <p className="font-semibold">Episode {EpisodeNumber}</p>
                 <p className="w-[80%] text-center">
-                  If current server is not working please switch to other
-                  servers
+                 Jika Server Tidak Berjalan Ganti Keserver lain
                 </p>
               </div>
               <div className="w-full h-full flex flex-col items-center">
@@ -215,7 +214,7 @@ const StreamPage = () => {
                         ))}
                       </>
                     ) : (
-                      <p>Dub is not Available</p>
+                      <p>Dubbing Tidak Tersedia</p>
                     )}
                   </div>
                 </div>
