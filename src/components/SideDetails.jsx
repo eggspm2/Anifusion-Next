@@ -9,19 +9,19 @@ const SideDetails = ({ Aniwatch, style}) => {
   return (
     <div className={`w-full h-full  flex flex-col justify-center text-[0.8rem] ${style} gap-2`}>
       <div className="flex gap-2">
-        <p className="font-semibold">Japanese: </p>
+        <p className="font-semibold">Jepang: </p>
         <p className="font-light">{Aniwatch.japanese}</p>
       </div>
       <div className="flex gap-2">
-        <p className="font-semibold">Aired: </p>
+        <p className="font-semibold">Rilis: </p>
         <p className="font-light">{Aniwatch.aired}</p>
       </div>
       <div className="flex gap-2">
-        <p className="font-semibold">Preimeired:</p>
+        <p className="font-semibold">Premier:</p>
         <p className="font-light">{Aniwatch.premiered}</p>
       </div>
       <div className="flex gap-2">
-        <p className="font-semibold">Duration: </p>
+        <p className="font-semibold">Durasi: </p>
         <p className="font-light">{Aniwatch.duration}</p>
       </div>
       <div className="flex gap-2">
@@ -29,7 +29,7 @@ const SideDetails = ({ Aniwatch, style}) => {
         <p className="font-light">{Aniwatch.status}</p>
       </div>
       <div className="flex gap-2 pb-1">
-        <p className="font-semibold">Mal Score: </p>
+        <p className="font-semibold">Score: </p>
         <p className="font-light">{Aniwatch.malscore}</p>
       </div>
       
@@ -44,12 +44,12 @@ const SideDetails = ({ Aniwatch, style}) => {
           </div>
       </div>
       <div className="flex gap-2 pt-1">
-        <p className="font-semibold">Studios: </p>
+        <p className="font-semibold">Studio: </p>
         <p className="font-light">{Aniwatch.studios}</p>
       </div>
 
       <div className="flex gap-2">
-        <p className="font-semibold">Producers: </p>
+        <p className="font-semibold">Produser: </p>
         <p className="font-light">{Aniwatch.producers}</p>
       </div>
     </div>
