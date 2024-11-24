@@ -34,7 +34,7 @@ export function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Sz Anime. All rights reserved.
+            &copy; {new Date().getFullYear()} Ikhsan and reyyuki. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
