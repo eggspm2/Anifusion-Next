@@ -45,7 +45,7 @@ export default function NewHeader() {
         <div className="flex h-16 items-center justify-between w-full px-4">
           <Link href="/" className="flex items-center space-x-2">
             <Sparkles className="h-6 w-6" />
-            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">AniFusion</span>
+            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">SZ - ANIME</span>
           </Link>
           <nav className={cn(
             "md:mt-[0px]  fixed right-0 top-0  z-50 bg-background md:bg-transparent md:static rounded-lg",
