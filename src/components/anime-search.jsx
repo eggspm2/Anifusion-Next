@@ -36,21 +36,21 @@ export function AnimeSearchComponent() {
           <div className="mr-4 hidden md:flex">
             <a className="mr-6 flex items-center space-x-2" href="/">
               <Search className="h-6 w-6" />
-              <span className="hidden font-bold sm:inline-block">AnimeSearch</span>
+              <span className="hidden font-bold sm:inline-block">Cari Anime</span>
             </a>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/docs">Docs</a>
+                href="/docs">Dok</a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/docs/components">Components</a>
+                href="/docs/components">Komponen</a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/themes">Themes</a>
+                href="/themes">Tema</a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/examples">Examples</a>
+                href="/examples">Contoh</a>
             </nav>
           </div>
         </div>
@@ -62,10 +62,10 @@ export function AnimeSearchComponent() {
               <div className="space-y-2">
                 <h1
                   className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Discover Your Next Anime Adventure
+                  Temukan Anime Terbaikmu
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Search through our vast collection of anime titles and find your next binge-worthy series.
+                  Cari judul anime , series , movie yang akan menjadi tontonan selanjutnya
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
@@ -78,7 +78,7 @@ export function AnimeSearchComponent() {
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)} />
-                  <Button type="submit">Search</Button>
+                  <Button type="submit">Cari</Button>
                 </form>
               </div>
             </div>
@@ -121,8 +121,8 @@ export function AnimeSearchComponent() {
                         </p>
                       </CardContent>
                       <CardFooter>
-                        <Badge variant="secondary">Action</Badge>
-                        <Badge variant="secondary" className="ml-2">Adventure</Badge>
+                        <Badge variant="secondary">Aksi</Badge>
+                        <Badge variant="secondary" className="ml-2">Petualangan</Badge>
                       </CardFooter>
                     </Card>
                   </motion.div>
