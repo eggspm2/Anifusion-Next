@@ -14,7 +14,7 @@ export function Footer() {
               <span className="font-bold text-2xl">Sz Anime</span>
             </Link>
             <p className="text-muted-foreground mb-4">
-              Nonton anime gratis tanpa iklan
+              Bebas nonton , bebas iklan gratis sepuasnya..
             </p>
           </div>
           <div>
