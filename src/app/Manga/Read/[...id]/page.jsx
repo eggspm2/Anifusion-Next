@@ -100,10 +100,9 @@ const Page = ({ params }) => {
           <DrawerContent>
             <DrawerHeader>
               <div className="flex flex-col text-center gap-1 pt-3">
-                <DrawerTitle>Choose Your Chapter</DrawerTitle>
+                <DrawerTitle>Pilih Chapter</DrawerTitle>
                 <DrawerDescription>
-                  Browse through the chapters and dive into your next manga
-                  adventure!
+                  c
                 </DrawerDescription>
               </div>
             </DrawerHeader>
@@ -164,16 +163,15 @@ const Page = ({ params }) => {
           <DrawerTrigger>
             <Button variant="outline" className="px-[40px]">
               <FontAwesomeIcon icon={faBook} className="pr-5" />
-              Chapters List
+               List Chapter
             </Button>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
               <div className="flex flex-col text-center gap-1 pt-3">
-                <DrawerTitle>Choose Your Chapter</DrawerTitle>
+                <DrawerTitle>Pilih Chapter</DrawerTitle>
                 <DrawerDescription>
-                  Browse through the chapters and dive into your next manga
-                  adventure!
+                  Telusuri lebih banyak manga lainnya!
                 </DrawerDescription>
               </div>
             </DrawerHeader>
