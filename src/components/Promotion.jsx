@@ -8,7 +8,7 @@ const Promotion = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <div className="w-full flex flex-col gap-3 p-[20px]">
-      <h1 className="text-[30px] font-semibold">Promotional Videos</h1>
+      <h1 className="text-[30px] font-semibold">Anime Promosi</h1>
       <div className="flex gap-3">
         {data.map((item) => (
           <div className="flex flex-col w-[200px] h-[140px] justify-center items-center pt-3 relative overflow-x-scroll ScrollWidth" key={item.title}>
