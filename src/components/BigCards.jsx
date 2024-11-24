@@ -9,7 +9,7 @@ const BigCards = ({ data }) => {
   if (!data) return <div>Loading ...</div>;
   return (
     <div className="flex flex-col w-full  p-[20px] gap-10">
-      <h1 className="text-[35px] font-semibold max-md:text-[25px]">Recommended for You</h1>
+      <h1 className="text-[35px] font-semibold max-md:text-[25px]">Rekomendasi Untukmu</h1>
       <div className="flex flex-wrap gap-5">
         {data.map((item, index) => (
           <Link
