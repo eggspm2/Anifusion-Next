@@ -19,20 +19,20 @@ export default function LandingPage() {
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-3xl mx-auto text-center">
                 <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                  Your Gateway to <span className="text-primary">Anime</span> & <span className="text-primary">Manga</span>
+                  Nonton Gratis Tanpa Batas<span className="text-primary">Anime</span> & <span className="text-primary">Manga</span>
                 </h1>
                 <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Discover, watch, and read your favorite stories all in one place. Join our community of passionate fans today!
+                 Telusuri lebih banyak anime , manga dan jangan lupa untuk join kekomunitas
                 </p>
                 <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                   <Link href="/Anime">
                   <Button size="lg" className="bg-primary hover:bg-primary/90">
-                    <Play className="mr-2 h-5 w-5" /> Start Watching
+                    <Play className="mr-2 h-5 w-5" /> Mulai Nonton
                   </Button>
                   </Link>
                   <Link href="/Manga">
                   <Button size="lg" variant="outline">
-                    <BookOpen className="mr-2 h-5 w-5" /> Explore Manga
+                    <BookOpen className="mr-2 h-5 w-5" /> Baca Manga
                   </Button>
                   </Link>
                 </div>
@@ -48,7 +48,7 @@ export default function LandingPage() {
                   <BookOpen className="mr-2" />
                   Manga Reading
                 </CardTitle>
-                <CardDescription>Dive into a vast collection of manga</CardDescription>
+                <CardDescription>Baca Manga Populer Disini</CardDescription>
               </CardHeader>
               <CardContent>
                 <Image
@@ -59,12 +59,12 @@ export default function LandingPage() {
                   className="w-full h-68 object-cover rounded-md mb-4"
                 />
                 <p className="text-muted-foreground">
-                  Explore thousands of manga titles across various genres. From action-packed shonen to heartwarming slice-of-life, find your next favorite series.
+                  Telusuri lebih banyak manga populer sesuai dengan genre yang kamu suka
                 </p>
               </CardContent>
               <CardFooter>
                 <Button asChild>
-                  <Link href="/Manga">Start Reading</Link>
+                  <Link href="/Manga">Mulai Membaca</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -73,9 +73,9 @@ export default function LandingPage() {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <PlayCircle className="mr-2" />
-                  Anime Streaming
+                  Nonton Anime
                 </CardTitle>
-                <CardDescription>Watch your favorite anime series and movies</CardDescription>
+                <CardDescription>Tonton Anime , Series , Dan Movie Favoritmu</CardDescription>
               </CardHeader>
               <CardContent>
                 <Image
@@ -86,12 +86,12 @@ export default function LandingPage() {
                   className="w-full h-68 object-cover rounded-md mb-4"
                 />
                 <p className="text-muted-foreground">
-                  Stream the latest anime episodes and classic series in high quality. Enjoy a wide selection of subtitled and dubbed content.
+                  Tonton anime klasik dan terbaru , populer disini
                 </p>
               </CardContent>
               <CardFooter>
                 <Button asChild>
-                  <Link href="/Anime">Start Watching</Link>
+                  <Link href="/Anime">Mulai Menonton</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -118,7 +118,7 @@ export default function LandingPage() {
                         <Link href={`/Anime/home/${item.id}`}>
                         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                           <Button variant="secondary" size="sm" className="w-full">
-                            Watch Now <ChevronRight className="ml-2 h-4 w-4" />
+                            Tonton Sekarang <ChevronRight className="ml-2 h-4 w-4" />
                           </Button>
                         </div>
                         </Link>
@@ -128,7 +128,7 @@ export default function LandingPage() {
                     <CardTitle className="text-lg truncate">{item.title.english ?? item.title.romaji }</CardTitle>
                       <p className="text-sm text-muted-foreground flex items-center mt-1">
                         <Star className="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" />
-                        {item.rating/20} • Action, Adventure
+                        {item.rating/20} • Aksi , Petualang
                       </p>
                     </CardContent>
                   </Card>
@@ -143,13 +143,13 @@ export default function LandingPage() {
           <section className="py-20 bg-muted">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold tracking-tight text-center mb-12">
-                Why Choose AniFusion?
+                Keunggulan SZ - ANIME 
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { title: "Vast Library", description: "Access thousands of anime series and manga titles", icon: "📚" },
-                  { title: "HD Streaming", description: "Enjoy high-quality video and smooth playback", icon: "🎥" },
-                  { title: "Community", description: "Connect with fellow anime and manga enthusiasts", icon: "🌟" }
+                  { title: "Vast Library", description: "Akses gratis ribuan manga dan anime populer gratis", icon: "📚" },
+                  { title: "HD Streaming", description: "Film dengan kualitas bagus", icon: "🎥" },
+                  { title: "Community", description: "Gratis tanpa iklan", icon: "🌟" }
                 ].map((feature, index) => (
                   <Card key={index} className="bg-card">
                     <CardHeader>
@@ -171,10 +171,10 @@ export default function LandingPage() {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl font-bold tracking-tight mb-6">
-                  Ready to Start Your Journey?
+                  Siap memulai petualangan ini ?
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Join millions of anime and manga fans. Start your free trial today!
+                  Bergabung dengan ribuan fans anime dan manga
                 </p>
                 <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                   <Input
@@ -184,11 +184,11 @@ export default function LandingPage() {
                     required
                   />
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90">
-                    Get Started
+                    Mulai
                   </Button>
                 </form>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  No credit card required. Cancel anytime.
+                  Tanpa bayar dan tanpa iklan
                 </p>
               </div>
             </div>
