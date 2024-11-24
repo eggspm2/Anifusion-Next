@@ -6,7 +6,7 @@ import React from 'react'
     if(!data) return <div>Loading ...</div>
   return (
     <div className='w-full  flex flex-col gap-4 p-[20px]'>
-        <h1 className='text-[30px] font-semibold'>More Seasons</h1>
+        <h1 className='text-[30px] font-semibold'>Musim lainnya</h1>
         <div className='flex gap-5 flex-wrap '>
         {data.map((item) => (
             <div key={item.id} className='w-[150px] h-[70px] flex relative overflow-hidden rounded-xl' style={{ backgroundImage: `url(${item.poster})` }}>
