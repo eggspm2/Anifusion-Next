@@ -102,7 +102,7 @@ export default function LandingPage() {
           <section className="py-20">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold tracking-tight text-center mb-12">
-                Most Popular
+                Paling Populer
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {mostPopularAnimes ?  mostPopularAnimes.map((item, index) => (
@@ -135,7 +135,7 @@ export default function LandingPage() {
                 )) : null}
               </div>
               <div className="mt-12 text-center">
-                <Button size="lg">Explore All Titles</Button>
+                <Button size="lg">Telusuri Semua</Button>
               </div>
             </div>
           </section>
