@@ -147,9 +147,9 @@ export default function LandingPage() {
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { title: "Vast Library", description: "Akses gratis ribuan manga dan anime populer gratis", icon: "📚" },
-                  { title: "HD Streaming", description: "Film dengan kualitas bagus", icon: "🎥" },
-                  { title: "Community", description: "Gratis tanpa iklan", icon: "🌟" }
+                  { title: "Banyak Pilihan", description: "Akses gratis ribuan manga dan anime populer gratis", icon: "📚" },
+                  { title: "Nonton HD", description: "Film dengan kualitas bagus", icon: "🎥" },
+                  { title: "Akses Free", description: "Gratis tanpa iklan", icon: "🌟" }
                 ].map((feature, index) => (
                   <Card key={index} className="bg-card">
                     <CardHeader>
