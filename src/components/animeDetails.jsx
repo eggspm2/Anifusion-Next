@@ -39,11 +39,11 @@ const AnimeDetails = ({ data }) => {
             className="flex justify-center max-md:w-max max-md:px-[10px] items-center w-[180px] bg-pink-300 rounded-3xl h-[45px] gap-2"
           >
             <FontAwesomeIcon icon={faPlay} />
-            <p>Watch now</p>
+            <p>Tonton sekarang</p>
           </Link>
           <div className="flex justify-center items-center w-[180px] max-md:w-max max-md:px-[10px] bg-green-100 rounded-3xl h-[45px] gap-2">
             <FontAwesomeIcon icon={faPlus} />
-            <p>Add to List</p>
+            <p>Tambah ke list</p>
           </div>
         </div>
         <div className="w-full text-[0.9rem]">{data.description.length > 650 ? data.description.substring(0,650) + "..." : data.description}</div>
