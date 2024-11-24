@@ -42,14 +42,14 @@ const MangaSlider = ({ data }) => {
                   className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[20px] max-md:py-[10px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faCircleInfo} />
-                  <p>Details</p>
+                  <p>Detail</p>
                 </Link>
                 <Link
                   href={`/Manga/Read/${item.id}/${"chapter-1"}`}
                   className="flex justify-center items-center py-[10px] px-[20px] max-md:px-[20px] max-md:py-[10px] max-md:h-min max-md:text-[12px] gap-2 bg-white rounded-3xl border border-zinc-500/50"
                 >
                   <FontAwesomeIcon icon={faBook} />
-                  <p>Read now</p>
+                  <p>Baca Sekarang</p>
                 </Link>
               </div>
             </div>
