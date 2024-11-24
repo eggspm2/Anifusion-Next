@@ -47,22 +47,22 @@ export default function Page() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Discover Your Next Anime Adventure
+                  Telusuri anime favoritmu
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Search through our vast collection of anime titles and find your next binge-worthy series.
+                  Temukan lebih banyak anime yang menarik
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
                 <form onSubmit={handleSearch} className="flex space-x-2">
                   <Input
                     className="max-w-lg flex-1"
-                    placeholder="Search anime..."
+                    placeholder="Mencari anime..."
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
-                  <Button type="submit">Search</Button>
+                  <Button type="submit">Telusuri</Button>
                 </form>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Page() {
                     </motion.div>
                   ))
                 ) : (
-                  <p className="col-span-full text-center text-lg text-muted-foreground">No results found</p>
+                  <p className="col-span-full text-center text-lg text-muted-foreground">Tidak Menemukan Hasil</p>
                 )}
               </AnimatePresence>
             </motion.div>
